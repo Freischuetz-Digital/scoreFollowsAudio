@@ -22,20 +22,38 @@ function getMeasure(time){
   for (i=0; i < json.measures.length; i++){
     cur = json.measures[i];
     diff = cur.timestamp - time;
-    console.log(cur.timestamp);
-    console.log(diff);
+    /*console.log(cur.timestamp);
+    console.log(diff);*/
     if(diff < bestDiff){
       minDiff = diff;
       bestIndex = i +1; //+1 um die tatsächliche Taktzahl zu errechnen
     }
   }
-  $('#facsimileID').text(json.measures[bestIndex-1].page);
+  var imageUri = json.measures[bestIndex-1].page;
+  $('#facsimileID').text(imageUri);
+  checkImage(imageUri);
   $("#measureCount").text(bestIndex);
-  console.log("bestIndex: ");
+  /*console.log("bestIndex: ");
   console.log(bestIndex);
   console.log("minDiff: ");
-  console.log(minDiff);
+  console.log(minDiff);*/
 };
+
+function checkImage(imageUri) {
+  if (currentImageUri !== imageUri){
+    setImage(imageUri, 'myCanvas');
+  }
+};
+
+function setImage(imageUri, targetID){
+  currentImageUri = imageUri;
+  /*var c = document.getElementById('myCanvas');
+  var ctx = c.getContext("2d");
+  var img =  document.getElementById('currentImage');
+  ctx.drawImage(img,10,10);*/
+  document.getElementById('currentImage').src = 'http://freischuetz-digital.de/digilib/Scaler/freidi/'+imageUri+'?dw=710&amp;mo=fit';
+};
+
 
 /*
  * research

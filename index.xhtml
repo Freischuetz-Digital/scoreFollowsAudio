@@ -9,7 +9,10 @@
   <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
     <section id="facsimile">
       <header>Facsimile</header>
-      <img src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
+      <!--<canvas id="myCanvas" width="710" height="533"
+        style="border:1px solid #000000;">
+      </canvas> -->
+      <img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
       <div id="facsimileID"></div>
     </section>  
     <section id="audioDiv">
@@ -27,6 +30,7 @@
         </audio>
       </section>
       <script type="text/javascript">
+        var currentImageUri;
         var json;
         $.getJSON('./Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
         
