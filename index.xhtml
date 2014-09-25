@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreiDi Web-Demo: Audio Score Following</title>
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"/>
+      <script type="text/javascript" src="src/FreiDi_audio.js"/>
+    </head>
+  <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
+    <section id="facsimile">
+      <header>Facsimile</header>
+      <img src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
+      <div id="facsimileID"></div>
+    </section>  
+    <section id="audioDiv">
+        <header>Audio</header>
+        
+        <div>
+          <header>Measure:</header>
+          count: <div id="measureCount"></div>
+          time: <div id="currentTime"></div>
+        </div>
+        
+        <audio id="track" controls="controls">
+          <source src="Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+          Your browser does not support the HTML5 audio element.
+        </audio>
+      </section>
+      <script type="text/javascript">
+        var json;
+        $.getJSON('./Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        
+        $("#track").bind('timeupdate', function() {
+          var blah = this.currentTime; 
+          console.log(blah);
+          $("#currentTime").text(blah);
+          getMeasure(blah);
+        });
+      </script>
+    </body>
+</html>
