@@ -29,6 +29,7 @@ function getMeasure(time){
       bestIndex = i +1; //+1 um die tatsächliche Taktzahl zu errechnen
     }
   }
+  $('#facsimileID').text(json.measures[bestIndex-1].page);
   $("#measureCount").text(bestIndex);
   console.log("bestIndex: ");
   console.log(bestIndex);
