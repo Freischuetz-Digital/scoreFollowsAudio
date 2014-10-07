@@ -20,19 +20,28 @@ function getMeasure(time){
   var i;
   var cur;
   for (i=0; i < json.measures.length; i++){
+  
     cur = json.measures[i];
     diff = cur.timestamp - time;
     /*console.log(cur.timestamp);
     console.log(diff);*/
     if(diff < bestDiff){
       minDiff = diff;
-      bestIndex = i +1; //+1 um die tatsächliche Taktzahl zu errechnen
+      bestIndex = i; 
     }
   }
-  var imageUri = json.measures[bestIndex-1].page;
-  $('#facsimileID').text(imageUri);
+  var imageUri = json.measures[0].page;
+  var measureID;
+  var measureCount;
+  if(bestIndex >= 0){
+    imageUri = json.measures[bestIndex].page;
+    measureID = json.measures[bestIndex].measureID;
+    measureCount = bestIndex + 1;//+1 um die tatsächliche Taktzahl zu errechnen
+  };
   checkImage(imageUri);
-  $("#measureCount").text(bestIndex);
+  $('#facsimileID').text(imageUri);
+  $("#measureCount").text(measureCount);
+  $("#measureID").text(measureID);
   /*console.log("bestIndex: ");
   console.log(bestIndex);
   console.log("minDiff: ");
