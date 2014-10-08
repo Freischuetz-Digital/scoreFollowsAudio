@@ -31,10 +31,14 @@
         </audio>
       </section>
       <script type="text/javascript">
+        //set currentImage to default value
         var currentImageUri = 'sources/A/00000100.jpg';
+        //declare variable json
         var json;
+        //get JSON and assign response to var json and log data
         $.getJSON('./Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
         
+        //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
           var blah = this.currentTime; 
           $("#currentTime").text(blah);

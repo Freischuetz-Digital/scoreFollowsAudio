@@ -1,5 +1,5 @@
 /*
- * not used
+ * unused functions
  */
 function appendAudio() {
   var audio = new Audio();
@@ -10,9 +10,14 @@ function appendAudio() {
   console.log('audio appended');
 };
 /*
- * used
+ * used functions
  */
 
+/**
+ * get image URI, measure number, measure ID from JSON based on input time
+ * @param      {Number}   time from audio player
+ * @var        {Number}   bestDiff
+ */
 function getMeasure(time){
   var bestDiff = 0;
   var minDiff;
@@ -23,8 +28,6 @@ function getMeasure(time){
   
     cur = json.measures[i];
     diff = cur.timestamp - time;
-    /*console.log(cur.timestamp);
-    console.log(diff);*/
     if(diff < bestDiff){
       minDiff = diff;
       bestIndex = i; 
@@ -38,29 +41,35 @@ function getMeasure(time){
     measureID = json.measures[bestIndex].measureID;
     measureCount = bestIndex + 1;//+1 um die tatsächliche Taktzahl zu errechnen
   };
+  
+  //call function to check current image against the one associated with best match
   checkImage(imageUri);
+  //set facsimile text field to new value
   $('#facsimileID').text(imageUri);
+  //set measure count to new value
   $("#measureCount").text(measureCount);
+  //set measure ID to new value
   $("#measureID").text(measureID);
-  /*console.log("bestIndex: ");
-  console.log(bestIndex);
-  console.log("minDiff: ");
-  console.log(minDiff);*/
 };
 
+ /**
+ * check if submitted image URI equals current image URI
+ * @param      {String}   imageURI image URI from JSON to be checked against currently visible images URI
+ */
 function checkImage(imageUri) {
   if (currentImageUri !== imageUri){
-    setImage(imageUri, 'myCanvas');
+    setImage(imageUri, 'currentImage');
   }
 };
 
+ /**
+ * set an img elements src attribute to supplied URI
+ * @param      {String}   imageUri new image URI
+ * @param      {String}   targetID ID of the target img element
+ */
 function setImage(imageUri, targetID){
   currentImageUri = imageUri;
-  /*var c = document.getElementById('myCanvas');
-  var ctx = c.getContext("2d");
-  var img =  document.getElementById('currentImage');
-  ctx.drawImage(img,10,10);*/
-  document.getElementById('currentImage').src = 'http://freischuetz-digital.de/digilib/Scaler/freidi/'+imageUri+'?dw=710&amp;mo=fit';
+  document.getElementById(targetID).src = 'http://freischuetz-digital.de/digilib/Scaler/freidi/'+imageUri+'?dw=710&amp;mo=fit';
 };
 
 
