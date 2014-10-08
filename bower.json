@@ -1,10 +1,10 @@
 {
-  "name": "scoreFollowWebDemo",
-  "version": "0.0.0",
+  "name": "scoreFollowsAudio",
+  "version": "0.1.0",
   "authors": [
     "Benjamin W. Bohl <bohl@edirom.de>"
   ],
-  "description": "Freischütz Digital Projects demo of score follows audio",
+  "description": "javascript library for json/time-based synchronisation of score to audio",
   "keywords": [
     "audio",
     "html5",
