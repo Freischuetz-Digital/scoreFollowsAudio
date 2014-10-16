@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>FreiDi Web-Demo: Audio Score Following</title>
-      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"/>
-      <script type="text/javascript" src="src/FreiDi_audio.js"/>
+      <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"/>
+      <script type="text/javascript" src="../src/FreiDi_audio.js"/>
     </head>
   <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
     <section id="facsimile">
@@ -16,7 +16,7 @@
       <div id="facsimileID"></div>
     </section>  
     <section id="audioDiv">
-        <header>Audio</header>
+        <h1>Audio</h1>
         
         <div>
           <header>Measure:</header>
@@ -26,7 +26,7 @@
         </div>
         
         <audio id="track" controls="controls">
-          <source src="Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+          <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
           Your browser does not support the HTML5 audio element.
         </audio>
       </section>
@@ -36,7 +36,7 @@
         //declare variable json
         var json;
         //get JSON and assign response to var json and log data
-        $.getJSON('./Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
         
         //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
