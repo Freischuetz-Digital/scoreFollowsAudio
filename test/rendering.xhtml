@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreiDi Web-Demo: Rendering Follows Audio</title>
+    
+    <script type="text/javascript" src="../bower_components/verovio-toolkit-0.9.3.js"/>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"/>
+    <script type="text/javascript" src="../src/FreiDi_audio.js"/>
+  </head>
+  <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
+    
+      <h1>rendering</h1>
+      <div id="output"/>
+    
+      <script type="text/javascript">
+  var vrvToolkit = new verovio.toolkit();
+  console.log(vrvToolkit);
+  /* Load the file using HTTP GET */
+  $.get( "../A_mov6_no_bTrem.xml", function( data ) {
+    var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({ inputFormat: 'mei',
+	pageHeight: 1000,
+	pageWidth: 2200,
+	ignoreLayout: 1,
+	border: 10,
+	scale: 50 }) );
+	console.log($("#output"));
+    $("#output").html(svg);
+    	console.log($("#output"));
+
+  });
+</script>
+      <div id="facsimileID"></div>
+      
+    
+      <h1>Audio</h1>
+      
+      <div>
+        <header>Measure:</header>
+        count: <div id="measureCount"></div>
+        time: <div id="currentTime"></div>
+        id: <div id="measureID"></div>
+      </div>
+      
+      <audio id="track" controls="controls">
+        <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+        Your browser does not support the HTML5 audio element.
+      </audio>
+    
+    <script type="text/javascript">
+        //set currentImage to default value
+        var currentImageUri = 'sources/A/00000100.jpg';
+        //declare variable json
+        var json;
+        //get JSON and assign response to var json and log data
+        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        
+        //bind function to timeupdate of audio element
+        $("#track").bind('timeupdate', function() {
+          var blah = this.currentTime; 
+          $("#currentTime").text(blah);
+          getMeasure(blah);
+        });
+      </script>
+  </body>
+</html>
