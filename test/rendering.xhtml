@@ -4,32 +4,18 @@
   <head>
     <title>FreiDi Web-Demo: Rendering Follows Audio</title>
     
-    <script type="text/javascript" src="../bower_components/verovio-toolkit-0.9.3.js"/>
+    <script type="text/javascript" src="./verovio-toolkit.js"/>
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"/>
     <script type="text/javascript" src="../src/FreiDi_audio.js"/>
+    
+    <script type="text/javascript" src="./d3.min.js"></script>
+    
   </head>
   <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
     
-      <h1>rendering</h1>
-      <div id="output"/>
-    
       <script type="text/javascript">
-  var vrvToolkit = new verovio.toolkit();
-  console.log(vrvToolkit);
-  /* Load the file using HTTP GET */
-  $.get( "../A_mov6_no_bTrem.xml", function( data ) {
-    var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({ inputFormat: 'mei',
-	pageHeight: 1000,
-	pageWidth: 2200,
-	ignoreLayout: 1,
-	border: 10,
-	scale: 50 }) );
-	console.log($("#output"));
-    $("#output").html(svg);
-    	console.log($("#output"));
-
-  });
-</script>
+          var vrvToolkit = new verovio.toolkit();
+      </script>
       <div id="facsimileID"></div>
       
     
@@ -46,8 +32,16 @@
         <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
         Your browser does not support the HTML5 audio element.
       </audio>
+      
+    
+      <h1>rendering</h1>
+      <div id="output" style="height: 1500px;"/>
     
     <script type="text/javascript">
+    //<![CDATA[
+        var currentPage = 1;
+        var currentMeasure = undefined;
+        var leftBarLine = -1;
         //set currentImage to default value
         var currentImageUri = 'sources/A/00000100.jpg';
         //declare variable json
@@ -59,8 +53,73 @@
         $("#track").bind('timeupdate', function() {
           var blah = this.currentTime; 
           $("#currentTime").text(blah);
-          getMeasure(blah);
+          measure = getMeasure(blah);
+          if ( (measure != undefined)  && (measure != currentMeasure) )  {
+              d3.selectAll(".highlight").remove();
+              currentMeasure = measure;
+              page = vrvToolkit.getPageWithElement( currentMeasure );
+              if ( (page > 0) && (page != currentPage) ) {
+                  currentPage = page;
+                  leftBarLine = -1;
+                  console.log( Number(currentPage) );
+                  var svg = vrvToolkit.renderPage( Number(currentPage), "" );
+                  $("#output").html(svg);
+              }
+              console.log ("#" + currentMeasure );
+              
+              // Highligt the bounding boxes
+              var measureElement = d3.select( "#" + currentMeasure );
+              var barLineElement = d3.select( "#" + currentMeasure + " .barLine" );
+              var systemElement = measureElement.select(function() { return this.parentNode; });
+              var measureBB = measureElement[0][0].getBBox();
+              var barLineBB = barLineElement[0][0].getBBox();
+              var systemBB = systemElement[0][0].getBBox();
+              
+              var x = measureBB.x;
+              if (leftBarLine != -1) {
+                  x = leftBarLine;
+              }
+              var width = barLineBB.x - x + barLineBB.width;
+              
+              if (width < 0) {
+                  return;
+              }
+              
+              leftBarLine = x + width;
+              measureElement.append("rect")
+                    .attr("class", "highlight")
+              		.attr("x", x)
+                    .attr("y", systemBB.y - 5)
+                    .attr("width", width)
+                    .attr("height", systemBB.height + 10)
+                    .attr("fill", "steelblue")
+                    .attr("fill-opacity", 0.1)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+              
+              
+          }
+          
+
         });
+        /* Load the file using HTTP GET */
+        $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
+            
+        var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({ inputFormat: 'mei',
+      	pageHeight: 2970,
+      	pageWidth: 2100,
+      	ignoreLayout: 1,
+      	border: 10,
+      	scale: 50 }) );
+        
+        $("#output").html(svg);
+        
+        console.log( vrvToolkit.getPageCount() );
+        
+        });
+        
+        
+        //]]>
       </script>
   </body>
 </html>
