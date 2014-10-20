@@ -50,6 +50,8 @@ function getMeasure(time){
   $("#measureCount").text(measureCount);
   //set measure ID to new value
   $("#measureID").text(measureID);
+  
+  return measureID;
 };
 
  /**
