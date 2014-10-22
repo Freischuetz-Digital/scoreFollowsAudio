@@ -26,34 +26,108 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>FreiDi Web-Demo: Audio Score Following</title>
-      <script type="text/javascript" src="../dist/bower.js"/>
-      <script type="text/javascript" src="../dist/FreiDi-scoreFollowsAudio.min.js"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="index page for tests / demos"/>
+    <meta name="author" content="Benjamin W. Bohl"/>
+    
+    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap.css"/>
+    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap-responsive.css"/>
+    <link href="http://www.freischuetz-digital.de/styles/bootswatch.css" rel="stylesheet"/>
+    <link href="http://www.freischuetz-digital.de/styles/freidi.css" rel="stylesheet"/>
+    <link href="http://www.freischuetz-digital.de/styles/ptsans.css" rel="stylesheet"/>
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.freischuetz-digital.de/pix/freidi_icon_144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.freischuetz-digital.de/pix/freidi_icon_114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.freischuetz-digital.de/pix/freidi_icon_72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="http://www.freischuetz-digital.de/pix/freidi_icon_57.png"/>
+    <link rel="shortcut icon" href="http://www.freischuetz-digital.de/pix/freidi_favicon.png"/>
+    
+    <script type="text/javascript" src="../dist/bower.js"/>
+    <script type="text/javascript" src="../dist/FreiDi-scoreFollowsAudio.min.js"/>
     </head>
-  <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
-    <section id="facsimile">
-      <header>Facsimile</header>
-      <!--<canvas id="myCanvas" width="710" height="533"
-        style="border:1px solid #000000;">
-      </canvas> -->
-      <img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
-      <div id="facsimileID"></div>
-    </section>  
-    <section id="audioDiv">
-        <h1>Audio</h1>
-        
-        <div>
-          <header>Measure:</header>
-          count: <div id="measureCount"></div>
-          time: <div id="currentTime"></div>
-          id: <div id="measureID"></div>
+  <body data-spy="scroll" data-target="#navbar" data-offset="30"><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/index.html">Freischütz<br/>
+            <small>Digital</small>
+          </a>
+          <ul class="nav">
+            <li class="active">
+              <a href="http://www.freischuetz-digital.de/index.html">Project Website</a>
+            </li>
+            <li>
+              <a href="https://github.com/Freischuetz-Digital/">GitHub Repository</a>
+            </li>
+          </ul>
         </div>
-        
-        <audio id="track" controls="controls">
-          <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
-          Your browser does not support the HTML5 audio element.
-        </audio>
-      </section>
+      </div>
+    </div>
+    <div id="content" class="container">
+      <div id="figure-top" class="figure visible-desktop">
+        <img style="height: 330px;" src="" alt=""/>
+      </div>
+      <header id="overview" class="jumbotron subhead">
+        <div class="row" style="min-height: 0;">
+          <div class="span8">
+            <img style="margin: 40px 0 0 3px;" src="http://www.freischuetz-digital.de/pix/Logo_greenInset.png"/>
+          </div>
+          <div class="span4"> </div>
+        </div>
+        <div id="navbar" class="subnav">
+          <ul class="nav nav-pills">
+            <li id="nav_home">
+              <a href="index.html">Description</a>
+            </li>
+            <li id="nav_facs">
+              <a href="facsimile.xhtml">Facsimile Demo</a>
+            </li>
+            <li id="nav_vrvTest">
+              <a href="verovio-test.html">Verovio Test</a>
+            </li>
+            <li id="nav_rend">
+              <a href="rendering.xhtml">Rendering Demo</a>
+            </li>
+            <li id="nav_code">
+              <a href="https://github.com/Freischuetz-Digital/scoreFollowsAudio">Code</a>
+            </li>
+            <li id="nav_issues">
+              <a href="https://github.com/Freischuetz-Digital/scoreFollowsAudio/issues">Issue tracker</a>
+            </li>
+          </ul>
+        </div>
+        <div id="backlink" style="display:none;">
+          <a href="#" onclick="nav_back(); false;">zurück</a>
+        </div>
+      </header>
+      <div class="row-fluid">
+        <div id="facsimile" class="span9">
+          <h1>Facsimile</h1>
+          <!--<canvas id="myCanvas" width="710" height="533"
+            style="border:1px solid #000000;">
+          </canvas> -->
+          <img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
+          <div id="facsimileID"/>
+        </div>  
+        <div id="audioDiv" class="span3">
+          <h1>Audio</h1>
+            
+          <div>
+            <header>Measure:</header>
+            count: <div id="measureCount"></div>
+            time: <div id="currentTime"></div>
+            id: <div id="measureID"></div>
+          </div>
+            
+          <audio id="track" controls="controls">
+            <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+            Your browser does not support the HTML5 audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
       <script type="text/javascript">
         //set currentImage to default value
         var currentImageUri = 'sources/A/00000100.jpg';
