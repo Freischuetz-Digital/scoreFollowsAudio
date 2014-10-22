@@ -11,7 +11,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-install-dependencies'
-  grunt.loadNpmTasks 'grunt-bower-cli'  
+  grunt.loadNpmTasks 'grunt-bower-cli',
+  grunt.loadNpmTasks 'grunt-contrib-jshint'
 
   # Project configuration.
   grunt.initConfig
