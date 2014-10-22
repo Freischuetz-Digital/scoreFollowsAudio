@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ - FreiDi-scoreFollowsAudio
+ - Copyright Benjamin W. Bohl 2014.
+ - bohl(at)edirom.de
+ -
+ - https://github.com/Freischuetz-Digital/scoreFollowsAudio
+ - 
+ - ## Description & License
+ - 
+ - This file implements a demo for facsimile page turning
+ -
+ - This program is free software: you can redistribute it and/or modify
+ - it under the terms of the GNU General Public License as published by
+ - the Free Software Foundation, either version 3 of the License, or
+ - (at your option) any later version.
+ :
+ - This program is distributed in the hope that it will be useful,
+ - but WITHOUT ANY WARRANTY; without even the implied warranty of
+ - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ - GNU General Public License for more details.
+ -
+ - You should have received a copy of the GNU General Public License
+ - along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>FreiDi Web-Demo: Audio Score Following</title>
-      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"/>
-      <script type="text/javascript" src="src/FreiDi_audio.js"/>
+      <script type="text/javascript" src="../dist/bower.js"/>
+      <script type="text/javascript" src="../dist/FreiDi-scoreFollowsAudio.min.js"/>
     </head>
   <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
     <section id="facsimile">
@@ -16,7 +40,7 @@
       <div id="facsimileID"></div>
     </section>  
     <section id="audioDiv">
-        <header>Audio</header>
+        <h1>Audio</h1>
         
         <div>
           <header>Measure:</header>
@@ -26,7 +50,7 @@
         </div>
         
         <audio id="track" controls="controls">
-          <source src="Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+          <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
           Your browser does not support the HTML5 audio element.
         </audio>
       </section>
@@ -36,7 +60,7 @@
         //declare variable json
         var json;
         //get JSON and assign response to var json and log data
-        $.getJSON('./Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
         
         //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
