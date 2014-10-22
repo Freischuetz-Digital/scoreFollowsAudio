@@ -25,23 +25,90 @@
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>FreiDi: scoreFollowsAudio tests</title>
-    </head>
-    <body>
-      <section>
-        <h1>
-          Introduction
-        </h1>
-        <p>This section contains test implementations of th scoreFollowsAudio Javascript Library. At the moment the following test are implemented as examples as follows:</p>
-        <dl>
-          <dt><a href="facsimile.xhtml">facsimile.html</a></dt>
-          <dd>implements a facsimile page turn demo using a recording and autogaph images derived from the Freischütz Digital project</dd>
-          <dt><a href="verovio-test.html">verovio-test.html</a></dt>
-          <dd>test verovio with an example copied from the verovio website</dd>
-          <dt><a href="rendering.xhtml">rendering.html</a></dt>
-          <dd>impleents a rendered score (using verovio) of No. 6 from Weber's Opera Der Freischütz based on an encoding derived from the Freischütz Digital project</dd>
-        </dl>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>FreiDi: scoreFollowsAudio tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="index page for tests / demos"/>
+    <meta name="author" content="Benjamin W. Bohl"/>
+    
+    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap.css"/>
+    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap-responsive.css"/>
+    <link href="http://www.freischuetz-digital.de/styles/bootswatch.css" rel="stylesheet"/>
+    <link href="http://www.freischuetz-digital.de/styles/freidi.css" rel="stylesheet"/>
+    <link href="http://www.freischuetz-digital.de/styles/ptsans.css" rel="stylesheet"/>
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.freischuetz-digital.de/pix/freidi_icon_144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.freischuetz-digital.de/pix/freidi_icon_114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.freischuetz-digital.de/pix/freidi_icon_72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="http://www.freischuetz-digital.de/pix/freidi_icon_57.png"/>
+    <link rel="shortcut icon" href="http://www.freischuetz-digital.de/pix/freidi_favicon.png"/>
+  </head>
+  <body data-spy="scroll" data-target="#navbar" data-offset="30">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/index.html">Freischütz<br/>
+            <small>Digital</small>
+          </a>
+          <ul class="nav">
+            <li class="active">
+              <a href="http://www.freischuetz-digital.de/index.html">Projekt</a>
+            </li>
+            <li>
+              <a href="http://www.freischuetz-digital.de/edition/">Edirom</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="content" class="container">
+      <div id="figure-top" class="figure visible-desktop">
+        <img style="height: 330px;" src="" alt=""/>
+      </div>
+      <header id="overview" class="jumbotron subhead">
+        <div class="row" style="min-height: 0;">
+          <div class="span8">
+            <img style="margin: 40px 0 0 3px;" src="http://www.freischuetz-digital.de/pix/Logo_greenInset.png"/>
+          </div>
+          <div class="span4"> </div>
+        </div>
+        <div id="navbar" class="subnav">
+          <ul class="nav nav-pills">
+            <li id="nav_home">
+              <a href="index.html">Description</a>
+            </li>
+            <li id="nav_facs">
+              <a href="facsimile.xhtml">Facsimile Demo</a>
+            </li>
+            <li id="nav_vrvTest">
+              <a href="verovio-test.html">Verovio Test</a>
+            </li>
+            <li id="nav_rend">
+              <a href="rendering.xhtml">Rendering Demo</a>
+            </li>
+          </ul>
+        </div>
+        <div id="backlink" style="display:none;">
+          <a href="#" onclick="nav_back(); false;">zurück</a>
+        </div>
+      </header>
+      <section id="home">
+        <div class="page-header">
+          <h1>
+            FreiDi-scoreFollowsAudio Tests and Demo
+          </h1>
+          <p>This section contains test implementations of th scoreFollowsAudio Javascript Library. At the moment the following test are implemented as examples as follows:</p>
+          <dl>
+            <dt><a href="facsimile.xhtml">facsimile.html</a></dt>
+            <dd>implements a facsimile page turn demo using a recording and autogaph images derived from the Freischütz Digital project</dd>
+            <dt><a href="verovio-test.html">verovio-test.html</a></dt>
+            <dd>test verovio with an example copied from the verovio website</dd>
+            <dt><a href="rendering.xhtml">rendering.html</a></dt>
+            <dd>impleents a rendered score (using verovio) of No. 6 from Weber's Opera Der Freischütz based on an encoding derived from the Freischütz Digital project</dd>
+          </dl>
+        </div>
       </section>
-    </body>
+    </div>
+  </body>
 </html>
