@@ -2,12 +2,10 @@
 # temporary ignores
 # remove later
 # =========================
-Gruntfile.coffee
 audioClips2mei.xsl
 Weber_Freischuetz-06_FreiDi.mp3
 Weber_Freischuetz-06_FreiDi_annoMeasures.txt
 Weber_Freischuetz-06_FreiDi_annoMeasures.xml
-package.json
 A_mov6.xml
 
 
