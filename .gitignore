@@ -6,9 +6,12 @@ Weber_Freischuetz-06_FreiDi.mp3
 Weber_Freischuetz-06_FreiDi_annoMeasures.txt
 Weber_Freischuetz-06_FreiDi_annoMeasures.xml
 package.json
+A_mov6.xml
+
+# exclude dist and documentation folders
+dist
 doxView
 dox
-A_mov6.xml
 
 # Windows image file caches
 Thumbs.db
