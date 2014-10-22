@@ -105,11 +105,18 @@
         </div>
       </header>
       <div class="row-fluid">
-        <div id="facsimileID"></div>
+        <div id="facsimile" style="visibility:hidden;display:none;">
+          <h1>Facsimile</h1>
+          <!--<canvas id="myCanvas" width="710" height="533"
+            style="border:1px solid #000000;">
+          </canvas> -->
+          <img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
+          <div id="facsimileID"/>
+        </div>
       
-        <div id="rendering" class="span9">
-          <h1>rendering</h1>
-          <div id="output" style="height: 1500px;"/>
+        <div id="rendering" class="span8">
+          <h1>Rendering</h1>
+          <div id="output" style="height: 1000px;"/>
         </div>
       
         <div id="audioDiv" class="span3">
@@ -121,7 +128,7 @@
             id: <div id="measureID"></div>
           </div>
           <audio id="track" controls="controls">
-            <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+            <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:90%; height:10px;"/>
             Your browser does not support the HTML5 audio element.
           </audio>
         </div>
@@ -201,8 +208,8 @@
       	pageHeight: 2970,
       	pageWidth: 2100,
       	ignoreLayout: 1,
-      	border: 10,
-      	scale: 50 }) );
+      	border: 5,
+      	scale: 25 }) );
         
         $("#output").html(svg);
         
