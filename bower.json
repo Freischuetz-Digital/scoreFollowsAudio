@@ -1,10 +1,10 @@
 {
-  "name": "scoreFollowWebDemo",
-  "version": "0.0.0",
+  "name": "scoreFollowsAudio",
+  "version": "0.2.0",
   "authors": [
     "Benjamin W. Bohl <bohl@edirom.de>"
   ],
-  "description": "Freischütz Digital Projects demo of score follows audio",
+  "description": "javascript library for json/time-based synchronisation of score to audio",
   "keywords": [
     "audio",
     "html5",
@@ -21,6 +21,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0",
+    "d3": "~3.4.13",
+    "verovio": "https://github.com/rism-ch/verovio/releases/download/version-0.9.3/verovio-toolkit-0.9.3.js.zip"
   }
 }

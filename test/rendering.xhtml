@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ - FreiDi-scoreFollowsAudio
+ - Copyright Benjamin W. Bohl, Laurent Pugin 2014.
+ - bohl(at)edirom.de
+ -
+ - https://github.com/Freischuetz-Digital/scoreFollowsAudio
+ - 
+ - ## Description & License
+ - 
+ - This file implements a demo for facsimile page turning
+ -
+ - This program is free software: you can redistribute it and/or modify
+ - it under the terms of the GNU General Public License as published by
+ - the Free Software Foundation, either version 3 of the License, or
+ - (at your option) any later version.
+ :
+ - This program is distributed in the hope that it will be useful,
+ - but WITHOUT ANY WARRANTY; without even the implied warranty of
+ - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ - GNU General Public License for more details.
+ -
+ - You should have received a copy of the GNU General Public License
+ - along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreiDi Web-Demo: Rendering Follows Audio</title>
+    
+    <script type="text/javascript" src="./verovio-toolkit.js"/>
+    <script type="text/javascript" src="../dist/bower.js"/>
+    <script type="text/javascript" src="../dist/FreiDi-scoreFollowsAudio.min.js"/>
+    
+  </head>
+  <body><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
+    
+      <script type="text/javascript">
+          var vrvToolkit = new verovio.toolkit();
+      </script>
+      <div id="facsimileID"></div>
+      
+    
+      <h1>Audio</h1>
+      
+      <div>
+        <header>Measure:</header>
+        count: <div id="measureCount"></div>
+        time: <div id="currentTime"></div>
+        id: <div id="measureID"></div>
+      </div>
+      
+      <audio id="track" controls="controls">
+        <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+        Your browser does not support the HTML5 audio element.
+      </audio>
+      
+    
+      <h1>rendering</h1>
+      <div id="output" style="height: 1500px;"/>
+    
+    <script type="text/javascript">
+    //<![CDATA[
+        var currentPage = 1;
+        var currentMeasure = undefined;
+        var leftBarLine = -1;
+        //set currentImage to default value
+        var currentImageUri = 'sources/A/00000100.jpg';
+        //declare variable json
+        var json;
+        //get JSON and assign response to var json and log data
+        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        
+        //bind function to timeupdate of audio element
+        $("#track").bind('timeupdate', function() {
+          var blah = this.currentTime; 
+          $("#currentTime").text(blah);
+          measure = getMeasure(blah);
+          if ( (measure != undefined)  && (measure != currentMeasure) )  {
+              d3.selectAll(".highlight").remove();
+              currentMeasure = measure;
+              page = vrvToolkit.getPageWithElement( currentMeasure );
+              if ( (page > 0) && (page != currentPage) ) {
+                  currentPage = page;
+                  leftBarLine = -1;
+                  console.log( Number(currentPage) );
+                  var svg = vrvToolkit.renderPage( Number(currentPage), "" );
+                  $("#output").html(svg);
+              }
+              console.log ("#" + currentMeasure );
+              
+              // Highligt the bounding boxes
+              var measureElement = d3.select( "#" + currentMeasure );
+              var barLineElement = d3.select( "#" + currentMeasure + " .barLine" );
+              var systemElement = measureElement.select(function() { return this.parentNode; });
+              var measureBB = measureElement[0][0].getBBox();
+              var barLineBB = barLineElement[0][0].getBBox();
+              var systemBB = systemElement[0][0].getBBox();
+              
+              var x = measureBB.x;
+              if (leftBarLine != -1) {
+                  x = leftBarLine;
+              }
+              var width = barLineBB.x - x + barLineBB.width;
+              
+              if (width < 0) {
+                  return;
+              }
+              
+              leftBarLine = x + width;
+              measureElement.append("rect")
+                    .attr("class", "highlight")
+              		.attr("x", x)
+                    .attr("y", systemBB.y - 5)
+                    .attr("width", width)
+                    .attr("height", systemBB.height + 10)
+                    .attr("fill", "steelblue")
+                    .attr("fill-opacity", 0.1)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+              
+              
+          }
+          
+
+        });
+        /* Load the file using HTTP GET */
+        $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
+            
+        var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({ inputFormat: 'mei',
+      	pageHeight: 2970,
+      	pageWidth: 2100,
+      	ignoreLayout: 1,
+      	border: 10,
+      	scale: 50 }) );
+        
+        $("#output").html(svg);
+        
+        console.log( vrvToolkit.getPageCount() );
+        
+        });
+        
+        
+        //]]>
+      </script>
+  </body>
+</html>
