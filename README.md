@@ -20,3 +20,11 @@ grunt run
 ```
 
 This will download, compile, and copy corresponding files, and finally serve the test/index.html page and open it in your browser.
+
+License
+-------
+
+This package is available under the terms of [GNU GPL-3 License](https://www.gnu.org/licenses/gpl.html) a copy of the license can be found in the repository [gpl-3.0.txt](gpl-3.0.txt).
+
+
+Verovio is being developed by RISM Switzerland, and licensed under GNU GPL-3 Licence, the code is available at https://github.com/rism-ch/verovio.
