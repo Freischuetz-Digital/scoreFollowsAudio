@@ -157,9 +157,9 @@
         
         //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
-          var blah = this.currentTime; 
-          $("#currentTime").text(blah);
-          measure = getMeasure(blah);
+          var timeupdate = this.currentTime; 
+          $("#currentTime").text(timeupdate);
+          measure = getMeasure(timeupdate);
           if ( (measure != undefined)  && (measure != currentMeasure) )  {
               d3.selectAll(".highlight").remove();
               currentMeasure = measure;
