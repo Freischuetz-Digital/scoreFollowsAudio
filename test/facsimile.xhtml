@@ -138,9 +138,9 @@
         
         //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
-          var blah = this.currentTime; 
-          $("#currentTime").text(blah);
-          getMeasure(blah);
+          var time = this.currentTime;
+          $("#currentTime").text(time);
+          getMeasure(time);
         });
       </script>
     </body>
