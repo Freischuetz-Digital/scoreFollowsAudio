@@ -157,10 +157,12 @@
         
         //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
-          var blah = this.currentTime; 
-          $("#currentTime").text(blah);
-          measure = getMeasure(blah);
+          var time = this.currentTime;
+          console.log(time);
+          $("#currentTime").text(time);
+          measure = getMeasure(time);
           if ( (measure != undefined)  && (measure != currentMeasure) )  {
+              console.log('measure undefined');
               d3.selectAll(".highlight").remove();
               currentMeasure = measure;
               page = vrvToolkit.getPageWithElement( currentMeasure );

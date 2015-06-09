@@ -45,13 +45,14 @@ function appendAudio() {
  * @var        {Number}   bestDiff
  */
 function getMeasure(time){
+  console.log(time);
   var bestDiff = 0;
   var minDiff;
   var bestIndex;
   var i;
   var cur;
   for (i=0; i < json.measures.length; i++){
-  
+    console.log(i);
     cur = json.measures[i];
     diff = cur.timestamp - time;
     if(diff < bestDiff){
