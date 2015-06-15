@@ -35,9 +35,42 @@ function appendAudio() {
   document.getElementById("audioDiv").appendChild(audio);
   console.log('audio appended');
 };
+
 /*
+ * global variables
+ */
+ 
+ var globalTime = 0;
+
+ /*
  * used functions
  */
+
+function switchAudio(url,currentTime){
+console.log('switch audio');
+console.log(url);
+
+  var audio = $('#track');
+  audio[0].pause();
+  audio.attr('src', url);
+  $('#track').bind('canplay', function() {
+    console.log('setPlayerTime ' + currentTime);
+
+});
+      audio[0].load();
+    audio[0].currentTime = everpolate.linear(currentTime,mat_startTimes[0],mat_startTimes[1])[0]; // jumps to 29th secs
+    audio[0].play();
+
+  //audio.currentTime(currentTime);
+};
+
+function updateAudioTimes(currentTime, source){
+console.log(currentTime);
+  var time = everpolate.linear(currentTime,mat_startTimes[0],mat_startTimes[1])[0];
+  console.log(time);
+  $(source + " .currentTime").text(time);
+
+};
 
 /**
  * get image URI, measure number, measure ID from JSON based on input time
@@ -45,7 +78,7 @@ function appendAudio() {
  * @var        {Number}   bestDiff
  */
 function getMeasure(time){
-  console.log(time);
+//  console.log(time);
   var bestDiff = 0;
   var minDiff;
   var bestIndex;

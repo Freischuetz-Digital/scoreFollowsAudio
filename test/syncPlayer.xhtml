@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ - FreiDi-scoreFollowsAudio
+ - Copyright Benjamin W. Bohl, Laurent Pugin 2014.
+ - bohl(at)edirom.de
+ -
+ - https://github.com/Freischuetz-Digital/scoreFollowsAudio
+ - 
+ - ## Description & License
+ - 
+ - This file implements a demo for facsimile page turning
+ -
+ - This program is free software: you can redistribute it and/or modify
+ - it under the terms of the GNU General Public License as published by
+ - the Free Software Foundation, either version 3 of the License, or
+ - (at your option) any later version.
+ :
+ - This program is distributed in the hope that it will be useful,
+ - but WITHOUT ANY WARRANTY; without even the implied warranty of
+ - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ - GNU General Public License for more details.
+ -
+ - You should have received a copy of the GNU General Public License
+ - along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>FreiDi Web-Demo: Rendering Follows Audio</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="index page for tests / demos"/>
+    <meta name="author" content="Benjamin W. Bohl"/>
+    
+    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap.css"/>
+    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap-responsive.css"/>
+    <link href="http://www.freischuetz-digital.de/styles/bootswatch.css" rel="stylesheet"/>
+    <link href="http://www.freischuetz-digital.de/styles/freidi.css" rel="stylesheet"/>
+    <link href="http://www.freischuetz-digital.de/styles/ptsans.css" rel="stylesheet"/>
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.freischuetz-digital.de/pix/freidi_icon_144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.freischuetz-digital.de/pix/freidi_icon_114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.freischuetz-digital.de/pix/freidi_icon_72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="http://www.freischuetz-digital.de/pix/freidi_icon_57.png"/>
+    <link rel="shortcut icon" href="http://www.freischuetz-digital.de/pix/freidi_favicon.png"/>
+    
+    <script type="text/javascript" src="./verovio-toolkit.js"/>
+    <script type="text/javascript" src="../dist/bower.js"/>
+    <script type="text/javascript" src="../src/FreiDi-scoreFollowsAudio.js"/>
+    <style>
+      #audioList{
+      }
+      #audioList btn{
+        display: block;
+      }
+    </style>
+  </head>
+  <body data-spy="scroll" data-target="#navbar" data-offset="30"><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
+    
+    <!--<script type="text/javascript">
+      var vrvToolkit = new verovio.toolkit();
+    </script>-->
+    
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/index.html">Freischütz<br/>
+            <small>Digital</small>
+          </a>
+          <ul class="nav">
+            <li class="active">
+              <a href="http://www.freischuetz-digital.de/index.html">Project Website</a>
+            </li>
+            <li>
+              <a href="https://github.com/Freischuetz-Digital/">GitHub Repository</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="content" class="container">
+      <div id="figure-top" class="figure visible-desktop">
+        powered by:
+        <a href="http://www.verovio.org"><img src="http://rism-ch.github.io/verovio/images/verovio-fadded-50.png" width="147" alt="verovio logo"/></a>
+      </div>
+      <header id="overview" class="jumbotron subhead">
+        <div class="row" style="min-height: 0;">
+          <div class="span8">
+            <img style="margin: 40px 0 0 3px;" src="http://www.freischuetz-digital.de/pix/Logo_greenInset.png"/>
+          </div>
+          <div class="span4"> </div>
+        </div>
+        <div id="navbar" class="subnav">
+          <ul class="nav nav-pills">
+            <li id="nav_home">
+              <a href="index.html">Description</a>
+            </li>
+            <li id="nav_facs">
+              <a href="facsimile.xhtml">Facsimile Demo</a>
+            </li>
+            <li id="nav_vrvTest">
+              <a href="verovio-test.html">Verovio Test</a>
+            </li>
+            <li id="nav_rend">
+              <a href="rendering.xhtml">Rendering Demo</a>
+            </li>
+            <li id="nav_code">
+              <a href="https://github.com/Freischuetz-Digital/scoreFollowsAudio">Code</a>
+            </li>
+            <li id="nav_issues">
+              <a href="https://github.com/Freischuetz-Digital/scoreFollowsAudio/issues">Issue tracker</a>
+            </li>
+          </ul>
+        </div>
+        <div role="tabpanel">
+          
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+              <a href="#mov_6" aria-controls="mov_6" role="tab" class="tab-button" data-toggle="tab">6</a>
+            </li>
+            <li role="presentation">
+              <a href="#mov_8" aria-controls="mov_8" role="tab" class="tab-button" data-toggle="tab">8</a>
+            </li>
+            <li role="presentation">
+              <a href="#mov_9" aria-controls="mov_9" role="tab" class="tab-button" data-toggle="tab">9</a>
+            </li>
+          </ul>
+          
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="mov_6">
+              <!--
+                for mov_6 return all sources
+                for mov_6 return all audios
+              -->
+              <div>
+                <div id="sourceList" style="float:left; width:250px;">
+                  <h2>sources</h2>
+                  <div class="btn-group-vertical" role="group" aria-label="...">
+                    <button type="button" class="btn btn-small btn-primary">A</button>
+                    <button type="button" class="btn btn-small">KA2</button>
+                  </div>
+                </div>
+                <div id="audioList" style="float:left; width:250px;">
+                <h2>audios</h2>
+                <div class="btn-group-vertical" role="group" aria-label="...">
+                  <button id="bloemeke" type="button" class="btn btn-small btn-primary" onclick="switchAudio('../Weber_Freischuetz-06_Bloemeke2013.wav',globalTime)">Bloemeke <span class="currentTime">00:00</span></button>
+                  <button id="ackermann" type="button" class="btn btn-small" onclick="switchAudio('../Weber_Freischuetz-06_Ackermann1951.wav',globalTime)">Ackermann <span class="currentTime">00:00</span></button>
+                  <button type="button" class="btn btn-small">Furtwängler <span class="currentTime">00:00</span></button>
+                  <button type="button" class="btn btn-small">Jochum <span class="currentTime">00:00</span></button>
+                  <button type="button" class="btn btn-small">Kleiber, Carlos <span class="currentTime">00:00</span></button>
+                  <button type="button" class="btn btn-small">Kleiber, Erich <span class="currentTime">00:00</span></button>
+                  <button type="button" class="btn btn-small">Janowski <span class="currentTime">00:00</span></button>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mov_8">8</div>
+            <div role="tabpanel" class="tab-pane" id="mov_9">9</div>
+          </div>
+          
+        </div>
+        <div id="backlink" style="display:none;">
+          <a href="#" onclick="nav_back(); false;">zurück</a>
+        </div>
+      </header>
+      <div class="row-fluid">
+        <div id="facsimile" style="visibility:hidden;display:none;">
+          <h1>Facsimile</h1>
+          <!--<canvas id="myCanvas" width="710" height="533"
+            style="border:1px solid #000000;">
+          </canvas> -->
+          <img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
+          <div id="facsimileID"/>
+        </div>
+      
+        <div id="rendering" class="span8">
+          <h1>Rendering</h1>
+          <div id="output" style="height: 1000px;"/>
+        </div>
+      
+        <div id="audioDiv" class="span3">
+          <h1>Audio</h1>
+          <div>
+            <header>Measure:</header>
+            count: <div id="measureCount"></div>
+            time: <div id="currentTime"></div>
+            id: <div id="measureID"></div>
+          </div>
+          <audio id="track" controls="controls">
+            <source src="" type="audio/wav" style="width:90%; height:10px;"/>
+            Your browser does not support the HTML5 audio element.
+          </audio>
+        </div>
+      
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        
+        //var recordings = $.append();
+        
+        var currentPage = 1;
+        var currentMeasure = undefined;
+        var leftBarLine = -1;
+        //set currentImage to default value
+        var currentImageUri = 'sources/A/00000100.jpg';
+        //declare variable json
+       var mat_startTimes = [];
+        var json;
+        var json2; 
+        //get JSON and assign response to var json and log data
+        $.getJSON('../Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
+          json = data; console.log(data);
+          source1 = [];
+          $.each(data.measure, function(index, item){
+              source1.push(data.measure[index].start);
+           })
+           
+           mat_startTimes.push(source1);
+
+          }, 'json');
+        $.getJSON('../Weber_Freischuetz-06_Ackermann1951_annoMeasures.json', function(data){
+          json2 = data;
+          console.log(data);
+          source2 = [];
+          $.each(data.measure, function(index, item){
+              source2.push(data.measure[index].start);
+           })
+           
+           mat_startTimes.push(source2);
+
+        }, 'json');
+        
+       
+       
+
+        
+        //bind function to timeupdate of audio element
+        $("#track").bind('timeupdate', function() {
+          var time = this.currentTime;
+          globalTime = time;
+          console.log(time);
+          $("#bloemeke .currentTime").text(time);
+          updateAudioTimes(time, '#ackermann');
+
+          //TODO format time
+          measure = getMeasure(time);
+          
+          if ( (measure !== undefined)  && (measure !== currentMeasure) )  {
+              console.log('measure undefined');
+              d3.selectAll(".highlight").remove();
+              currentMeasure = measure;
+              
+              interpolateTimestamps(time);
+              
+              /*page = vrvToolkit.getPageWithElement( currentMeasure );
+              if ( (page > 0) && (page != currentPage) ) {
+                  currentPage = page;
+                  leftBarLine = -1;
+                  console.log( Number(currentPage) );
+                  var svg = vrvToolkit.renderPage( Number(currentPage), "" );
+                  $("#output").html(svg);
+              }*/
+              console.log ("#" + currentMeasure );
+              
+              // Highligt the bounding boxes
+              var measureElement = d3.select( "#" + currentMeasure );
+              var barLineElement = d3.select( "#" + currentMeasure + " .barLine" );
+              var systemElement = measureElement.select(function() { return this.parentNode; });
+              var measureBB = measureElement[0][0].getBBox();
+              var barLineBB = barLineElement[0][0].getBBox();
+              var systemBB = systemElement[0][0].getBBox();
+              
+              var x = measureBB.x;
+              if (leftBarLine != -1) {
+                  x = leftBarLine;
+              }
+              var width = barLineBB.x - x + barLineBB.width;
+              
+              if (width < 0) {
+                  return;
+              }
+              
+              leftBarLine = x + width;
+              measureElement.append("rect")
+                    .attr("class", "highlight")
+              		.attr("x", x)
+                    .attr("y", systemBB.y - 5)
+                    .attr("width", width)
+                    .attr("height", systemBB.height + 10)
+                    .attr("fill", "steelblue")
+                    .attr("fill-opacity", 0.1)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+              
+              
+          }
+          
+
+        });
+        /* Load the file using HTTP GET */
+       /* $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
+            
+        var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({ inputFormat: 'mei',
+      	pageHeight: 2970,
+      	pageWidth: 2100,
+      	ignoreLayout: 1,
+      	border: 5,
+      	scale: 25 }) );
+        
+        $("#output").html(svg);
+        
+        console.log( vrvToolkit.getPageCount() );
+        
+        });*/
+        
+        
+        //]]>
+      </script>
+<!--    //TODO activate tabs-->
+    <script>
+      $('#mov_6 a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      });
+      $('#mov_8 a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+      $('#mov_9 a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+    </script>
+  </body>
+</html>

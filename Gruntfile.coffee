@@ -35,7 +35,7 @@ module.exports = (grunt) ->
         options:
           port: 8000
           hostname: "localhost"
-          open: 'http://localhost:8000/test/index.html'
+          #open: 'http://localhost:8000/test/index.html'
           
 
     watch:
@@ -68,8 +68,10 @@ module.exports = (grunt) ->
         src: ['bower_components/jquery/dist/jquery.min.js', 
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
               'bower_components/bootstrap/js/tabs.js',
-              'bower_components/d3/d3.min.js']
+              'bower_components/d3/d3.min.js',
+              'bower_components/everpolate/everpolate.browserified.min.js']
               #'bower_components/verovio/index.js']
+              #'bower_components/linear-interpolator/node_main.js']
         dest: 'dist/bower.js'
 
     copy:
