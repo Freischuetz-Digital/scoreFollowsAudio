@@ -58,9 +58,9 @@
   </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="30"><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
     
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
       var vrvToolkit = new verovio.toolkit();
-    </script>-->
+    </script>
     
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -146,8 +146,8 @@
                 <div id="audioList" style="float:left; width:250px;">
                 <h2>audios</h2>
                 <div class="btn-group-vertical" role="group" aria-label="...">
-                  <button id="bloemeke" type="button" class="btn btn-small btn-primary" onclick="switchAudio('../Weber_Freischuetz-06_Bloemeke2013.wav',globalTime)">Bloemeke <span class="currentTime">00:00</span></button>
-                  <button id="ackermann" type="button" class="btn btn-small" onclick="switchAudio('../Weber_Freischuetz-06_Ackermann1951.wav',globalTime)">Ackermann <span class="currentTime">00:00</span></button>
+                  <button id="bloemeke" type="button" class="btn btn-small btn-primary" onclick="switchAudio('../Weber_Freischuetz-06_Bloemeke2013.wav',globalTime);audioNum = 0">Bloemeke <span class="currentTime">00:00</span></button>
+                  <button id="ackermann" type="button" class="btn btn-small" onclick="switchAudio('../Weber_Freischuetz-06_Ackermann1951.wav',globalTime);audioNum = 1">Ackermann <span class="currentTime">00:00</span></button>
                   <button type="button" class="btn btn-small">Furtwängler <span class="currentTime">00:00</span></button>
                   <button type="button" class="btn btn-small">Jochum <span class="currentTime">00:00</span></button>
                   <button type="button" class="btn btn-small">Kleiber, Carlos <span class="currentTime">00:00</span></button>
@@ -209,20 +209,27 @@
         //set currentImage to default value
         var currentImageUri = 'sources/A/00000100.jpg';
         //declare variable json
-       var mat_startTimes = [];
+
+       var mat_startTimes = [],
+	       measures = [];
         var json;
         var json2; 
+		var json3;
         //get JSON and assign response to var json and log data
+		
+		
         $.getJSON('../Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
           json = data; console.log(data);
           source1 = [];
+		  measure1 = [];
           $.each(data.measure, function(index, item){
               source1.push(data.measure[index].start);
+			  measure1.push(data.measure[index].label);
            })
-           
+           measures = measure1;
            mat_startTimes.push(source1);
 
-          }, 'json');
+          }, 'json2');
         $.getJSON('../Weber_Freischuetz-06_Ackermann1951_annoMeasures.json', function(data){
           json2 = data;
           console.log(data);
@@ -233,10 +240,10 @@
            
            mat_startTimes.push(source2);
 
-        }, 'json');
+        }, 'json3 ');
         
        
-       
+               $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
 
         
         //bind function to timeupdate of audio element
@@ -244,8 +251,21 @@
           var time = this.currentTime;
           globalTime = time;
           console.log(time);
-          $("#bloemeke .currentTime").text(time);
-          updateAudioTimes(time, '#ackermann');
+		  
+		  if ( audioNum == 0 ){
+          $("#bloemeke .currentTime").text(time.toFixed(1));
+		  var warpedTime = everpolate.linear(time, mat_startTimes[0], mat_startTimes[1])[0];
+		  		  
+		  $("#ackermann .currentTime").text(warpedTime.toFixed(1));
+          }
+		  
+		  if ( audioNum == 1 ){
+		  console.log("Ackermann")
+          $("#ackermann .currentTime").text(time.toFixed(1));
+		  var warpedTime = everpolate.linear(time, mat_startTimes[1], mat_startTimes[0])[0];
+		  		  
+		  $("#bloemeke .currentTime").text(warpedTime.toFixed(1));
+          }
 
           //TODO format time
           measure = getMeasure(time);
@@ -255,16 +275,16 @@
               d3.selectAll(".highlight").remove();
               currentMeasure = measure;
               
-              interpolateTimestamps(time);
+              //interpolateTimestamps(time);
               
-              /*page = vrvToolkit.getPageWithElement( currentMeasure );
+              page = vrvToolkit.getPageWithElement( currentMeasure );
               if ( (page > 0) && (page != currentPage) ) {
                   currentPage = page;
                   leftBarLine = -1;
                   console.log( Number(currentPage) );
                   var svg = vrvToolkit.renderPage( Number(currentPage), "" );
                   $("#output").html(svg);
-              }*/
+              }
               console.log ("#" + currentMeasure );
               
               // Highligt the bounding boxes
@@ -303,7 +323,7 @@
 
         });
         /* Load the file using HTTP GET */
-       /* $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
+        $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
             
         var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({ inputFormat: 'mei',
       	pageHeight: 2970,
@@ -316,7 +336,7 @@
         
         console.log( vrvToolkit.getPageCount() );
         
-        });*/
+        });
         
         
         //]]>
