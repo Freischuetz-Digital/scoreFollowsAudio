@@ -146,8 +146,8 @@
                 <div id="audioList" style="float:left; width:250px;">
                 <h2>audios</h2>
                 <div class="btn-group-vertical" role="group" aria-label="...">
-                  <button id="bloemeke" type="button" class="btn btn-small btn-primary" onclick="switchAudio('../Weber_Freischuetz-06_Bloemeke2013.wav',globalTime);audioNum = 0">Bloemeke <span class="currentTime">00:00</span></button>
-                  <button id="ackermann" type="button" class="btn btn-small" onclick="switchAudio('../Weber_Freischuetz-06_Ackermann1951.wav',globalTime);audioNum = 1">Ackermann <span class="currentTime">00:00</span></button>
+                  <button id="bloemeke" type="button" class="btn btn-small btn-primary" onclick="switchAudio('../Weber_Freischuetz-06_Bloemeke2013.wav',globalTime, 0);">Bloemeke <span class="currentTime">00:00</span></button>
+                  <button id="ackermann" type="button" class="btn btn-small" onclick="switchAudio('../Weber_Freischuetz-06_Ackermann1951.wav',globalTime, 1);">Ackermann <span class="currentTime">00:00</span></button>
                   <button type="button" class="btn btn-small">Furtwängler <span class="currentTime">00:00</span></button>
                   <button type="button" class="btn btn-small">Jochum <span class="currentTime">00:00</span></button>
                   <button type="button" class="btn btn-small">Kleiber, Carlos <span class="currentTime">00:00</span></button>
@@ -186,6 +186,7 @@
           <div>
             <header>Measure:</header>
             count: <div id="measureCount"></div>
+			position: <div id="measurePosition"></div>
             time: <div id="currentTime"></div>
             id: <div id="measureID"></div>
           </div>
@@ -202,7 +203,7 @@
     //<![CDATA[
         
         //var recordings = $.append();
-        
+        var audioNum = 0;
         var currentPage = 1;
         var currentMeasure = undefined;
         var leftBarLine = -1;

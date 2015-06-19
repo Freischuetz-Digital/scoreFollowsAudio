@@ -45,7 +45,7 @@
     <link rel="shortcut icon" href="http://www.freischuetz-digital.de/pix/freidi_favicon.png"/>
     
     <script type="text/javascript" src="../dist/bower.js"/>
-    <script type="text/javascript" src="../dist/FreiDi-scoreFollowsAudio.min.js"/>
+    <script type="text/javascript" src="../src/FreiDi-scoreFollowsAudio.js"/>
     </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="30"><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
     <div class="navbar navbar-fixed-top">
@@ -122,7 +122,7 @@
           </div>
             
           <audio id="track" controls="controls">
-            <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+            <source src="../Weber_Freischuetz-06_Bloemeke2013.wav" type="audio/mpeg" style="width:100px; height:10px;"/>
             Your browser does not support the HTML5 audio element.
           </audio>
         </div>
@@ -135,7 +135,38 @@
         var json;
         //get JSON and assign response to var json and log data
         $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        var json2; 
+		var json3;
+        //get JSON and assign response to var json and log data
+		var mat_startTimes = [];
+		
+        $.getJSON('../Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
+          json = data; console.log(data);
+          source1 = [];
+		  measure1 = [];
+          $.each(data.measure, function(index, item){
+              source1.push(data.measure[index].start);
+			  measure1.push(data.measure[index].label);
+           })
+           measures = measure1;
+           mat_startTimes.push(source1);
+
+          }, 'json2');
+        $.getJSON('../Weber_Freischuetz-06_Ackermann1951_annoMeasures.json', function(data){
+          json2 = data;
+          console.log(data);
+          source2 = [];
+          $.each(data.measure, function(index, item){
+              source2.push(data.measure[index].start);
+           })
+           
+           mat_startTimes.push(source2);
+
+        }, 'json3 ');
         
+       
+        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        var audioNum = 0;
         //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
           var time = this.currentTime;

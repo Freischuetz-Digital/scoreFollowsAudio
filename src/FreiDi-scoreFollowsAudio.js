@@ -46,30 +46,25 @@ function appendAudio() {
  * used functions
  */
 
-function switchAudio(url,currentTime){
-console.log('switch audio');
-console.log(url);
-
+function switchAudio(url,currentTime, newAudioID){
+  console.log('switch audio');
+  console.log(url);
+  console.log('Old time ' + currentTime);
+  
   var audio = $('#track');
-  audio[0].pause();
   audio.attr('src', url);
-  $('#track').bind('canplay', function() {
-    console.log('setPlayerTime ' + currentTime);
+  audio[0].currentTime = everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]; 
+  audio.bind('canplay', function() {
+   // console.log('New time '  + audio[0].currentTime);
+   audio[0].play();
+   audioNum = newAudioID;
+   });   
 
-});
-      audio[0].load();
-    audio[0].currentTime = everpolate.linear(currentTime,mat_startTimes[0],mat_startTimes[1])[0]; // jumps to 29th secs
-    audio[0].play();
 
-  //audio.currentTime(currentTime);
 };
 
 function updateAudioTimes(currentTime, source){
-console.log(currentTime);
-  var time = everpolate.linear(currentTime,mat_startTimes[0],mat_startTimes[1])[0];
-  console.log(time);
-  $(source + " .currentTime").text(time);
-
+  
 };
 
 /**
@@ -81,33 +76,34 @@ function getMeasure(time){
 //  console.log(time);
   var bestDiff = 0;
   var minDiff;
-  var bestIndex;
   var i;
   var cur;
-  for (i=0; i < json.measures.length; i++){
-    console.log(i);
-    cur = json.measures[i];
-    diff = cur.timestamp - time;
-    if(diff < bestDiff){
-      minDiff = diff;
-      bestIndex = i; 
-    }
-  }
-  var imageUri = json.measures[0].page;
+
+  var imageUri;
   var measureID;
+  var measureNumber;
   var measureCount;
-  if(bestIndex >= 0){
-    imageUri = json.measures[bestIndex].page;
-    measureID = json.measures[bestIndex].measureID;
-    measureCount = bestIndex + 1;//+1 um die tatsächliche Taktzahl zu errechnen
-  };
+  var measureIndex;
   
-  //call function to check current image against the one associated with best match
-  checkImage(imageUri);
+  // Compute exact measure position by interpolation
+  measurePosition = everpolate.linear(time, mat_startTimes[audioNum], measures)[0];
+  // Compute measure number (measureCount)
+  measureCount    = Math.floor( measurePosition );
+  measureIndex    = measureCount-1;
+  if(measureIndex >= 0){
+    imageUri = json.measures[measureIndex].page;
+    checkImage(imageUri);
+    measureID = json.measures[measureIndex].measureID;  
+  }
+  else{
+    measureIndex = 0;
+  };
   //set facsimile text field to new value
   $('#facsimileID').text(imageUri);
   //set measure count to new value
-  $("#measureCount").text(measureCount);
+  //$("#measureCount").text(measureCount);
+  //set measure position to new value
+  //$("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
   $("#measureID").text(measureID);
   
