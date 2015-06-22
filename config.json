@@ -1,0 +1,21 @@
+{
+  "purpose": "driver file for freidi:scoreFollowsAudio",
+  "appVersion": "0.",
+  "comparison": [
+    {
+      "sortNum": 1,
+      "comparisonKey": "Weber_Freischuetz-06",
+      "label": "6"
+    },
+    {
+      "sortNum": 2,
+      "comparisonKey": "Weber_Freischuetz-08",
+      "label": "8"
+    },
+    {
+      "sortNum": 3,
+      "comparisonKey": "Weber_Freischuetz-09",
+      "label": "9"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "recording":[
+    {
+      "id": "bloemeke2013",
+      "label": "Bloemeke",
+      "comparisonKey": "Weber_Freischuetz-06",
+      "audioURI": "Weber_Freischuetz-06_Bloemeke2013.wav",
+      "annotsURI": "Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json"
+    },
+        {
+      "id": "ackermann1951",
+      "label": "Ackermann",
+      "comparisonKey": "Weber_Freischuetz-06",
+      "audioURI": "Weber_Freischuetz-06_Ackermann1951.wav",
+      "annotsURI": "Weber_Freischuetz-06_Ackermann1951_annoMeasures.json"
+    }
+  ]
+}

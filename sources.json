@@ -1,0 +1,23 @@
+{
+  "source": [
+    {
+      "id": "freidi-musicSource_A",
+      "label": "Autograph (A)",
+      "facsimileURI": "http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/",
+      "movement": [
+        {
+          "id": "A_mov6",
+          "comparisonKey": "Weber_Freischuetz-06"
+        },
+        {
+          "id": "A_mov8",
+          "comparisonKey": "Weber_Freischuetz-08"
+        },
+        {
+          "id": "A_mov9",
+          "comparisonKey": "Weber_Freischuetz-09"
+        }
+      ]
+    }
+  ]
+}

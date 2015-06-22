@@ -40,7 +40,16 @@ function appendAudio() {
  * global variables
  */
  
- var globalTime = 0;
+var globalTime = 0;
+var currentPage = 1;
+var currentMeasure = undefined;
+var leftBarLine = -1;
+//set currentImage to default value
+var currentImageUri = 'sources/A/00000100.jpg';
+//declare variable json
+
+var mat_startTimes = [];
+var measures = [];
 
  /*
  * used functions
@@ -58,9 +67,75 @@ function switchAudio(url,currentTime, newAudioID){
    // console.log('New time '  + audio[0].currentTime);
    audio[0].play();
    audioNum = newAudioID;
-   });   
+   }); 
+};
 
+function createSourceButtons(comparisonKey){
+  if(sourcesLoaded !== true){
+    setTimeout(function(){createSourceButtons(comparisonKey);},1000);
+  }else{
+    console.log('processing sources for: ' +comparisonKey);
+    $.each(sources.source, function(index, source){
+      var label = source.label;
+      $.each(source.movement, function(index, mov){
+        if(mov.comparisonKey === comparisonKey){
+          var btn = $('<button type="button" class="btn btn-small" id="'+mov.id+'">'+label+'</button>');
+          $('#' + comparisonKey + ' .sourceList .btn-group-vertical').append(btn);
+          
+          $('#'+mov.id).click(function(){
+          //alert('button '+label+' clicked');
+          loadSource(mov.id);
 
+          });
+        }
+      });
+    }); 
+  }
+};
+
+function createRecordingButtons(comparisonKey){
+  if(recordingsLoaded !== true){
+    setTimeout(function(){createRecordingButtons(comparisonKey);},1000);
+  }else{
+    console.log('processing recordings for: ' +comparisonKey);
+    $.each(recordings.recording, function(index, recording){
+      var label = recording.label;
+      //$.each(source.movement, function(index, mov){
+      if(recording.comparisonKey === comparisonKey){
+        var btn = $('<button type="button" class="btn btn-small" id="'+label+'">'+label+' <span class="currentTime">00:00</span></button>');
+        $('#' + comparisonKey + ' .recordingList .btn-group-vertical').append(btn);
+        
+        $('#'+label).click(function(){
+          //alert('button '+label+' clicked');
+          switchAudio(recording.audioURI,globalTime);audioNum = index;
+
+        });
+      }
+      //});
+    }); 
+  }
+};
+
+function loadSource(movID){
+  console.log('supplied movID: ' + movID);
+  console.log('TODO: implement real source switch');
+  /* Load the file using HTTP GET */
+  $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
+      
+  var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({
+      inputFormat: 'mei',
+       pageHeight: 2970,
+       pageWidth: 2100,
+       ignoreLayout: 1,
+       border: 5,
+       scale: 25 })
+    );
+   
+    $("#output").html(svg);
+  
+    console.log(vrvToolkit.getPageCount());
+  
+  });
 };
 
 function updateAudioTimes(currentTime, source){
