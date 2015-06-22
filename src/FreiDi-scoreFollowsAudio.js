@@ -61,7 +61,7 @@ function switchAudio(url,currentTime, newAudioID){
   console.log('Old time ' + currentTime);
   
   var audio = $('#track');
-  audio.attr('src', url);
+  audio.attr('src', '/'+url);
   audio[0].currentTime = everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]; 
   audio.bind('canplay', function() {
    // console.log('New time '  + audio[0].currentTime);
@@ -71,6 +71,8 @@ function switchAudio(url,currentTime, newAudioID){
 };
 
 function createSourceButtons(comparisonKey){
+  $.getJSON('../sources.json', function(data){sources = data; console.log(data); sourcesLoaded = true}, 'json');
+      
   if(sourcesLoaded !== true){
     setTimeout(function(){createSourceButtons(comparisonKey);},1000);
   }else{
@@ -94,6 +96,7 @@ function createSourceButtons(comparisonKey){
 };
 
 function createRecordingButtons(comparisonKey){
+  $.getJSON('../recordings.json', function(data){recordings = data; console.log(data); recordingsLoaded = true}, 'json');
   if(recordingsLoaded !== true){
     setTimeout(function(){createRecordingButtons(comparisonKey);},1000);
   }else{
@@ -107,7 +110,7 @@ function createRecordingButtons(comparisonKey){
         
         $('#'+label).click(function(){
           //alert('button '+label+' clicked');
-          switchAudio(recording.audioURI,globalTime);audioNum = index;
+          switchAudio(recording.audioURI,globalTime, index);audioNum = index;
 
         });
       }

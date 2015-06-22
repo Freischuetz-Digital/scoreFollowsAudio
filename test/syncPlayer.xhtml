@@ -45,7 +45,6 @@
     <link rel="apple-touch-icon-precomposed" href="http://www.freischuetz-digital.de/pix/freidi_icon_57.png"/>
     <link rel="shortcut icon" href="http://www.freischuetz-digital.de/pix/freidi_favicon.png"/>
     
-    <script type="text/javascript" src="./verovio-toolkit.js"/>
     <script type="text/javascript" src="../dist/bower.js"/>
     <script type="text/javascript" src="../src/FreiDi-scoreFollowsAudio.js"/>
     <style>
@@ -57,10 +56,6 @@
     </style>
   </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="30"><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
-    
-    <script type="text/javascript">
-      var vrvToolkit = new verovio.toolkit();
-    </script>
     
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -217,9 +212,6 @@
       var recordingsLoaded = false;
       var audioNum = 0;
       
-      $.getJSON('../sources.json', function(data){sources = data; console.log(data); sourcesLoaded = true}, 'json');
-      $.getJSON('../recordings.json', function(data){recordings = data; console.log(data); recordingsLoaded = true}, 'json');
-      
       $.getJSON('../config.json', function(data){
         config = data;
         console.log(data);
@@ -305,18 +297,18 @@
         console.log(time);
 		  
   		  if ( audioNum == 0 ){
-          $("#bloemeke .currentTime").text(time.toFixed(1));
+          $("#Bloemeke .currentTime").text(time.toFixed(1));
   		    var warpedTime = everpolate.linear(time, mat_startTimes[0], mat_startTimes[1])[0];
   		  		  
-  		    $("#ackermann .currentTime").text(warpedTime.toFixed(1));
+  		    $("#Ackermann .currentTime").text(warpedTime.toFixed(1));
         }
 		  
    		  if ( audioNum == 1 ){
    		    console.log("Ackermann")
-           $("#ackermann .currentTime").text(time.toFixed(1));
+           $("#Ackermann .currentTime").text(time.toFixed(1));
    		    var warpedTime = everpolate.linear(time, mat_startTimes[1], mat_startTimes[0])[0];
    		  		  
-   		    $("#bloemeke .currentTime").text(warpedTime.toFixed(1));
+   		    $("#Bloemeke .currentTime").text(warpedTime.toFixed(1));
         }
 
         //TODO format time
@@ -377,6 +369,16 @@
         
         //]]>
       </script>
+    <script type="text/javascript" src="./verovio-toolkit.js"/>
+    <script type="text/javascript">
+      var vrvToolkit = new verovio.toolkit();
+    </script>
+    <!--<script type="text/javascript">
+      $(document).ready(function(){
+          var vrvToolkit = new verovio.toolkit();
+        }
+      );
+    </script>-->
 <!--    //TODO activate tabs-->
     <!--<script>
       $('#mov_6 a').click(function (e) {
