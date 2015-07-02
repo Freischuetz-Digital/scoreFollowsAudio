@@ -55,14 +55,16 @@ var measures = [];
  * used functions
  */
 
-function switchAudio(url,currentTime, newAudioID){
+function switchAudio(url, currentTime, newAudioID){
   console.log('switch audio');
+  console.log(newAudioID);
   console.log(url);
   console.log('Old time ' + currentTime);
   
   var audio = $('#track');
-  audio.attr('src', '/'+url);
-  audio[0].currentTime = everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]; 
+  audio.attr('src', '/' + url);
+  var newTime = everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0];
+  audio[0].currentTime = newTime; 
   audio.bind('canplay', function() {
    // console.log('New time '  + audio[0].currentTime);
    audio[0].play();
@@ -84,10 +86,11 @@ function createSourceButtons(comparisonKey){
           var btn = $('<button type="button" class="btn btn-small" id="'+mov.id+'">'+label+'</button>');
           $('#' + comparisonKey + ' .sourceList .btn-group-vertical').append(btn);
           
-          $('#'+mov.id).click(function(){
-          //alert('button '+label+' clicked');
-          loadSource(mov.id);
-
+          $('#'+mov.id).click(function(event){
+            var buttonID = event.currentTarget.id;
+            $('.recordingList button').toggleClass('btn-primary', false);
+            $('#' + buttonID).toggleClass('btn-primary', true);
+            loadSource(mov.id);
           });
         }
       });
@@ -105,13 +108,14 @@ function createRecordingButtons(comparisonKey){
       var label = recording.label;
       //$.each(source.movement, function(index, mov){
       if(recording.comparisonKey === comparisonKey){
-        var btn = $('<button type="button" class="btn btn-small" id="'+label+'">'+label+' <span class="currentTime">00:00</span></button>');
+        var btn = $('<button type="button" class="btn btn-small" id="'+recording.id+'">'+label+' <span class="currentTime">00:00</span></button>');
         $('#' + comparisonKey + ' .recordingList .btn-group-vertical').append(btn);
         
-        $('#'+label).click(function(){
-          //alert('button '+label+' clicked');
-          switchAudio(recording.audioURI,globalTime, index);audioNum = index;
-
+        $('#'+recording.id).click(function(event){
+          var buttonID = event.currentTarget.id;
+          $('.recordingList button').toggleClass('btn-primary', false);
+          $('#' + buttonID).toggleClass('btn-primary', true);
+          switchAudio(recording.audioURI, globalTime, recording.id);audioNum = recording.id;
         });
       }
       //});
@@ -144,6 +148,31 @@ function loadSource(movID){
 function updateAudioTimes(currentTime, source){
   
 };
+
+function prepareSync(comparisonKey){
+    $.each(recordings.recording, function(index, recording){
+      if(recording.comparisonKey === comparisonKey){
+        $.getJSON('/' + recording.annotsURI, function(data){
+          var measureData = [];
+          $.each(data.measure, function(index, item){
+            measureData.push(data.measure[index].start);
+          });
+          mat_startTimes[recording.id] = measureData;
+        }, 'json');
+        
+        $("#track").bind('timeupdate', function() {
+          console.log('updateTime for ' + recording.id);
+          var time = this.currentTime;
+          globalTime = time;
+          var warpedTime = everpolate.linear(time, mat_startTimes[audioNum], mat_startTimes[recording.id])[0];
+          
+          $("#" + recording.id + " .currentTime").text(warpedTime.toFixed(1));
+
+        });
+
+     }
+   });   
+}
 
 /**
  * get image URI, measure number, measure ID from JSON based on input time
