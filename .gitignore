@@ -7,6 +7,7 @@ Weber_Freischuetz-06_FreiDi_annoMeasures.txt
 Weber_Freischuetz-06_FreiDi_annoMeasures.xml
 A_mov6.xml
 *.wav
+*annoMeasures.json
 
 # =========================
 #dist and documentation
