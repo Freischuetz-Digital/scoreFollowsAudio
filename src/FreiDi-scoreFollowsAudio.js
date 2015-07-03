@@ -212,7 +212,7 @@ function getMeasure(time){
   //set facsimile text field to new value
   $('#facsimileID').text(imageUri);
   //set measure count to new value
-  //$("#measureCount").text(measureCount);
+  $("#measureCount").text(measureCount);
   //set measure position to new value
   //$("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
