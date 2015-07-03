@@ -63,8 +63,8 @@ function switchAudio(url, currentTime, newAudioID){
   
   var audio = $('#track');
   audio.attr('src', '/' + url);
-  var newTime = everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0];
-  audio[0].currentTime = newTime; 
+  var newTime = Number(everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]);
+  audio[0].currentTime = newTime.toFixed(4); 
   audio.bind('canplay', function() {
    // console.log('New time '  + audio[0].currentTime);
    audio[0].play();
@@ -162,11 +162,15 @@ function prepareSync(comparisonKey){
         
         $("#track").bind('timeupdate', function() {
           console.log('updateTime for ' + recording.id);
+          console.log(recording.id);
           var time = this.currentTime;
+          console.log(time);
           globalTime = time;
-          var warpedTime = everpolate.linear(time, mat_startTimes[audioNum], mat_startTimes[recording.id])[0];
-          
-          $("#" + recording.id + " .currentTime").text(warpedTime.toFixed(1));
+          console.log(globalTime);
+          var warpedTime = Number(everpolate.linear(time, mat_startTimes[audioNum], mat_startTimes[recording.id])[0]);
+          console.log(warpedTime);
+          var mmss = new Date(null, null, null, null, null, warpedTime).toString("mm:ss")
+          $("#" + recording.id + " .currentTime").text(mmss);
 
         });
 
@@ -193,7 +197,7 @@ function getMeasure(time){
   var measureIndex;
   
   // Compute exact measure position by interpolation
-  measurePosition = everpolate.linear(time, mat_startTimes[audioNum], measures)[0];
+  measurePosition = Number(everpolate.linear(time, mat_startTimes[audioNum], measures)[0]);
   // Compute measure number (measureCount)
   measureCount    = Math.floor( measurePosition );
   measureIndex    = measureCount-1;
