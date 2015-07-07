@@ -90,7 +90,9 @@ function createSourceButtons(comparisonKey){
             var buttonID = event.currentTarget.id;
             $('.recordingList button').toggleClass('btn-primary', false);
             $('#' + buttonID).toggleClass('btn-primary', true);
-            loadSource(mov.id);
+            //loadMeasureCoreChart(source.id);
+            renderSource(mov.id);
+            
           });
         }
       });
@@ -123,7 +125,7 @@ function createRecordingButtons(comparisonKey){
   }
 };
 
-function loadSource(movID){
+function renderSource(movID){
   console.log('supplied movID: ' + movID);
   console.log('TODO: implement real source switch');
   /* Load the file using HTTP GET */
@@ -149,15 +151,24 @@ function updateAudioTimes(currentTime, source){
   
 };
 
+function getMusicSourceMeasureID(coreRef){
+
+  
+  
+}
+
 function prepareSync(comparisonKey){
     $.each(recordings.recording, function(index, recording){
       if(recording.comparisonKey === comparisonKey){
         $.getJSON('/' + recording.annotsURI, function(data){
-          var measureData = [];
+          var measureStarts = [];
+          var measureLabels = [];
           $.each(data.measure, function(index, item){
-            measureData.push(data.measure[index].start);
+            measureStarts.push(data.measure[index].start);
+            measureLabels.push(item.label);
           });
-          mat_startTimes[recording.id] = measureData;
+          mat_startTimes[recording.id] = measureStarts;
+          measures[recording.id] = measureLabels;
         }, 'json');
         
         $("#track").bind('timeupdate', function() {
@@ -197,14 +208,14 @@ function getMeasure(time){
   var measureIndex;
   
   // Compute exact measure position by interpolation
-  measurePosition = Number(everpolate.linear(time, mat_startTimes[audioNum], measures)[0]);
+  measurePosition = Number(everpolate.linear(time, mat_startTimes[audioNum], measures[audioNum])[0]);
   // Compute measure number (measureCount)
   measureCount    = Math.floor( measurePosition );
   measureIndex    = measureCount-1;
   if(measureIndex >= 0){
-    imageUri = json.measures[measureIndex].page;
+    imageUri = json.measure[measureIndex].facsURI;
     checkImage(imageUri);
-    measureID = json.measures[measureIndex].measureID;  
+    measureID = json.measure[measureIndex].sourceIdRef;  
   }
   else{
     measureIndex = 0;

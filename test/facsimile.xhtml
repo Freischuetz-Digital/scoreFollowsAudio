@@ -122,7 +122,7 @@
           </div>
             
           <audio id="track" controls="controls">
-            <source src="../Weber_Freischuetz-06_Bloemeke2013.wav" type="audio/mpeg" style="width:100px; height:10px;"/>
+            <source src="../Weber_Freischuetz-06_Bloemeke2013.wav" type="audio/wav" style="width:100px; height:10px;"/>
             Your browser does not support the HTML5 audio element.
           </audio>
         </div>
@@ -133,25 +133,39 @@
         var currentImageUri = 'sources/A/00000100.jpg';
         //declare variable json
         var json;
-        //get JSON and assign response to var json and log data
-        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
         var json2; 
-		var json3;
+		    var json3;
+        var mat_startTimes = [];
+
         //get JSON and assign response to var json and log data
-		var mat_startTimes = [];
+        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
+          json = data;
+          console.log(data);
+          mat_startTimes[audioNum] = data;
+          var measureStarts = [];
+          var measureLabels = [];
+          $.each(data.measure, function(index, item){
+            measureStarts.push(data.measure[index].start);
+            measureLabels.push( item.label);
+          });
+          mat_startTimes[audioNum] = measureStarts;
+          measures[audioNum] = measureLabels;
+        }, 'json');
+        
+        //get JSON and assign response to var json and log data
 		
-        $.getJSON('../Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
+      /*  $.getJSON('../Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
           json = data; console.log(data);
           source1 = [];
-		  measure1 = [];
+		      measure1 = [];
           $.each(data.measure, function(index, item){
-              source1.push(data.measure[index].start);
-			  measure1.push(data.measure[index].label);
-           })
-           measures = measure1;
-           mat_startTimes.push(source1);
+            source1.push(data.measure[index].start);
+			      measure1.push(data.measure[index].label);
+          })
+          measures = measure1;
+          mat_startTimes.push(source1);
 
-          }, 'json2');
+        }, 'json2');
         $.getJSON('../Weber_Freischuetz-06_Ackermann1951_annoMeasures.json', function(data){
           json2 = data;
           console.log(data);
@@ -162,9 +176,8 @@
            
            mat_startTimes.push(source2);
 
-        }, 'json3 ');
+        }, 'json3 ');*/
         
-       
         $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
         var audioNum = 0;
         //bind function to timeupdate of audio element
