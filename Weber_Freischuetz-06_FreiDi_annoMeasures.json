@@ -1,1791 +1,2237 @@
-{"measures": [
-    {
-        "timestamp": "1.915291666",
-        "measure": "1",
-        "measureID": "A_mov6_measure1",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "535",
-            "uly": "305",
-            "lrx": "1064",
-            "lry": "2746"
-        }
-    },
-    {
-        "timestamp": "3.766854166",
-        "measure": "2",
-        "measureID": "A_mov6_measure2",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "964",
-            "uly": "369",
-            "lrx": "1419",
-            "lry": "2625"
-        }
-    },
-    {
-        "timestamp": "5.435979166",
-        "measure": "3",
-        "measureID": "A_mov6_measure3",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "1257",
-            "uly": "365",
-            "lrx": "1642",
-            "lry": "2667"
-        }
-    },
-    {
-        "timestamp": "7.028479166",
-        "measure": "4",
-        "measureID": "A_mov6_measure4",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "1523",
-            "uly": "375",
-            "lrx": "1962",
-            "lry": "2711"
-        }
-    },
-    {
-        "timestamp": "8.720645833",
-        "measure": "5",
-        "measureID": "A_mov6_measure5",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "1816",
-            "uly": "359",
-            "lrx": "2275",
-            "lry": "2695"
-        }
-    },
-    {
-        "timestamp": "10.345645833",
-        "measure": "6",
-        "measureID": "A_mov6_measure6",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "2151",
-            "uly": "379",
-            "lrx": "2626",
-            "lry": "2701"
-        }
-    },
-    {
-        "timestamp": "12.044604166",
-        "measure": "7",
-        "measureID": "A_mov6_measure7",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "2484",
-            "uly": "349",
-            "lrx": "2874",
-            "lry": "2744"
-        }
-    },
-    {
-        "timestamp": "13.729145833",
-        "measure": "8",
-        "measureID": "A_mov6_measure8",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "2780",
-            "uly": "349",
-            "lrx": "3255",
-            "lry": "2731"
-        }
-    },
-    {
-        "timestamp": "15.428437500",
-        "measure": "9",
-        "measureID": "A_mov6_measure9",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "3089",
-            "uly": "365",
-            "lrx": "3538",
-            "lry": "2711"
-        }
-    },
-    {
-        "timestamp": "17.066520833",
-        "measure": "10",
-        "measureID": "A_mov6_measure10",
-        "page": "sources/A/00000100.jpg",
-        "coordinates": {
-            "ulx": "3408",
-            "uly": "409",
-            "lrx": "3837",
-            "lry": "2764"
-        }
-    },
-    {
-        "timestamp": "18.720979166",
-        "measure": "11",
-        "measureID": "A_mov6_measure11",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "152",
-            "uly": "309",
-            "lrx": "587",
-            "lry": "2784"
-        }
-    },
-    {
-        "timestamp": "20.657791666",
-        "measure": "12",
-        "measureID": "A_mov6_measure12",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "467",
-            "uly": "369",
-            "lrx": "892",
-            "lry": "2784"
-        }
-    },
-    {
-        "timestamp": "22.334458333",
-        "measure": "13",
-        "measureID": "A_mov6_measure13",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "707",
-            "uly": "387",
-            "lrx": "1255",
-            "lry": "2808"
-        }
-    },
-    {
-        "timestamp": "23.996854166",
-        "measure": "14",
-        "measureID": "A_mov6_measure14",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "1094",
-            "uly": "271",
-            "lrx": "1659",
-            "lry": "2731"
-        }
-    },
-    {
-        "timestamp": "25.786979166",
-        "measure": "15",
-        "measureID": "A_mov6_measure15",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "1539",
-            "uly": "315",
-            "lrx": "2088",
-            "lry": "2784"
-        }
-    },
-    {
-        "timestamp": "27.547791666",
-        "measure": "16",
-        "measureID": "A_mov6_measure16",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "1932",
-            "uly": "369",
-            "lrx": "2417",
-            "lry": "2800"
-        }
-    },
-    {
-        "timestamp": "29.353562500",
-        "measure": "17",
-        "measureID": "A_mov6_measure17",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "2279",
-            "uly": "391",
-            "lrx": "2667",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "31.113645833",
-        "measure": "18",
-        "measureID": "A_mov6_measure18",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "2551",
-            "uly": "387",
-            "lrx": "3056",
-            "lry": "2890"
-        }
-    },
-    {
-        "timestamp": "32.883250000",
-        "measure": "19",
-        "measureID": "A_mov6_measure19",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "2926",
-            "uly": "369",
-            "lrx": "3236",
-            "lry": "2850"
-        }
-    },
-    {
-        "timestamp": "34.809729166",
-        "measure": "20",
-        "measureID": "A_mov6_measure20",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "3150",
-            "uly": "387",
-            "lrx": "3487",
-            "lry": "2856"
-        }
-    },
-    {
-        "timestamp": "36.508687500",
-        "measure": "21",
-        "measureID": "A_mov6_measure21",
-        "page": "sources/A/00000101.jpg",
-        "coordinates": {
-            "ulx": "3395",
-            "uly": "413",
-            "lrx": "3711",
-            "lry": "2860"
-        }
-    },
-    {
-        "timestamp": "38.162979166",
-        "measure": "22",
-        "measureID": "A_mov6_measure22",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "223",
-            "uly": "359",
-            "lrx": "665",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "39.924687500",
-        "measure": "23",
-        "measureID": "A_mov6_measure23",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "561",
-            "uly": "381",
-            "lrx": "876",
-            "lry": "2768"
-        }
-    },
-    {
-        "timestamp": "41.577145833",
-        "measure": "24",
-        "measureID": "A_mov6_measure24",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "750",
-            "uly": "359",
-            "lrx": "1098",
-            "lry": "2840"
-        }
-    },
-    {
-        "timestamp": "43.353604166",
-        "measure": "25",
-        "measureID": "A_mov6_measure25",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "1012",
-            "uly": "375",
-            "lrx": "1447",
-            "lry": "2774"
-        }
-    },
-    {
-        "timestamp": "45.062166666",
-        "measure": "26",
-        "measureID": "A_mov6_measure26",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "1295",
-            "uly": "391",
-            "lrx": "1762",
-            "lry": "2800"
-        }
-    },
-    {
-        "timestamp": "46.821375000",
-        "measure": "27",
-        "measureID": "A_mov6_measure27",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "1674",
-            "uly": "381",
-            "lrx": "1984",
-            "lry": "2737"
-        }
-    },
-    {
-        "timestamp": "48.707208333",
-        "measure": "28",
-        "measureID": "A_mov6_measure28",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "1926",
-            "uly": "359",
-            "lrx": "2355",
-            "lry": "2850"
-        }
-    },
-    {
-        "timestamp": "50.414666666",
-        "measure": "29",
-        "measureID": "A_mov6_measure29",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "2289",
-            "uly": "365",
-            "lrx": "2752",
-            "lry": "2802"
-        }
-    },
-    {
-        "timestamp": "52.159270833",
-        "measure": "30",
-        "measureID": "A_mov6_measure30",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "2676",
-            "uly": "405",
-            "lrx": "2957",
-            "lry": "2703"
-        }
-    },
-    {
-        "timestamp": "54.042333333",
-        "measure": "31",
-        "measureID": "A_mov6_measure31",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "2876",
-            "uly": "421",
-            "lrx": "3097",
-            "lry": "2778"
-        }
-    },
-    {
-        "timestamp": "55.636187500",
-        "measure": "32",
-        "measureID": "A_mov6_measure32",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "3031",
-            "uly": "355",
-            "lrx": "3430",
-            "lry": "2810"
-        }
-    },
-    {
-        "timestamp": "57.395333333",
-        "measure": "33",
-        "measureID": "A_mov6_measure33",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "3344",
-            "uly": "393",
-            "lrx": "3572",
-            "lry": "2788"
-        }
-    },
-    {
-        "timestamp": "59.253687500",
-        "measure": "34",
-        "measureID": "A_mov6_measure34",
-        "page": "sources/A/00000102.jpg",
-        "coordinates": {
-            "ulx": "3500",
-            "uly": "383",
-            "lrx": "3931",
-            "lry": "2788"
-        }
-    },
-    {
-        "timestamp": "61.037083333",
-        "measure": "35",
-        "measureID": "A_mov6_measure35",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "148",
-            "uly": "413",
-            "lrx": "513",
-            "lry": "2822"
-        }
-    },
-    {
-        "timestamp": "62.861687500",
-        "measure": "36",
-        "measureID": "A_mov6_measure36",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "403",
-            "uly": "425",
-            "lrx": "784",
-            "lry": "2808"
-        }
-    },
-    {
-        "timestamp": "64.646729166",
-        "measure": "37",
-        "measureID": "A_mov6_measure37",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "637",
-            "uly": "425",
-            "lrx": "980",
-            "lry": "2890"
-        }
-    },
-    {
-        "timestamp": "66.375208333",
-        "measure": "38",
-        "measureID": "A_mov6_measure38",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "822",
-            "uly": "435",
-            "lrx": "1175",
-            "lry": "2834"
-        }
-    },
-    {
-        "timestamp": "68.212916666",
-        "measure": "39",
-        "measureID": "A_mov6_measure39",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "1028",
-            "uly": "429",
-            "lrx": "1425",
-            "lry": "2888"
-        }
-    },
-    {
-        "timestamp": "70.148229166",
-        "measure": "40",
-        "measureID": "A_mov6_measure40",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "1321",
-            "uly": "451",
-            "lrx": "1724",
-            "lry": "2856"
-        }
-    },
-    {
-        "timestamp": "71.903166666",
-        "measure": "41",
-        "measureID": "A_mov6_measure41",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "1576",
-            "uly": "413",
-            "lrx": "1990",
-            "lry": "2856"
-        }
-    },
-    {
-        "timestamp": "73.578395833",
-        "measure": "42",
-        "measureID": "A_mov6_measure42",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "1876",
-            "uly": "369",
-            "lrx": "2235",
-            "lry": "2838"
-        }
-    },
-    {
-        "timestamp": "75.430541666",
-        "measure": "43",
-        "measureID": "A_mov6_measure43",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "2159",
-            "uly": "365",
-            "lrx": "2622",
-            "lry": "2846"
-        }
-    },
-    {
-        "timestamp": "77.205958333",
-        "measure": "44",
-        "measureID": "A_mov6_measure44",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "2468",
-            "uly": "387",
-            "lrx": "3001",
-            "lry": "2840"
-        }
-    },
-    {
-        "timestamp": "78.928750000",
-        "measure": "45",
-        "measureID": "A_mov6_measure45",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "2882",
-            "uly": "445",
-            "lrx": "3257",
-            "lry": "2822"
-        }
-    },
-    {
-        "timestamp": "80.795708333",
-        "measure": "46",
-        "measureID": "A_mov6_measure46",
-        "page": "sources/A/00000103.jpg",
-        "coordinates": {
-            "ulx": "3121",
-            "uly": "429",
-            "lrx": "3758",
-            "lry": "2828"
-        }
-    },
-    {
-        "timestamp": "82.479854166",
-        "measure": "47",
-        "measureID": "A_mov6_measure47",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "208",
-            "uly": "397",
-            "lrx": "746",
-            "lry": "2910"
-        }
-    },
-    {
-        "timestamp": "84.294187500",
-        "measure": "48",
-        "measureID": "A_mov6_measure48",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "659",
-            "uly": "375",
-            "lrx": "1024",
-            "lry": "2818"
-        }
-    },
-    {
-        "timestamp": "86.176583333",
-        "measure": "49",
-        "measureID": "A_mov6_measure49",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "930",
-            "uly": "369",
-            "lrx": "1409",
-            "lry": "2784"
-        }
-    },
-    {
-        "timestamp": "87.919333333",
-        "measure": "50",
-        "measureID": "A_mov6_measure50",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "1283",
-            "uly": "359",
-            "lrx": "1674",
-            "lry": "2802"
-        }
-    },
-    {
-        "timestamp": "89.689416666",
-        "measure": "51",
-        "measureID": "A_mov6_measure51",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "1545",
-            "uly": "321",
-            "lrx": "1914",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "91.448604166",
-        "measure": "52",
-        "measureID": "A_mov6_measure52",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "1794",
-            "uly": "331",
-            "lrx": "2141",
-            "lry": "2818"
-        }
-    },
-    {
-        "timestamp": "93.042458333",
-        "measure": "53",
-        "measureID": "A_mov6_measure53",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "1992",
-            "uly": "343",
-            "lrx": "2492",
-            "lry": "2786"
-        }
-    },
-    {
-        "timestamp": "94.809854166",
-        "measure": "54",
-        "measureID": "A_mov6_measure54",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "2345",
-            "uly": "359",
-            "lrx": "2748",
-            "lry": "2802"
-        }
-    },
-    {
-        "timestamp": "96.571937500",
-        "measure": "55",
-        "measureID": "A_mov6_measure55",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "2626",
-            "uly": "343",
-            "lrx": "3029",
-            "lry": "2786"
-        }
-    },
-    {
-        "timestamp": "98.216250000",
-        "measure": "56",
-        "measureID": "A_mov6_measure56",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "2887",
-            "uly": "369",
-            "lrx": "3295",
-            "lry": "2822"
-        }
-    },
-    {
-        "timestamp": "99.939062500",
-        "measure": "57",
-        "measureID": "A_mov6_measure57",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "3127",
-            "uly": "331",
-            "lrx": "3508",
-            "lry": "2834"
-        }
-    },
-    {
-        "timestamp": "101.525437500",
-        "measure": "58",
-        "measureID": "A_mov6_measure58",
-        "page": "sources/A/00000104.jpg",
-        "coordinates": {
-            "ulx": "3432",
-            "uly": "365",
-            "lrx": "3807",
-            "lry": "2824"
-        }
-    },
-    {
-        "timestamp": "103.257291666",
-        "measure": "59",
-        "measureID": "A_mov6_measure59",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "142",
-            "uly": "359",
-            "lrx": "599",
-            "lry": "2806"
-        }
-    },
-    {
-        "timestamp": "104.991937500",
-        "measure": "60",
-        "measureID": "A_mov6_measure60",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "485",
-            "uly": "365",
-            "lrx": "828",
-            "lry": "2808"
-        }
-    },
-    {
-        "timestamp": "106.548000000",
-        "measure": "61",
-        "measureID": "A_mov6_measure61",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "718",
-            "uly": "337",
-            "lrx": "1137",
-            "lry": "2828"
-        }
-    },
-    {
-        "timestamp": "108.254666666",
-        "measure": "62",
-        "measureID": "A_mov6_measure62",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "1006",
-            "uly": "337",
-            "lrx": "1375",
-            "lry": "2806"
-        }
-    },
-    {
-        "timestamp": "109.975895833",
-        "measure": "63",
-        "measureID": "A_mov6_measure63",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "1251",
-            "uly": "337",
-            "lrx": "1578",
-            "lry": "2802"
-        }
-    },
-    {
-        "timestamp": "111.721666666",
-        "measure": "64",
-        "measureID": "A_mov6_measure64",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "1485",
-            "uly": "337",
-            "lrx": "1828",
-            "lry": "2840"
-        }
-    },
-    {
-        "timestamp": "113.452250000",
-        "measure": "65",
-        "measureID": "A_mov6_measure65",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "1746",
-            "uly": "327",
-            "lrx": "2033",
-            "lry": "2780"
-        }
-    },
-    {
-        "timestamp": "115.197791666",
-        "measure": "66",
-        "measureID": "A_mov6_measure66",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "1970",
-            "uly": "381",
-            "lrx": "2231",
-            "lry": "2758"
-        }
-    },
-    {
-        "timestamp": "116.951187500",
-        "measure": "67",
-        "measureID": "A_mov6_measure67",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "2149",
-            "uly": "375",
-            "lrx": "2437",
-            "lry": "2806"
-        }
-    },
-    {
-        "timestamp": "118.675645833",
-        "measure": "68",
-        "measureID": "A_mov6_measure68",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "2317",
-            "uly": "369",
-            "lrx": "2626",
-            "lry": "2812"
-        }
-    },
-    {
-        "timestamp": "120.473562500",
-        "measure": "69",
-        "measureID": "A_mov6_measure69",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "2546",
-            "uly": "381",
-            "lrx": "2830",
-            "lry": "2840"
-        }
-    },
-    {
-        "timestamp": "122.249062500",
-        "measure": "70",
-        "measureID": "A_mov6_measure70",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "2742",
-            "uly": "369",
-            "lrx": "3013",
-            "lry": "2822"
-        }
-    },
-    {
-        "timestamp": "123.919729166",
-        "measure": "71",
-        "measureID": "A_mov6_measure71",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "2921",
-            "uly": "353",
-            "lrx": "3243",
-            "lry": "2844"
-        }
-    },
-    {
-        "timestamp": "125.704666666",
-        "measure": "72",
-        "measureID": "A_mov6_measure72",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "3165",
-            "uly": "387",
-            "lrx": "3398",
-            "lry": "2890"
-        }
-    },
-    {
-        "timestamp": "127.531375000",
-        "measure": "73",
-        "measureID": "A_mov6_measure73",
-        "page": "sources/A/00000105.jpg",
-        "coordinates": {
-            "ulx": "3356",
-            "uly": "381",
-            "lrx": "3744",
-            "lry": "2828"
-        }
-    },
-    {
-        "timestamp": "129.123645833",
-        "measure": "74",
-        "measureID": "A_mov6_measure74",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "208",
-            "uly": "343",
-            "lrx": "665",
-            "lry": "2818"
-        }
-    },
-    {
-        "timestamp": "130.840979166",
-        "measure": "75",
-        "measureID": "A_mov6_measure75",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "533",
-            "uly": "337",
-            "lrx": "940",
-            "lry": "2828"
-        }
-    },
-    {
-        "timestamp": "132.575812500",
-        "measure": "76",
-        "measureID": "A_mov6_measure76",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "848",
-            "uly": "190",
-            "lrx": "1185",
-            "lry": "2778"
-        }
-    },
-    {
-        "timestamp": "134.261125000",
-        "measure": "77",
-        "measureID": "A_mov6_measure77",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "1082",
-            "uly": "224",
-            "lrx": "1626",
-            "lry": "2824"
-        }
-    },
-    {
-        "timestamp": "135.921479166",
-        "measure": "78",
-        "measureID": "A_mov6_measure78",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "1507",
-            "uly": "234",
-            "lrx": "1970",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "137.584750000",
-        "measure": "79",
-        "measureID": "A_mov6_measure79",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "1872",
-            "uly": "321",
-            "lrx": "2377",
-            "lry": "2786"
-        }
-    },
-    {
-        "timestamp": "139.297229166",
-        "measure": "80",
-        "measureID": "A_mov6_measure80",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "2263",
-            "uly": "321",
-            "lrx": "2720",
-            "lry": "2758"
-        }
-    },
-    {
-        "timestamp": "141.105500000",
-        "measure": "81",
-        "measureID": "A_mov6_measure81",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "2600",
-            "uly": "331",
-            "lrx": "3051",
-            "lry": "2904"
-        }
-    },
-    {
-        "timestamp": "142.820333333",
-        "measure": "82",
-        "measureID": "A_mov6_measure82",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "2953",
-            "uly": "365",
-            "lrx": "3514",
-            "lry": "2818"
-        }
-    },
-    {
-        "timestamp": "144.603041666",
-        "measure": "83",
-        "measureID": "A_mov6_measure83",
-        "page": "sources/A/00000106.jpg",
-        "coordinates": {
-            "ulx": "3398",
-            "uly": "327",
-            "lrx": "3789",
-            "lry": "2802"
-        }
-    },
-    {
-        "timestamp": "146.425812500",
-        "measure": "84",
-        "measureID": "A_mov6_measure84",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "158",
-            "uly": "315",
-            "lrx": "706",
-            "lry": "2828"
-        }
-    },
-    {
-        "timestamp": "148.275625000",
-        "measure": "85",
-        "measureID": "A_mov6_measure85",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "647",
-            "uly": "347",
-            "lrx": "1000",
-            "lry": "2784"
-        }
-    },
-    {
-        "timestamp": "150.121208333",
-        "measure": "86",
-        "measureID": "A_mov6_measure86",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "898",
-            "uly": "353",
-            "lrx": "1443",
-            "lry": "2790"
-        }
-    },
-    {
-        "timestamp": "151.927937500",
-        "measure": "87",
-        "measureID": "A_mov6_measure87",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "1321",
-            "uly": "347",
-            "lrx": "1980",
-            "lry": "2834"
-        }
-    },
-    {
-        "timestamp": "153.687479166",
-        "measure": "88",
-        "measureID": "A_mov6_measure88",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "1822",
-            "uly": "381",
-            "lrx": "2377",
-            "lry": "2812"
-        }
-    },
-    {
-        "timestamp": "155.517083333",
-        "measure": "89",
-        "measureID": "A_mov6_measure89",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "2257",
-            "uly": "381",
-            "lrx": "2887",
-            "lry": "2828"
-        }
-    },
-    {
-        "timestamp": "157.270687500",
-        "measure": "90",
-        "measureID": "A_mov6_measure90",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "2724",
-            "uly": "387",
-            "lrx": "3332",
-            "lry": "2912"
-        }
-    },
-    {
-        "timestamp": "159.167312500",
-        "measure": "91",
-        "measureID": "A_mov6_measure91",
-        "page": "sources/A/00000107.jpg",
-        "coordinates": {
-            "ulx": "3215",
-            "uly": "397",
-            "lrx": "3694",
-            "lry": "2812"
-        }
-    },
-    {
-        "timestamp": "160.996812500",
-        "measure": "92",
-        "measureID": "A_mov6_measure92",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "245",
-            "uly": "365",
-            "lrx": "756",
-            "lry": "2812"
-        }
-    },
-    {
-        "timestamp": "162.808812500",
-        "measure": "93",
-        "measureID": "A_mov6_measure93",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "615",
-            "uly": "375",
-            "lrx": "1066",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "164.591937500",
-        "measure": "94",
-        "measureID": "A_mov6_measure94",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "946",
-            "uly": "375",
-            "lrx": "1545",
-            "lry": "2780"
-        }
-    },
-    {
-        "timestamp": "166.452333333",
-        "measure": "95",
-        "measureID": "A_mov6_measure95",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "1431",
-            "uly": "365",
-            "lrx": "2073",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "168.191812500",
-        "measure": "96",
-        "measureID": "A_mov6_measure96",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "1964",
-            "uly": "343",
-            "lrx": "2534",
-            "lry": "2812"
-        }
-    },
-    {
-        "timestamp": "170.112833333",
-        "measure": "97",
-        "measureID": "A_mov6_measure97",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "2387",
-            "uly": "321",
-            "lrx": "2746",
-            "lry": "2774"
-        }
-    },
-    {
-        "timestamp": "171.893854166",
-        "measure": "98",
-        "measureID": "A_mov6_measure98",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "2616",
-            "uly": "337",
-            "lrx": "3067",
-            "lry": "2790"
-        }
-    },
-    {
-        "timestamp": "173.738145833",
-        "measure": "99",
-        "measureID": "A_mov6_measure99",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "2963",
-            "uly": "375",
-            "lrx": "3442",
-            "lry": "2818"
-        }
-    },
-    {
-        "timestamp": "175.505895833",
-        "measure": "100",
-        "measureID": "A_mov6_measure100",
-        "page": "sources/A/00000108.jpg",
-        "coordinates": {
-            "ulx": "3350",
-            "uly": "353",
-            "lrx": "3855",
-            "lry": "2774"
-        }
-    },
-    {
-        "timestamp": "177.366020833",
-        "measure": "101",
-        "measureID": "A_mov6_measure101",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "126",
-            "uly": "321",
-            "lrx": "473",
-            "lry": "2868"
-        }
-    },
-    {
-        "timestamp": "179.311520833",
-        "measure": "102",
-        "measureID": "A_mov6_measure102",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "387",
-            "uly": "331",
-            "lrx": "680",
-            "lry": "2894"
-        }
-    },
-    {
-        "timestamp": "181.308979166",
-        "measure": "103",
-        "measureID": "A_mov6_measure103",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "593",
-            "uly": "375",
-            "lrx": "962",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "183.191041666",
-        "measure": "104",
-        "measureID": "A_mov6_measure104",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "876",
-            "uly": "321",
-            "lrx": "1185",
-            "lry": "2786"
-        }
-    },
-    {
-        "timestamp": "184.968041666",
-        "measure": "105",
-        "measureID": "A_mov6_measure105",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "1100",
-            "uly": "234",
-            "lrx": "1415",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "186.773979166",
-        "measure": "106",
-        "measureID": "A_mov6_measure106",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "1311",
-            "uly": "224",
-            "lrx": "1816",
-            "lry": "2840"
-        }
-    },
-    {
-        "timestamp": "188.678312500",
-        "measure": "107",
-        "measureID": "A_mov6_measure107",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "1686",
-            "uly": "246",
-            "lrx": "2159",
-            "lry": "2786"
-        }
-    },
-    {
-        "timestamp": "190.461979166",
-        "measure": "108",
-        "measureID": "A_mov6_measure108",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "1980",
-            "uly": "299",
-            "lrx": "2714",
-            "lry": "2818"
-        }
-    },
-    {
-        "timestamp": "192.330250000",
-        "measure": "109",
-        "measureID": "A_mov6_measure109",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "2584",
-            "uly": "353",
-            "lrx": "3259",
-            "lry": "2790"
-        }
-    },
-    {
-        "timestamp": "194.204937500",
-        "measure": "110",
-        "measureID": "A_mov6_measure110",
-        "page": "sources/A/00000109.jpg",
-        "coordinates": {
-            "ulx": "3121",
-            "uly": "353",
-            "lrx": "3708",
-            "lry": "2806"
-        }
-    },
-    {
-        "timestamp": "196.141416666",
-        "measure": "111",
-        "measureID": "A_mov6_measure111",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "235",
-            "uly": "309",
-            "lrx": "601",
-            "lry": "2814"
-        }
-    },
-    {
-        "timestamp": "198.136875000",
-        "measure": "112",
-        "measureID": "A_mov6_measure112",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "459",
-            "uly": "389",
-            "lrx": "994",
-            "lry": "2790"
-        }
-    },
-    {
-        "timestamp": "200.013125000",
-        "measure": "113",
-        "measureID": "A_mov6_measure113",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "854",
-            "uly": "395",
-            "lrx": "1469",
-            "lry": "2756"
-        }
-    },
-    {
-        "timestamp": "201.870916666",
-        "measure": "114",
-        "measureID": "A_mov6_measure114",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "1297",
-            "uly": "375",
-            "lrx": "1866",
-            "lry": "2770"
-        }
-    },
-    {
-        "timestamp": "203.807250000",
-        "measure": "115",
-        "measureID": "A_mov6_measure115",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "1736",
-            "uly": "385",
-            "lrx": "2245",
-            "lry": "2816"
-        }
-    },
-    {
-        "timestamp": "205.788604166",
-        "measure": "116",
-        "measureID": "A_mov6_measure116",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "2111",
-            "uly": "375",
-            "lrx": "2676",
-            "lry": "2786"
-        }
-    },
-    {
-        "timestamp": "207.701437500",
-        "measure": "117",
-        "measureID": "A_mov6_measure117",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "2554",
-            "uly": "375",
-            "lrx": "2929",
-            "lry": "2826"
-        }
-    },
-    {
-        "timestamp": "209.736541666",
-        "measure": "118",
-        "measureID": "A_mov6_measure118",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "2810",
-            "uly": "405",
-            "lrx": "3328",
-            "lry": "2790"
-        }
-    },
-    {
-        "timestamp": "211.518791666",
-        "measure": "119",
-        "measureID": "A_mov6_measure119",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "3233",
-            "uly": "385",
-            "lrx": "3522",
-            "lry": "2800"
-        }
-    },
-    {
-        "timestamp": "213.380562500",
-        "measure": "120",
-        "measureID": "A_mov6_measure120",
-        "page": "sources/A/00000110.jpg",
-        "coordinates": {
-            "ulx": "3448",
-            "uly": "439",
-            "lrx": "3977",
-            "lry": "2844"
-        }
-    },
-    {
-        "timestamp": "215.252875000",
-        "measure": "121",
-        "measureID": "A_mov6_measure121",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "66",
-            "uly": "331",
-            "lrx": "627",
-            "lry": "2860"
-        }
-    },
-    {
-        "timestamp": "217.107000000",
-        "measure": "122",
-        "measureID": "A_mov6_measure122",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "479",
-            "uly": "315",
-            "lrx": "1104",
-            "lry": "2774"
-        }
-    },
-    {
-        "timestamp": "218.957437500",
-        "measure": "123",
-        "measureID": "A_mov6_measure123",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "974",
-            "uly": "327",
-            "lrx": "1425",
-            "lry": "2770"
-        }
-    },
-    {
-        "timestamp": "221.067812500",
-        "measure": "124",
-        "measureID": "A_mov6_measure124",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "1321",
-            "uly": "255",
-            "lrx": "1734",
-            "lry": "2796"
-        }
-    },
-    {
-        "timestamp": "222.776375000",
-        "measure": "125",
-        "measureID": "A_mov6_measure125",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "1626",
-            "uly": "315",
-            "lrx": "2055",
-            "lry": "2774"
-        }
-    },
-    {
-        "timestamp": "224.680708333",
-        "measure": "126",
-        "measureID": "A_mov6_measure126",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "1980",
-            "uly": "347",
-            "lrx": "2409",
-            "lry": "2741"
-        }
-    },
-    {
-        "timestamp": "226.661750000",
-        "measure": "127",
-        "measureID": "A_mov6_measure127",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "2327",
-            "uly": "331",
-            "lrx": "2674",
-            "lry": "2774"
-        }
-    },
-    {
-        "timestamp": "228.637708333",
-        "measure": "128",
-        "measureID": "A_mov6_measure128",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "2572",
-            "uly": "337",
-            "lrx": "2925",
-            "lry": "2790"
-        }
-    },
-    {
-        "timestamp": "230.656770833",
-        "measure": "129",
-        "measureID": "A_mov6_measure129",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "2862",
-            "uly": "359",
-            "lrx": "3231",
-            "lry": "2866"
-        }
-    },
-    {
-        "timestamp": "232.470145833",
-        "measure": "130",
-        "measureID": "A_mov6_measure130",
-        "page": "sources/A/00000111.jpg",
-        "coordinates": {
-            "ulx": "3127",
-            "uly": "365",
-            "lrx": "3801",
-            "lry": "2802"
-        }
-    },
-    {
-        "timestamp": "234.323958333",
-        "measure": "131",
-        "measureID": "A_mov6_measure131",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "229",
-            "uly": "349",
-            "lrx": "649",
-            "lry": "2850"
-        }
-    },
-    {
-        "timestamp": "236.319500000",
-        "measure": "132",
-        "measureID": "A_mov6_measure132",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "545",
-            "uly": "339",
-            "lrx": "900",
-            "lry": "2770"
-        }
-    },
-    {
-        "timestamp": "238.133500000",
-        "measure": "133",
-        "measureID": "A_mov6_measure133",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "784",
-            "uly": "359",
-            "lrx": "1209",
-            "lry": "2760"
-        }
-    },
-    {
-        "timestamp": "240.001708333",
-        "measure": "134",
-        "measureID": "A_mov6_measure134",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "1044",
-            "uly": "349",
-            "lrx": "1568",
-            "lry": "2770"
-        }
-    },
-    {
-        "timestamp": "241.906437500",
-        "measure": "135",
-        "measureID": "A_mov6_measure135",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "1423",
-            "uly": "349",
-            "lrx": "1878",
-            "lry": "2760"
-        }
-    },
-    {
-        "timestamp": "243.910166666",
-        "measure": "136",
-        "measureID": "A_mov6_measure136",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "1752",
-            "uly": "355",
-            "lrx": "2161",
-            "lry": "2776"
-        }
-    },
-    {
-        "timestamp": "245.762750000",
-        "measure": "137",
-        "measureID": "A_mov6_measure137",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "2055",
-            "uly": "309",
-            "lrx": "2484",
-            "lry": "2711"
-        }
-    },
-    {
-        "timestamp": "247.560625000",
-        "measure": "138",
-        "measureID": "A_mov6_measure138",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "2381",
-            "uly": "339",
-            "lrx": "2780",
-            "lry": "2735"
-        }
-    },
-    {
-        "timestamp": "249.322000000",
-        "measure": "139",
-        "measureID": "A_mov6_measure139",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "2654",
-            "uly": "339",
-            "lrx": "3079",
-            "lry": "2741"
-        }
-    },
-    {
-        "timestamp": "251.237625000",
-        "measure": "140",
-        "measureID": "A_mov6_measure140",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "2953",
-            "uly": "355",
-            "lrx": "3378",
-            "lry": "2701"
-        }
-    },
-    {
-        "timestamp": "253.199750000",
-        "measure": "141",
-        "measureID": "A_mov6_measure141",
-        "page": "sources/A/00000112.jpg",
-        "coordinates": {
-            "ulx": "3283",
-            "uly": "309",
-            "lrx": "3867",
-            "lry": "2764"
-        }
-    },
-    {
-        "timestamp": "255.013125000",
-        "measure": "142",
-        "measureID": "A_mov6_measure142",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "66",
-            "uly": "309",
-            "lrx": "523",
-            "lry": "2844"
-        }
-    },
-    {
-        "timestamp": "256.982354166",
-        "measure": "143",
-        "measureID": "A_mov6_measure143",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "387",
-            "uly": "305",
-            "lrx": "828",
-            "lry": "2780"
-        }
-    },
-    {
-        "timestamp": "258.742312500",
-        "measure": "144",
-        "measureID": "A_mov6_measure144",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "696",
-            "uly": "347",
-            "lrx": "1094",
-            "lry": "2816"
-        }
-    },
-    {
-        "timestamp": "260.736937500",
-        "measure": "145",
-        "measureID": "A_mov6_measure145",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "990",
-            "uly": "321",
-            "lrx": "1409",
-            "lry": "2802"
-        }
-    },
-    {
-        "timestamp": "262.481750000",
-        "measure": "146",
-        "measureID": "A_mov6_measure146",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "1327",
-            "uly": "321",
-            "lrx": "1696",
-            "lry": "2824"
-        }
-    },
-    {
-        "timestamp": "264.249541666",
-        "measure": "147",
-        "measureID": "A_mov6_measure147",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "1632",
-            "uly": "343",
-            "lrx": "2061",
-            "lry": "2824"
-        }
-    },
-    {
-        "timestamp": "266.170229166",
-        "measure": "148",
-        "measureID": "A_mov6_measure148",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "1958",
-            "uly": "343",
-            "lrx": "2349",
-            "lry": "2824"
-        }
-    },
-    {
-        "timestamp": "268.169583333",
-        "measure": "149",
-        "measureID": "A_mov6_measure149",
-        "page": "sources/A/00000113.jpg",
-        "coordinates": {
-            "ulx": "2269",
-            "uly": "359",
-            "lrx": "2732",
-            "lry": "2796"
-        }
+{"measure": [
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure1",
+    "coreIdRef": "#core_mov6_measure1",
+    "sourceIdRef": "#A_mov6_measure1",
+    "start": 1.91529167,
+    "end": 3.76685417,
+    "label": 1,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 535,
+      "uly": 305,
+      "lrx": 1064,
+      "lry": 2746
     }
-]
-}
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure2",
+    "coreIdRef": "#core_mov6_measure2",
+    "sourceIdRef": "#A_mov6_measure2",
+    "start": 3.76685417,
+    "end": 5.43597917,
+    "label": 2,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 964,
+      "uly": 369,
+      "lrx": 1419,
+      "lry": 2625
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure3",
+    "coreIdRef": "#core_mov6_measure3",
+    "sourceIdRef": "#A_mov6_measure3",
+    "start": 5.43597917,
+    "end": 7.02847917,
+    "label": 3,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 1257,
+      "uly": 365,
+      "lrx": 1642,
+      "lry": 2667
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure4",
+    "coreIdRef": "#core_mov6_measure4",
+    "sourceIdRef": "#A_mov6_measure4",
+    "start": 7.02847917,
+    "end": 8.72064583,
+    "label": 4,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 1523,
+      "uly": 375,
+      "lrx": 1962,
+      "lry": 2711
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure5",
+    "coreIdRef": "#core_mov6_measure5",
+    "sourceIdRef": "#A_mov6_measure5",
+    "start": 8.72064583,
+    "end": 10.34564583,
+    "label": 5,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 1816,
+      "uly": 359,
+      "lrx": 2275,
+      "lry": 2695
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure6",
+    "coreIdRef": "#core_mov6_measure6",
+    "sourceIdRef": "#A_mov6_measure6",
+    "start": 10.34564583,
+    "end": 12.04460417,
+    "label": 6,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 2151,
+      "uly": 379,
+      "lrx": 2626,
+      "lry": 2701
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure7",
+    "coreIdRef": "#core_mov6_measure7",
+    "sourceIdRef": "#A_mov6_measure7",
+    "start": 12.04460417,
+    "end": 13.72914583,
+    "label": 7,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 2484,
+      "uly": 349,
+      "lrx": 2874,
+      "lry": 2744
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure8",
+    "coreIdRef": "#core_mov6_measure8",
+    "sourceIdRef": "#A_mov6_measure8",
+    "start": 13.72914583,
+    "end": 15.4284375,
+    "label": 8,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 2780,
+      "uly": 349,
+      "lrx": 3255,
+      "lry": 2731
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure9",
+    "coreIdRef": "#core_mov6_measure9",
+    "sourceIdRef": "#A_mov6_measure9",
+    "start": 15.4284375,
+    "end": 17.06652083,
+    "label": 9,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 3089,
+      "uly": 365,
+      "lrx": 3538,
+      "lry": 2711
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure10",
+    "coreIdRef": "#core_mov6_measure10",
+    "sourceIdRef": "#A_mov6_measure10",
+    "start": 17.06652083,
+    "end": 18.72097917,
+    "label": 10,
+    "facsURI": "sources/A/00000100.jpg",
+    "coordinates": {
+      "ulx": 3408,
+      "uly": 409,
+      "lrx": 3837,
+      "lry": 2764
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure11",
+    "coreIdRef": "#core_mov6_measure11",
+    "sourceIdRef": "#A_mov6_measure11",
+    "start": 18.72097917,
+    "end": 20.65779167,
+    "label": 11,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 152,
+      "uly": 309,
+      "lrx": 587,
+      "lry": 2784
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure12",
+    "coreIdRef": "#core_mov6_measure12",
+    "sourceIdRef": "#A_mov6_measure12",
+    "start": 20.65779167,
+    "end": 22.33445833,
+    "label": 12,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 467,
+      "uly": 369,
+      "lrx": 892,
+      "lry": 2784
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure13",
+    "coreIdRef": "#core_mov6_measure13",
+    "sourceIdRef": "#A_mov6_measure13",
+    "start": 22.33445833,
+    "end": 23.99685417,
+    "label": 13,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 707,
+      "uly": 387,
+      "lrx": 1255,
+      "lry": 2808
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure14",
+    "coreIdRef": "#core_mov6_measure14",
+    "sourceIdRef": "#A_mov6_measure14",
+    "start": 23.99685417,
+    "end": 25.78697917,
+    "label": 14,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 1094,
+      "uly": 271,
+      "lrx": 1659,
+      "lry": 2731
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure15",
+    "coreIdRef": "#core_mov6_measure15",
+    "sourceIdRef": "#A_mov6_measure15",
+    "start": 25.78697917,
+    "end": 27.54779167,
+    "label": 15,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 1539,
+      "uly": 315,
+      "lrx": 2088,
+      "lry": 2784
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure16",
+    "coreIdRef": "#core_mov6_measure16",
+    "sourceIdRef": "#A_mov6_measure16",
+    "start": 27.54779167,
+    "end": 29.3535625,
+    "label": 16,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 1932,
+      "uly": 369,
+      "lrx": 2417,
+      "lry": 2800
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure17",
+    "coreIdRef": "#core_mov6_measure17",
+    "sourceIdRef": "#A_mov6_measure17",
+    "start": 29.3535625,
+    "end": 31.11364583,
+    "label": 17,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 2279,
+      "uly": 391,
+      "lrx": 2667,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure18",
+    "coreIdRef": "#core_mov6_measure18",
+    "sourceIdRef": "#A_mov6_measure18",
+    "start": 31.11364583,
+    "end": 32.88325,
+    "label": 18,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 2551,
+      "uly": 387,
+      "lrx": 3056,
+      "lry": 2890
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure19",
+    "coreIdRef": "#core_mov6_measure19",
+    "sourceIdRef": "#A_mov6_measure19",
+    "start": 32.88325,
+    "end": 34.80972917,
+    "label": 19,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 2926,
+      "uly": 369,
+      "lrx": 3236,
+      "lry": 2850
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure20",
+    "coreIdRef": "#core_mov6_measure20",
+    "sourceIdRef": "#A_mov6_measure20",
+    "start": 34.80972917,
+    "end": 36.5086875,
+    "label": 20,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 3150,
+      "uly": 387,
+      "lrx": 3487,
+      "lry": 2856
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure21",
+    "coreIdRef": "#core_mov6_measure21",
+    "sourceIdRef": "#A_mov6_measure21",
+    "start": 36.5086875,
+    "end": 38.16297917,
+    "label": 21,
+    "facsURI": "sources/A/00000101.jpg",
+    "coordinates": {
+      "ulx": 3395,
+      "uly": 413,
+      "lrx": 3711,
+      "lry": 2860
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure22",
+    "coreIdRef": "#core_mov6_measure22",
+    "sourceIdRef": "#A_mov6_measure22",
+    "start": 38.16297917,
+    "end": 39.9246875,
+    "label": 22,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 223,
+      "uly": 359,
+      "lrx": 665,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure23",
+    "coreIdRef": "#core_mov6_measure23",
+    "sourceIdRef": "#A_mov6_measure23",
+    "start": 39.9246875,
+    "end": 41.57714583,
+    "label": 23,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 561,
+      "uly": 381,
+      "lrx": 876,
+      "lry": 2768
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure24",
+    "coreIdRef": "#core_mov6_measure24",
+    "sourceIdRef": "#A_mov6_measure24",
+    "start": 41.57714583,
+    "end": 43.35360417,
+    "label": 24,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 750,
+      "uly": 359,
+      "lrx": 1098,
+      "lry": 2840
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure25",
+    "coreIdRef": "#core_mov6_measure25",
+    "sourceIdRef": "#A_mov6_measure25",
+    "start": 43.35360417,
+    "end": 45.06216667,
+    "label": 25,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 1012,
+      "uly": 375,
+      "lrx": 1447,
+      "lry": 2774
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure26",
+    "coreIdRef": "#core_mov6_measure26",
+    "sourceIdRef": "#A_mov6_measure26",
+    "start": 45.06216667,
+    "end": 46.821375,
+    "label": 26,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 1295,
+      "uly": 391,
+      "lrx": 1762,
+      "lry": 2800
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure27",
+    "coreIdRef": "#core_mov6_measure27",
+    "sourceIdRef": "#A_mov6_measure27",
+    "start": 46.821375,
+    "end": 48.70720833,
+    "label": 27,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 1674,
+      "uly": 381,
+      "lrx": 1984,
+      "lry": 2737
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure28",
+    "coreIdRef": "#core_mov6_measure28",
+    "sourceIdRef": "#A_mov6_measure28",
+    "start": 48.70720833,
+    "end": 50.41466667,
+    "label": 28,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 1926,
+      "uly": 359,
+      "lrx": 2355,
+      "lry": 2850
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure29",
+    "coreIdRef": "#core_mov6_measure29",
+    "sourceIdRef": "#A_mov6_measure29",
+    "start": 50.41466667,
+    "end": 52.15927083,
+    "label": 29,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 2289,
+      "uly": 365,
+      "lrx": 2752,
+      "lry": 2802
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure30",
+    "coreIdRef": "#core_mov6_measure30",
+    "sourceIdRef": "#A_mov6_measure30",
+    "start": 52.15927083,
+    "end": 54.04233333,
+    "label": 30,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 2676,
+      "uly": 405,
+      "lrx": 2957,
+      "lry": 2703
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure31",
+    "coreIdRef": "#core_mov6_measure31",
+    "sourceIdRef": "#A_mov6_measure31",
+    "start": 54.04233333,
+    "end": 55.6361875,
+    "label": 31,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 2876,
+      "uly": 421,
+      "lrx": 3097,
+      "lry": 2778
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure32",
+    "coreIdRef": "#core_mov6_measure32",
+    "sourceIdRef": "#A_mov6_measure32",
+    "start": 55.6361875,
+    "end": 57.39533333,
+    "label": 32,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 3031,
+      "uly": 355,
+      "lrx": 3430,
+      "lry": 2810
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure33",
+    "coreIdRef": "#core_mov6_measure33",
+    "sourceIdRef": "#A_mov6_measure33",
+    "start": 57.39533333,
+    "end": 59.2536875,
+    "label": 33,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 3344,
+      "uly": 393,
+      "lrx": 3572,
+      "lry": 2788
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure34",
+    "coreIdRef": "#core_mov6_measure34",
+    "sourceIdRef": "#A_mov6_measure34",
+    "start": 59.2536875,
+    "end": 61.03708333,
+    "label": 34,
+    "facsURI": "sources/A/00000102.jpg",
+    "coordinates": {
+      "ulx": 3500,
+      "uly": 383,
+      "lrx": 3931,
+      "lry": 2788
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure35",
+    "coreIdRef": "#core_mov6_measure35",
+    "sourceIdRef": "#A_mov6_measure35",
+    "start": 61.03708333,
+    "end": 62.8616875,
+    "label": 35,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 148,
+      "uly": 413,
+      "lrx": 513,
+      "lry": 2822
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure36",
+    "coreIdRef": "#core_mov6_measure36",
+    "sourceIdRef": "#A_mov6_measure36",
+    "start": 62.8616875,
+    "end": 64.64672917,
+    "label": 36,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 403,
+      "uly": 425,
+      "lrx": 784,
+      "lry": 2808
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure37",
+    "coreIdRef": "#core_mov6_measure37",
+    "sourceIdRef": "#A_mov6_measure37",
+    "start": 64.64672917,
+    "end": 66.37520833,
+    "label": 37,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 637,
+      "uly": 425,
+      "lrx": 980,
+      "lry": 2890
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure38",
+    "coreIdRef": "#core_mov6_measure38",
+    "sourceIdRef": "#A_mov6_measure38",
+    "start": 66.37520833,
+    "end": 68.21291667,
+    "label": 38,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 822,
+      "uly": 435,
+      "lrx": 1175,
+      "lry": 2834
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure39",
+    "coreIdRef": "#core_mov6_measure39",
+    "sourceIdRef": "#A_mov6_measure39",
+    "start": 68.21291667,
+    "end": 70.14822917,
+    "label": 39,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 1028,
+      "uly": 429,
+      "lrx": 1425,
+      "lry": 2888
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure40",
+    "coreIdRef": "#core_mov6_measure40",
+    "sourceIdRef": "#A_mov6_measure40",
+    "start": 70.14822917,
+    "end": 71.90316667,
+    "label": 40,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 1321,
+      "uly": 451,
+      "lrx": 1724,
+      "lry": 2856
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure41",
+    "coreIdRef": "#core_mov6_measure41",
+    "sourceIdRef": "#A_mov6_measure41",
+    "start": 71.90316667,
+    "end": 73.57839583,
+    "label": 41,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 1576,
+      "uly": 413,
+      "lrx": 1990,
+      "lry": 2856
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure42",
+    "coreIdRef": "#core_mov6_measure42",
+    "sourceIdRef": "#A_mov6_measure42",
+    "start": 73.57839583,
+    "end": 75.43054167,
+    "label": 42,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 1876,
+      "uly": 369,
+      "lrx": 2235,
+      "lry": 2838
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure43",
+    "coreIdRef": "#core_mov6_measure43",
+    "sourceIdRef": "#A_mov6_measure43",
+    "start": 75.43054167,
+    "end": 77.20595833,
+    "label": 43,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 2159,
+      "uly": 365,
+      "lrx": 2622,
+      "lry": 2846
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure44",
+    "coreIdRef": "#core_mov6_measure44",
+    "sourceIdRef": "#A_mov6_measure44",
+    "start": 77.20595833,
+    "end": 78.92875,
+    "label": 44,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 2468,
+      "uly": 387,
+      "lrx": 3001,
+      "lry": 2840
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure45",
+    "coreIdRef": "#core_mov6_measure45",
+    "sourceIdRef": "#A_mov6_measure45",
+    "start": 78.92875,
+    "end": 80.79570833,
+    "label": 45,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 2882,
+      "uly": 445,
+      "lrx": 3257,
+      "lry": 2822
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure46",
+    "coreIdRef": "#core_mov6_measure46",
+    "sourceIdRef": "#A_mov6_measure46",
+    "start": 80.79570833,
+    "end": 82.47985417,
+    "label": 46,
+    "facsURI": "sources/A/00000103.jpg",
+    "coordinates": {
+      "ulx": 3121,
+      "uly": 429,
+      "lrx": 3758,
+      "lry": 2828
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure47",
+    "coreIdRef": "#core_mov6_measure47",
+    "sourceIdRef": "#A_mov6_measure47",
+    "start": 82.47985417,
+    "end": 84.2941875,
+    "label": 47,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 208,
+      "uly": 397,
+      "lrx": 746,
+      "lry": 2910
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure48",
+    "coreIdRef": "#core_mov6_measure48",
+    "sourceIdRef": "#A_mov6_measure48",
+    "start": 84.2941875,
+    "end": 86.17658333,
+    "label": 48,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 659,
+      "uly": 375,
+      "lrx": 1024,
+      "lry": 2818
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure49",
+    "coreIdRef": "#core_mov6_measure49",
+    "sourceIdRef": "#A_mov6_measure49",
+    "start": 86.17658333,
+    "end": 87.91933333,
+    "label": 49,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 930,
+      "uly": 369,
+      "lrx": 1409,
+      "lry": 2784
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure50",
+    "coreIdRef": "#core_mov6_measure50",
+    "sourceIdRef": "#A_mov6_measure50",
+    "start": 87.91933333,
+    "end": 89.68941667,
+    "label": 50,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 1283,
+      "uly": 359,
+      "lrx": 1674,
+      "lry": 2802
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure51",
+    "coreIdRef": "#core_mov6_measure51",
+    "sourceIdRef": "#A_mov6_measure51",
+    "start": 89.68941667,
+    "end": 91.44860417,
+    "label": 51,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 1545,
+      "uly": 321,
+      "lrx": 1914,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure52",
+    "coreIdRef": "#core_mov6_measure52",
+    "sourceIdRef": "#A_mov6_measure52",
+    "start": 91.44860417,
+    "end": 93.04245833,
+    "label": 52,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 1794,
+      "uly": 331,
+      "lrx": 2141,
+      "lry": 2818
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure53",
+    "coreIdRef": "#core_mov6_measure53",
+    "sourceIdRef": "#A_mov6_measure53",
+    "start": 93.04245833,
+    "end": 94.80985417,
+    "label": 53,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 1992,
+      "uly": 343,
+      "lrx": 2492,
+      "lry": 2786
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure54",
+    "coreIdRef": "#core_mov6_measure54",
+    "sourceIdRef": "#A_mov6_measure54",
+    "start": 94.80985417,
+    "end": 96.5719375,
+    "label": 54,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 2345,
+      "uly": 359,
+      "lrx": 2748,
+      "lry": 2802
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure55",
+    "coreIdRef": "#core_mov6_measure55",
+    "sourceIdRef": "#A_mov6_measure55",
+    "start": 96.5719375,
+    "end": 98.21625,
+    "label": 55,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 2626,
+      "uly": 343,
+      "lrx": 3029,
+      "lry": 2786
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure56",
+    "coreIdRef": "#core_mov6_measure56",
+    "sourceIdRef": "#A_mov6_measure56",
+    "start": 98.21625,
+    "end": 99.9390625,
+    "label": 56,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 2887,
+      "uly": 369,
+      "lrx": 3295,
+      "lry": 2822
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure57",
+    "coreIdRef": "#core_mov6_measure57",
+    "sourceIdRef": "#A_mov6_measure57",
+    "start": 99.9390625,
+    "end": 101.5254375,
+    "label": 57,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 3127,
+      "uly": 331,
+      "lrx": 3508,
+      "lry": 2834
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure58",
+    "coreIdRef": "#core_mov6_measure58",
+    "sourceIdRef": "#A_mov6_measure58",
+    "start": 101.5254375,
+    "end": 103.25729167,
+    "label": 58,
+    "facsURI": "sources/A/00000104.jpg",
+    "coordinates": {
+      "ulx": 3432,
+      "uly": 365,
+      "lrx": 3807,
+      "lry": 2824
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure59",
+    "coreIdRef": "#core_mov6_measure59",
+    "sourceIdRef": "#A_mov6_measure59",
+    "start": 103.25729167,
+    "end": 104.9919375,
+    "label": 59,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 142,
+      "uly": 359,
+      "lrx": 599,
+      "lry": 2806
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure60",
+    "coreIdRef": "#core_mov6_measure60",
+    "sourceIdRef": "#A_mov6_measure60",
+    "start": 104.9919375,
+    "end": 106.548,
+    "label": 60,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 485,
+      "uly": 365,
+      "lrx": 828,
+      "lry": 2808
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure61",
+    "coreIdRef": "#core_mov6_measure61",
+    "sourceIdRef": "#A_mov6_measure61",
+    "start": 106.548,
+    "end": 108.25466667,
+    "label": 61,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 718,
+      "uly": 337,
+      "lrx": 1137,
+      "lry": 2828
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure62",
+    "coreIdRef": "#core_mov6_measure62",
+    "sourceIdRef": "#A_mov6_measure62",
+    "start": 108.25466667,
+    "end": 109.97589583,
+    "label": 62,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 1006,
+      "uly": 337,
+      "lrx": 1375,
+      "lry": 2806
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure63",
+    "coreIdRef": "#core_mov6_measure63",
+    "sourceIdRef": "#A_mov6_measure63",
+    "start": 109.97589583,
+    "end": 111.72166667,
+    "label": 63,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 1251,
+      "uly": 337,
+      "lrx": 1578,
+      "lry": 2802
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure64",
+    "coreIdRef": "#core_mov6_measure64",
+    "sourceIdRef": "#A_mov6_measure64",
+    "start": 111.72166667,
+    "end": 113.45225,
+    "label": 64,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 1485,
+      "uly": 337,
+      "lrx": 1828,
+      "lry": 2840
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure65",
+    "coreIdRef": "#core_mov6_measure65",
+    "sourceIdRef": "#A_mov6_measure65",
+    "start": 113.45225,
+    "end": 115.19779167,
+    "label": 65,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 1746,
+      "uly": 327,
+      "lrx": 2033,
+      "lry": 2780
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure66",
+    "coreIdRef": "#core_mov6_measure66",
+    "sourceIdRef": "#A_mov6_measure66",
+    "start": 115.19779167,
+    "end": 116.9511875,
+    "label": 66,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 1970,
+      "uly": 381,
+      "lrx": 2231,
+      "lry": 2758
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure67",
+    "coreIdRef": "#core_mov6_measure67",
+    "sourceIdRef": "#A_mov6_measure67",
+    "start": 116.9511875,
+    "end": 118.67564583,
+    "label": 67,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 2149,
+      "uly": 375,
+      "lrx": 2437,
+      "lry": 2806
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure68",
+    "coreIdRef": "#core_mov6_measure68",
+    "sourceIdRef": "#A_mov6_measure68",
+    "start": 118.67564583,
+    "end": 120.4735625,
+    "label": 68,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 2317,
+      "uly": 369,
+      "lrx": 2626,
+      "lry": 2812
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure69",
+    "coreIdRef": "#core_mov6_measure69",
+    "sourceIdRef": "#A_mov6_measure69",
+    "start": 120.4735625,
+    "end": 122.2490625,
+    "label": 69,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 2546,
+      "uly": 381,
+      "lrx": 2830,
+      "lry": 2840
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure70",
+    "coreIdRef": "#core_mov6_measure70",
+    "sourceIdRef": "#A_mov6_measure70",
+    "start": 122.2490625,
+    "end": 123.91972917,
+    "label": 70,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 2742,
+      "uly": 369,
+      "lrx": 3013,
+      "lry": 2822
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure71",
+    "coreIdRef": "#core_mov6_measure71",
+    "sourceIdRef": "#A_mov6_measure71",
+    "start": 123.91972917,
+    "end": 125.70466667,
+    "label": 71,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 2921,
+      "uly": 353,
+      "lrx": 3243,
+      "lry": 2844
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure72",
+    "coreIdRef": "#core_mov6_measure72",
+    "sourceIdRef": "#A_mov6_measure72",
+    "start": 125.70466667,
+    "end": 127.531375,
+    "label": 72,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 3165,
+      "uly": 387,
+      "lrx": 3398,
+      "lry": 2890
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure73",
+    "coreIdRef": "#core_mov6_measure73",
+    "sourceIdRef": "#A_mov6_measure73",
+    "start": 127.531375,
+    "end": 129.12364583,
+    "label": 73,
+    "facsURI": "sources/A/00000105.jpg",
+    "coordinates": {
+      "ulx": 3356,
+      "uly": 381,
+      "lrx": 3744,
+      "lry": 2828
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure74",
+    "coreIdRef": "#core_mov6_measure74",
+    "sourceIdRef": "#A_mov6_measure74",
+    "start": 129.12364583,
+    "end": 130.84097917,
+    "label": 74,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 208,
+      "uly": 343,
+      "lrx": 665,
+      "lry": 2818
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure75",
+    "coreIdRef": "#core_mov6_measure75",
+    "sourceIdRef": "#A_mov6_measure75",
+    "start": 130.84097917,
+    "end": 132.5758125,
+    "label": 75,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 533,
+      "uly": 337,
+      "lrx": 940,
+      "lry": 2828
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure76",
+    "coreIdRef": "#core_mov6_measure76",
+    "sourceIdRef": "#A_mov6_measure76",
+    "start": 132.5758125,
+    "end": 134.261125,
+    "label": 76,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 848,
+      "uly": 190,
+      "lrx": 1185,
+      "lry": 2778
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure77",
+    "coreIdRef": "#core_mov6_measure77",
+    "sourceIdRef": "#A_mov6_measure77",
+    "start": 134.261125,
+    "end": 135.92147917,
+    "label": 77,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 1082,
+      "uly": 224,
+      "lrx": 1626,
+      "lry": 2824
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure78",
+    "coreIdRef": "#core_mov6_measure78",
+    "sourceIdRef": "#A_mov6_measure78",
+    "start": 135.92147917,
+    "end": 137.58475,
+    "label": 78,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 1507,
+      "uly": 234,
+      "lrx": 1970,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure79",
+    "coreIdRef": "#core_mov6_measure79",
+    "sourceIdRef": "#A_mov6_measure79",
+    "start": 137.58475,
+    "end": 139.29722917,
+    "label": 79,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 1872,
+      "uly": 321,
+      "lrx": 2377,
+      "lry": 2786
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure80",
+    "coreIdRef": "#core_mov6_measure80",
+    "sourceIdRef": "#A_mov6_measure80",
+    "start": 139.29722917,
+    "end": 141.1055,
+    "label": 80,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 2263,
+      "uly": 321,
+      "lrx": 2720,
+      "lry": 2758
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure81",
+    "coreIdRef": "#core_mov6_measure81",
+    "sourceIdRef": "#A_mov6_measure81",
+    "start": 141.1055,
+    "end": 142.82033333,
+    "label": 81,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 2600,
+      "uly": 331,
+      "lrx": 3051,
+      "lry": 2904
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure82",
+    "coreIdRef": "#core_mov6_measure82",
+    "sourceIdRef": "#A_mov6_measure82",
+    "start": 142.82033333,
+    "end": 144.60304167,
+    "label": 82,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 2953,
+      "uly": 365,
+      "lrx": 3514,
+      "lry": 2818
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure83",
+    "coreIdRef": "#core_mov6_measure83",
+    "sourceIdRef": "#A_mov6_measure83",
+    "start": 144.60304167,
+    "end": 146.4258125,
+    "label": 83,
+    "facsURI": "sources/A/00000106.jpg",
+    "coordinates": {
+      "ulx": 3398,
+      "uly": 327,
+      "lrx": 3789,
+      "lry": 2802
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure84",
+    "coreIdRef": "#core_mov6_measure84",
+    "sourceIdRef": "#A_mov6_measure84",
+    "start": 146.4258125,
+    "end": 148.275625,
+    "label": 84,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 158,
+      "uly": 315,
+      "lrx": 706,
+      "lry": 2828
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure85",
+    "coreIdRef": "#core_mov6_measure85",
+    "sourceIdRef": "#A_mov6_measure85",
+    "start": 148.275625,
+    "end": 150.12120833,
+    "label": 85,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 647,
+      "uly": 347,
+      "lrx": 1000,
+      "lry": 2784
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure86",
+    "coreIdRef": "#core_mov6_measure86",
+    "sourceIdRef": "#A_mov6_measure86",
+    "start": 150.12120833,
+    "end": 151.9279375,
+    "label": 86,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 898,
+      "uly": 353,
+      "lrx": 1443,
+      "lry": 2790
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure87",
+    "coreIdRef": "#core_mov6_measure87",
+    "sourceIdRef": "#A_mov6_measure87",
+    "start": 151.9279375,
+    "end": 153.68747917,
+    "label": 87,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 1321,
+      "uly": 347,
+      "lrx": 1980,
+      "lry": 2834
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure88",
+    "coreIdRef": "#core_mov6_measure88",
+    "sourceIdRef": "#A_mov6_measure88",
+    "start": 153.68747917,
+    "end": 155.51708333,
+    "label": 88,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 1822,
+      "uly": 381,
+      "lrx": 2377,
+      "lry": 2812
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure89",
+    "coreIdRef": "#core_mov6_measure89",
+    "sourceIdRef": "#A_mov6_measure89",
+    "start": 155.51708333,
+    "end": 157.2706875,
+    "label": 89,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 2257,
+      "uly": 381,
+      "lrx": 2887,
+      "lry": 2828
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure90",
+    "coreIdRef": "#core_mov6_measure90",
+    "sourceIdRef": "#A_mov6_measure90",
+    "start": 157.2706875,
+    "end": 159.1673125,
+    "label": 90,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 2724,
+      "uly": 387,
+      "lrx": 3332,
+      "lry": 2912
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure91",
+    "coreIdRef": "#core_mov6_measure91",
+    "sourceIdRef": "#A_mov6_measure91",
+    "start": 159.1673125,
+    "end": 160.9968125,
+    "label": 91,
+    "facsURI": "sources/A/00000107.jpg",
+    "coordinates": {
+      "ulx": 3215,
+      "uly": 397,
+      "lrx": 3694,
+      "lry": 2812
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure92",
+    "coreIdRef": "#core_mov6_measure92",
+    "sourceIdRef": "#A_mov6_measure92",
+    "start": 160.9968125,
+    "end": 162.8088125,
+    "label": 92,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 245,
+      "uly": 365,
+      "lrx": 756,
+      "lry": 2812
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure93",
+    "coreIdRef": "#core_mov6_measure93",
+    "sourceIdRef": "#A_mov6_measure93",
+    "start": 162.8088125,
+    "end": 164.5919375,
+    "label": 93,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 615,
+      "uly": 375,
+      "lrx": 1066,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure94",
+    "coreIdRef": "#core_mov6_measure94",
+    "sourceIdRef": "#A_mov6_measure94",
+    "start": 164.5919375,
+    "end": 166.45233333,
+    "label": 94,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 946,
+      "uly": 375,
+      "lrx": 1545,
+      "lry": 2780
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure95",
+    "coreIdRef": "#core_mov6_measure95",
+    "sourceIdRef": "#A_mov6_measure95",
+    "start": 166.45233333,
+    "end": 168.1918125,
+    "label": 95,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 1431,
+      "uly": 365,
+      "lrx": 2073,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure96",
+    "coreIdRef": "#core_mov6_measure96",
+    "sourceIdRef": "#A_mov6_measure96",
+    "start": 168.1918125,
+    "end": 170.11283333,
+    "label": 96,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 1964,
+      "uly": 343,
+      "lrx": 2534,
+      "lry": 2812
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure97",
+    "coreIdRef": "#core_mov6_measure97",
+    "sourceIdRef": "#A_mov6_measure97",
+    "start": 170.11283333,
+    "end": 171.89385417,
+    "label": 97,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 2387,
+      "uly": 321,
+      "lrx": 2746,
+      "lry": 2774
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure98",
+    "coreIdRef": "#core_mov6_measure98",
+    "sourceIdRef": "#A_mov6_measure98",
+    "start": 171.89385417,
+    "end": 173.73814583,
+    "label": 98,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 2616,
+      "uly": 337,
+      "lrx": 3067,
+      "lry": 2790
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure99",
+    "coreIdRef": "#core_mov6_measure99",
+    "sourceIdRef": "#A_mov6_measure99",
+    "start": 173.73814583,
+    "end": 175.50589583,
+    "label": 99,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 2963,
+      "uly": 375,
+      "lrx": 3442,
+      "lry": 2818
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure100",
+    "coreIdRef": "#core_mov6_measure100",
+    "sourceIdRef": "#A_mov6_measure100",
+    "start": 175.50589583,
+    "end": 177.36602083,
+    "label": 100,
+    "facsURI": "sources/A/00000108.jpg",
+    "coordinates": {
+      "ulx": 3350,
+      "uly": 353,
+      "lrx": 3855,
+      "lry": 2774
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure101",
+    "coreIdRef": "#core_mov6_measure101",
+    "sourceIdRef": "#A_mov6_measure101",
+    "start": 177.36602083,
+    "end": 179.31152083,
+    "label": 101,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 126,
+      "uly": 321,
+      "lrx": 473,
+      "lry": 2868
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure102",
+    "coreIdRef": "#core_mov6_measure102",
+    "sourceIdRef": "#A_mov6_measure102",
+    "start": 179.31152083,
+    "end": 181.30897917,
+    "label": 102,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 387,
+      "uly": 331,
+      "lrx": 680,
+      "lry": 2894
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure103",
+    "coreIdRef": "#core_mov6_measure103",
+    "sourceIdRef": "#A_mov6_measure103",
+    "start": 181.30897917,
+    "end": 183.19104167,
+    "label": 103,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 593,
+      "uly": 375,
+      "lrx": 962,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure104",
+    "coreIdRef": "#core_mov6_measure104",
+    "sourceIdRef": "#A_mov6_measure104",
+    "start": 183.19104167,
+    "end": 184.96804167,
+    "label": 104,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 876,
+      "uly": 321,
+      "lrx": 1185,
+      "lry": 2786
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure105",
+    "coreIdRef": "#core_mov6_measure105",
+    "sourceIdRef": "#A_mov6_measure105",
+    "start": 184.96804167,
+    "end": 186.77397917,
+    "label": 105,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 1100,
+      "uly": 234,
+      "lrx": 1415,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure106",
+    "coreIdRef": "#core_mov6_measure106",
+    "sourceIdRef": "#A_mov6_measure106",
+    "start": 186.77397917,
+    "end": 188.6783125,
+    "label": 106,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 1311,
+      "uly": 224,
+      "lrx": 1816,
+      "lry": 2840
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure107",
+    "coreIdRef": "#core_mov6_measure107",
+    "sourceIdRef": "#A_mov6_measure107",
+    "start": 188.6783125,
+    "end": 190.46197917,
+    "label": 107,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 1686,
+      "uly": 246,
+      "lrx": 2159,
+      "lry": 2786
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure108",
+    "coreIdRef": "#core_mov6_measure108",
+    "sourceIdRef": "#A_mov6_measure108",
+    "start": 190.46197917,
+    "end": 192.33025,
+    "label": 108,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 1980,
+      "uly": 299,
+      "lrx": 2714,
+      "lry": 2818
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure109",
+    "coreIdRef": "#core_mov6_measure109",
+    "sourceIdRef": "#A_mov6_measure109",
+    "start": 192.33025,
+    "end": 194.2049375,
+    "label": 109,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 2584,
+      "uly": 353,
+      "lrx": 3259,
+      "lry": 2790
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure110",
+    "coreIdRef": "#core_mov6_measure110",
+    "sourceIdRef": "#A_mov6_measure110",
+    "start": 194.2049375,
+    "end": 196.14141667,
+    "label": 110,
+    "facsURI": "sources/A/00000109.jpg",
+    "coordinates": {
+      "ulx": 3121,
+      "uly": 353,
+      "lrx": 3708,
+      "lry": 2806
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure111",
+    "coreIdRef": "#core_mov6_measure111",
+    "sourceIdRef": "#A_mov6_measure111",
+    "start": 196.14141667,
+    "end": 198.136875,
+    "label": 111,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 235,
+      "uly": 309,
+      "lrx": 601,
+      "lry": 2814
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure112",
+    "coreIdRef": "#core_mov6_measure112",
+    "sourceIdRef": "#A_mov6_measure112",
+    "start": 198.136875,
+    "end": 200.013125,
+    "label": 112,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 459,
+      "uly": 389,
+      "lrx": 994,
+      "lry": 2790
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure113",
+    "coreIdRef": "#core_mov6_measure113",
+    "sourceIdRef": "#A_mov6_measure113",
+    "start": 200.013125,
+    "end": 201.87091667,
+    "label": 113,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 854,
+      "uly": 395,
+      "lrx": 1469,
+      "lry": 2756
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure114",
+    "coreIdRef": "#core_mov6_measure114",
+    "sourceIdRef": "#A_mov6_measure114",
+    "start": 201.87091667,
+    "end": 203.80725,
+    "label": 114,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 1297,
+      "uly": 375,
+      "lrx": 1866,
+      "lry": 2770
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure115",
+    "coreIdRef": "#core_mov6_measure115",
+    "sourceIdRef": "#A_mov6_measure115",
+    "start": 203.80725,
+    "end": 205.78860417,
+    "label": 115,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 1736,
+      "uly": 385,
+      "lrx": 2245,
+      "lry": 2816
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure116",
+    "coreIdRef": "#core_mov6_measure116",
+    "sourceIdRef": "#A_mov6_measure116",
+    "start": 205.78860417,
+    "end": 207.7014375,
+    "label": 116,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 2111,
+      "uly": 375,
+      "lrx": 2676,
+      "lry": 2786
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure117",
+    "coreIdRef": "#core_mov6_measure117",
+    "sourceIdRef": "#A_mov6_measure117",
+    "start": 207.7014375,
+    "end": 209.73654167,
+    "label": 117,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 2554,
+      "uly": 375,
+      "lrx": 2929,
+      "lry": 2826
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure118",
+    "coreIdRef": "#core_mov6_measure118",
+    "sourceIdRef": "#A_mov6_measure118",
+    "start": 209.73654167,
+    "end": 211.51879167,
+    "label": 118,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 2810,
+      "uly": 405,
+      "lrx": 3328,
+      "lry": 2790
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure119",
+    "coreIdRef": "#core_mov6_measure119",
+    "sourceIdRef": "#A_mov6_measure119",
+    "start": 211.51879167,
+    "end": 213.3805625,
+    "label": 119,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 3233,
+      "uly": 385,
+      "lrx": 3522,
+      "lry": 2800
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure120",
+    "coreIdRef": "#core_mov6_measure120",
+    "sourceIdRef": "#A_mov6_measure120",
+    "start": 213.3805625,
+    "end": 215.252875,
+    "label": 120,
+    "facsURI": "sources/A/00000110.jpg",
+    "coordinates": {
+      "ulx": 3448,
+      "uly": 439,
+      "lrx": 3977,
+      "lry": 2844
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure121",
+    "coreIdRef": "#core_mov6_measure121",
+    "sourceIdRef": "#A_mov6_measure121",
+    "start": 215.252875,
+    "end": 217.107,
+    "label": 121,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 66,
+      "uly": 331,
+      "lrx": 627,
+      "lry": 2860
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure122",
+    "coreIdRef": "#core_mov6_measure122",
+    "sourceIdRef": "#A_mov6_measure122",
+    "start": 217.107,
+    "end": 218.9574375,
+    "label": 122,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 479,
+      "uly": 315,
+      "lrx": 1104,
+      "lry": 2774
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure123",
+    "coreIdRef": "#core_mov6_measure123",
+    "sourceIdRef": "#A_mov6_measure123",
+    "start": 218.9574375,
+    "end": 221.0678125,
+    "label": 123,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 974,
+      "uly": 327,
+      "lrx": 1425,
+      "lry": 2770
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure124",
+    "coreIdRef": "#core_mov6_measure124",
+    "sourceIdRef": "#A_mov6_measure124",
+    "start": 221.0678125,
+    "end": 222.776375,
+    "label": 124,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 1321,
+      "uly": 255,
+      "lrx": 1734,
+      "lry": 2796
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure125",
+    "coreIdRef": "#core_mov6_measure125",
+    "sourceIdRef": "#A_mov6_measure125",
+    "start": 222.776375,
+    "end": 224.68070833,
+    "label": 125,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 1626,
+      "uly": 315,
+      "lrx": 2055,
+      "lry": 2774
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure126",
+    "coreIdRef": "#core_mov6_measure126",
+    "sourceIdRef": "#A_mov6_measure126",
+    "start": 224.68070833,
+    "end": 226.66175,
+    "label": 126,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 1980,
+      "uly": 347,
+      "lrx": 2409,
+      "lry": 2741
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure127",
+    "coreIdRef": "#core_mov6_measure127",
+    "sourceIdRef": "#A_mov6_measure127",
+    "start": 226.66175,
+    "end": 228.63770833,
+    "label": 127,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 2327,
+      "uly": 331,
+      "lrx": 2674,
+      "lry": 2774
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure128",
+    "coreIdRef": "#core_mov6_measure128",
+    "sourceIdRef": "#A_mov6_measure128",
+    "start": 228.63770833,
+    "end": 230.65677083,
+    "label": 128,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 2572,
+      "uly": 337,
+      "lrx": 2925,
+      "lry": 2790
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure129",
+    "coreIdRef": "#core_mov6_measure129",
+    "sourceIdRef": "#A_mov6_measure129",
+    "start": 230.65677083,
+    "end": 232.47014583,
+    "label": 129,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 2862,
+      "uly": 359,
+      "lrx": 3231,
+      "lry": 2866
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure130",
+    "coreIdRef": "#core_mov6_measure130",
+    "sourceIdRef": "#A_mov6_measure130",
+    "start": 232.47014583,
+    "end": 234.32395833,
+    "label": 130,
+    "facsURI": "sources/A/00000111.jpg",
+    "coordinates": {
+      "ulx": 3127,
+      "uly": 365,
+      "lrx": 3801,
+      "lry": 2802
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure131",
+    "coreIdRef": "#core_mov6_measure131",
+    "sourceIdRef": "#A_mov6_measure131",
+    "start": 234.32395833,
+    "end": 236.3195,
+    "label": 131,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 229,
+      "uly": 349,
+      "lrx": 649,
+      "lry": 2850
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure132",
+    "coreIdRef": "#core_mov6_measure132",
+    "sourceIdRef": "#A_mov6_measure132",
+    "start": 236.3195,
+    "end": 238.1335,
+    "label": 132,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 545,
+      "uly": 339,
+      "lrx": 900,
+      "lry": 2770
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure133",
+    "coreIdRef": "#core_mov6_measure133",
+    "sourceIdRef": "#A_mov6_measure133",
+    "start": 238.1335,
+    "end": 240.00170833,
+    "label": 133,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 784,
+      "uly": 359,
+      "lrx": 1209,
+      "lry": 2760
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure134",
+    "coreIdRef": "#core_mov6_measure134",
+    "sourceIdRef": "#A_mov6_measure134",
+    "start": 240.00170833,
+    "end": 241.9064375,
+    "label": 134,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 1044,
+      "uly": 349,
+      "lrx": 1568,
+      "lry": 2770
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure135",
+    "coreIdRef": "#core_mov6_measure135",
+    "sourceIdRef": "#A_mov6_measure135",
+    "start": 241.9064375,
+    "end": 243.91016667,
+    "label": 135,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 1423,
+      "uly": 349,
+      "lrx": 1878,
+      "lry": 2760
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure136",
+    "coreIdRef": "#core_mov6_measure136",
+    "sourceIdRef": "#A_mov6_measure136",
+    "start": 243.91016667,
+    "end": 245.76275,
+    "label": 136,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 1752,
+      "uly": 355,
+      "lrx": 2161,
+      "lry": 2776
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure137",
+    "coreIdRef": "#core_mov6_measure137",
+    "sourceIdRef": "#A_mov6_measure137",
+    "start": 245.76275,
+    "end": 247.560625,
+    "label": 137,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 2055,
+      "uly": 309,
+      "lrx": 2484,
+      "lry": 2711
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure138",
+    "coreIdRef": "#core_mov6_measure138",
+    "sourceIdRef": "#A_mov6_measure138",
+    "start": 247.560625,
+    "end": 249.322,
+    "label": 138,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 2381,
+      "uly": 339,
+      "lrx": 2780,
+      "lry": 2735
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure139",
+    "coreIdRef": "#core_mov6_measure139",
+    "sourceIdRef": "#A_mov6_measure139",
+    "start": 249.322,
+    "end": 251.237625,
+    "label": 139,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 2654,
+      "uly": 339,
+      "lrx": 3079,
+      "lry": 2741
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure140",
+    "coreIdRef": "#core_mov6_measure140",
+    "sourceIdRef": "#A_mov6_measure140",
+    "start": 251.237625,
+    "end": 253.19975,
+    "label": 140,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 2953,
+      "uly": 355,
+      "lrx": 3378,
+      "lry": 2701
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure141",
+    "coreIdRef": "#core_mov6_measure141",
+    "sourceIdRef": "#A_mov6_measure141",
+    "start": 253.19975,
+    "end": 255.013125,
+    "label": 141,
+    "facsURI": "sources/A/00000112.jpg",
+    "coordinates": {
+      "ulx": 3283,
+      "uly": 309,
+      "lrx": 3867,
+      "lry": 2764
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure142",
+    "coreIdRef": "#core_mov6_measure142",
+    "sourceIdRef": "#A_mov6_measure142",
+    "start": 255.013125,
+    "end": 256.98235417,
+    "label": 142,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 66,
+      "uly": 309,
+      "lrx": 523,
+      "lry": 2844
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure143",
+    "coreIdRef": "#core_mov6_measure143",
+    "sourceIdRef": "#A_mov6_measure143",
+    "start": 256.98235417,
+    "end": 258.7423125,
+    "label": 143,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 387,
+      "uly": 305,
+      "lrx": 828,
+      "lry": 2780
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure144",
+    "coreIdRef": "#core_mov6_measure144",
+    "sourceIdRef": "#A_mov6_measure144",
+    "start": 258.7423125,
+    "end": 260.7369375,
+    "label": 144,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 696,
+      "uly": 347,
+      "lrx": 1094,
+      "lry": 2816
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure145",
+    "coreIdRef": "#core_mov6_measure145",
+    "sourceIdRef": "#A_mov6_measure145",
+    "start": 260.7369375,
+    "end": 262.48175,
+    "label": 145,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 990,
+      "uly": 321,
+      "lrx": 1409,
+      "lry": 2802
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure146",
+    "coreIdRef": "#core_mov6_measure146",
+    "sourceIdRef": "#A_mov6_measure146",
+    "start": 262.48175,
+    "end": 264.24954167,
+    "label": 146,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 1327,
+      "uly": 321,
+      "lrx": 1696,
+      "lry": 2824
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure147",
+    "coreIdRef": "#core_mov6_measure147",
+    "sourceIdRef": "#A_mov6_measure147",
+    "start": 264.24954167,
+    "end": 266.17022917,
+    "label": 147,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 1632,
+      "uly": 343,
+      "lrx": 2061,
+      "lry": 2824
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure148",
+    "coreIdRef": "#core_mov6_measure148",
+    "sourceIdRef": "#A_mov6_measure148",
+    "start": 266.17022917,
+    "end": 268.16958333,
+    "label": 148,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 1958,
+      "uly": 343,
+      "lrx": 2349,
+      "lry": 2824
+    }
+  },
+  {
+    "recordingIdRef": "#Bloemeke2013_mov6_measure149",
+    "coreIdRef": "#core_mov6_measure149",
+    "sourceIdRef": "#A_mov6_measure149",
+    "start": 268.16958333,
+    "end": 272.08533333,
+    "label": 149,
+    "facsURI": "sources/A/00000113.jpg",
+    "coordinates": {
+      "ulx": 2269,
+      "uly": 359,
+      "lrx": 2732,
+      "lry": 2796
+    }
+  }
+]}
