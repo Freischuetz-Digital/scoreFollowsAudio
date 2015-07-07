@@ -225,7 +225,7 @@ function getMeasure(time){
   //set measure count to new value
   $("#measureCount").text(measureCount);
   //set measure position to new value
-  //$("#measurePosition").text(measurePosition.toFixed(3));
+  $("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
   $("#measureID").text(measureID);
   
