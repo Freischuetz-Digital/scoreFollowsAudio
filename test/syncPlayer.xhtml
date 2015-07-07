@@ -186,10 +186,11 @@
         <div id="audioDiv" class="span3">
           <h1>Audio</h1>
           <div>
+            <header>Audio:</header>
+            time: <div id="currentTime"></div>
             <header>Measure:</header>
             count: <div id="measureCount"></div>
-			position: <div id="measurePosition"></div>
-            time: <div id="currentTime"></div>
+            position: <div id="measurePosition"></div>
             id: <div id="measureID"></div>
           </div>
           <audio id="track" controls="controls">
@@ -315,15 +316,15 @@
 
         //TODO format time
         measure = getMeasure(time);
+        console.log(measure);
           
         if ( (measure !== undefined)  && (measure !== currentMeasure) )  {
-          console.log('measure undefined');
           d3.selectAll(".highlight").remove();
           currentMeasure = measure;
             
           //interpolateTimestamps(time);
               
-          page = vrvToolkit.getPageWithElement( currentMeasure );
+          page = vrvToolkit.getPageWithElement( currentMeasure.substring(currentMeasure.indexOf('#')+1) );
           if ( (page > 0) && (page != currentPage) ) {
               currentPage = page;
               leftBarLine = -1;
@@ -331,11 +332,11 @@
               var svg = vrvToolkit.renderPage( Number(currentPage), "" );
               $("#output").html(svg);
           }
-          console.log ("#" + currentMeasure );
+          console.log ( currentMeasure );
               
               // Highligt the bounding boxes
-              var measureElement = d3.select( "#" + currentMeasure );
-              var barLineElement = d3.select( "#" + currentMeasure + " .barLine" );
+              var measureElement = d3.select( currentMeasure );
+              var barLineElement = d3.select( currentMeasure + " .barLine" );
               var systemElement = measureElement.select(function() { return this.parentNode; });
                 var measureBB = measureElement[0][0].getBBox();
               var barLineBB = barLineElement[0][0].getBBox();
