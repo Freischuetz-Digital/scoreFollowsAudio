@@ -68,14 +68,14 @@
         
         <xsl:result-document href="{$targetPath}/../mei/{$fileName}_mei.xml">
             
-            <mei meiversion="2013">
+          <mei meiversion="2013" xmlns="http://www.music-encoding.org/ns/mei">
                 <meiHead>
                     <fileDesc>
                         <titleStmt>
-                            <title><xsl:value-of select="$workTitle"/></title>
-                            <respStmt>
+                          <title><xsl:value-of select="$fileRecording"/></title>
+                            <!--<respStmt>
                                 <persName role="cmp"><xsl:value-of select="$fileComp"/></persName>
-                            </respStmt>
+                            </respStmt>-->
                         </titleStmt>
                         <pubStmt/> 
                         <sourceDesc>
@@ -98,7 +98,7 @@
                         </change>
                         <change n="2">
                             <respStmt>
-                                <persName nymref="#smJK"/>
+                                <persName nymref="#smBWB"/>
                             </respStmt>
                             <changeDesc>
                                 <p>Plain file converted to MEI using audioClips2mei.xsl.</p>
@@ -120,7 +120,7 @@
                                                 <xsl:attribute name="type" select="'beat'"/>
                                             </xsl:when>
                                             <xsl:otherwise>
-                                                <xsl:attribute name="startid" select="concat('#rec',$fileRecording,'_mov',replace($moveNo,'0',''),'_measure',@measure)"/>
+                                                <xsl:attribute name="startid" select="concat('#',$fileRecording,'_mov',replace($moveNo,'0',''),'_measure',@measure)"/>
                                                 <xsl:attribute name="type" select="'measure'"/>
                                             </xsl:otherwise>
                                         </xsl:choose>
@@ -131,13 +131,13 @@
                         </recording>
                     </performance>
                     <body>
-                        <mdiv xml:id="{concat('rec',$fileRecording,'_mov',replace($moveNo,'0',''))}">
+                        <mdiv xml:id="{concat($fileRecording,'_mov',replace($moveNo,'0',''))}">
                             <score>
                                 <section>
                                     <xsl:for-each select="$prepFile//line">
                                         <xsl:variable name="pos" select="position()" as="xs:integer"/>
                                         
-                                        <measure xml:id="{concat('rec',$fileRecording,'_mov',replace($moveNo,'0',''),'_measure',@measure)}" sameas="{concat('../core.xml#core_mov',replace($moveNo,'0',''),'_measure',@measure)}"/>
+                                        <measure xml:id="{concat($fileRecording,'_mov',replace($moveNo,'0',''),'_measure',@measure)}" sameas="{concat('../core.xml#core_mov',replace($moveNo,'0',''),'_measure',@measure)}"/>
                                     </xsl:for-each>
                                 </section>
                             </score>
