@@ -33,9 +33,9 @@ declare namespace mei="http://www.music-encoding.org/ns/mei";
 
 declare option exist:serialize "method=json media-type=text/javascript";
 
-declare variable $musicSource := doc('file:///C:\Users\bwb\Desktop\temp\SVN_FreiDi_Release_0.8.0\Release 0.8.0\musicSources\freidi-musicSource_A.xml');
+declare variable $musicSource := doc('data/freidi-musicSource_A.xml');
 (:declare variable $clips2json := for $avFile in //avFile return :)
-declare variable $recording := doc('file:///C:\Users\bwb\Documents\GitHub\FreiDi\scoreFollowWebDemo\data\xslt\recordingPrep\mei\Weber_Freischuetz-06_Bloemeke2013_annoMeasures.txt_mei.xml');
+declare variable $recording := doc('data/Weber_Freischuetz-06_Bloemeke2013_annoMeasures.txt_mei.xml');
 (:xqjson:serialize-json(<json type="array">{$clips2json}</json>):)
 
 element json {
