@@ -45,8 +45,8 @@
     <link rel="shortcut icon" href="http://www.freischuetz-digital.de/pix/freidi_favicon.png"/>
     
     <script type="text/javascript" src="../dist/bower.js"/>
-    <script type="text/javascript" src="../dist/FreiDi-scoreFollowsAudio.min.js"/>
-    </head>
+    <script type="text/javascript" src="../src/FreiDi-scoreFollowsAudio.js"/>
+  </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="30"><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -115,14 +115,16 @@
           <h1>Audio</h1>
             
           <div>
+            <header>Audio:</header>
+            time: <div id="currentTime"></div>
             <header>Measure:</header>
             count: <div id="measureCount"></div>
-            time: <div id="currentTime"></div>
+            position: <div id="measurePosition"></div>
             id: <div id="measureID"></div>
           </div>
             
           <audio id="track" controls="controls">
-            <source src="../Weber_Freischuetz-06_FreiDi.mp3" type="audio/mpeg" style="width:100px; height:10px;"/>
+            <source src="../Weber_Freischuetz-06_Bloemeke2013.wav" type="audio/wav" style="width:100px; height:10px;"/>
             Your browser does not support the HTML5 audio element.
           </audio>
         </div>
@@ -133,9 +135,52 @@
         var currentImageUri = 'sources/A/00000100.jpg';
         //declare variable json
         var json;
+        var json2; 
+		    var json3;
+        var mat_startTimes = [];
+
         //get JSON and assign response to var json and log data
-        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
+          json = data;
+          console.log(data);
+          mat_startTimes[audioNum] = data;
+          var measureStarts = [];
+          var measureLabels = [];
+          $.each(data.measure, function(index, item){
+            measureStarts.push(data.measure[index].start);
+            measureLabels.push( item.label);
+          });
+          mat_startTimes[audioNum] = measureStarts;
+          measures[audioNum] = measureLabels;
+        }, 'json');
         
+        //get JSON and assign response to var json and log data
+		
+      /*  $.getJSON('../Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
+          json = data; console.log(data);
+          source1 = [];
+		      measure1 = [];
+          $.each(data.measure, function(index, item){
+            source1.push(data.measure[index].start);
+			      measure1.push(data.measure[index].label);
+          })
+          measures = measure1;
+          mat_startTimes.push(source1);
+
+        }, 'json2');
+        $.getJSON('../Weber_Freischuetz-06_Ackermann1951_annoMeasures.json', function(data){
+          json2 = data;
+          console.log(data);
+          source2 = [];
+          $.each(data.measure, function(index, item){
+              source2.push(data.measure[index].start);
+           })
+           
+           mat_startTimes.push(source2);
+
+        }, 'json3 ');*/
+        
+        var audioNum = 0;
         //bind function to timeupdate of audio element
         $("#track").bind('timeupdate', function() {
           var time = this.currentTime;

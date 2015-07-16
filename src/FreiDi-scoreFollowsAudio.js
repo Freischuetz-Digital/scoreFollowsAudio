@@ -35,9 +35,159 @@ function appendAudio() {
   document.getElementById("audioDiv").appendChild(audio);
   console.log('audio appended');
 };
+
 /*
+ * global variables
+ */
+ 
+var globalTime = 0;
+var currentPage = 1;
+var currentMeasure = undefined;
+var leftBarLine = -1;
+//set currentImage to default value
+var currentImageUri = 'sources/A/00000100.jpg';
+//declare variable json
+
+var mat_startTimes = [];
+var measures = [];
+
+ /*
  * used functions
  */
+
+function switchAudio(url, currentTime, newAudioID){
+  console.log('switch audio');
+  console.log(newAudioID);
+  console.log(url);
+  console.log('Old time ' + currentTime);
+  
+  var audio = $('#track');
+  audio.attr('src', '/' + url);
+  var newTime = Number(everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]);
+  audio[0].currentTime = newTime.toFixed(4); 
+  audio.bind('canplay', function() {
+   // console.log('New time '  + audio[0].currentTime);
+   audio[0].play();
+   audioNum = newAudioID;
+   }); 
+};
+
+function createSourceButtons(comparisonKey){
+  $.getJSON('../sources.json', function(data){sources = data; console.log(data); sourcesLoaded = true}, 'json');
+      
+  if(sourcesLoaded !== true){
+    setTimeout(function(){createSourceButtons(comparisonKey);},1000);
+  }else{
+    console.log('processing sources for: ' +comparisonKey);
+    $.each(sources.source, function(index, source){
+      var label = source.label;
+      $.each(source.movement, function(index, mov){
+        if(mov.comparisonKey === comparisonKey){
+          var btn = $('<button type="button" class="btn btn-small" id="'+mov.id+'">'+label+'</button>');
+          $('#' + comparisonKey + ' .sourceList .btn-group-vertical').append(btn);
+          
+          $('#'+mov.id).click(function(event){
+            var buttonID = event.currentTarget.id;
+            $('.recordingList button').toggleClass('btn-primary', false);
+            $('#' + buttonID).toggleClass('btn-primary', true);
+            //loadMeasureCoreChart(source.id);
+            renderSource(mov.id);
+            
+          });
+        }
+      });
+    }); 
+  }
+};
+
+function createRecordingButtons(comparisonKey){
+  $.getJSON('../recordings.json', function(data){recordings = data; console.log(data); recordingsLoaded = true}, 'json');
+  if(recordingsLoaded !== true){
+    setTimeout(function(){createRecordingButtons(comparisonKey);},1000);
+  }else{
+    console.log('processing recordings for: ' +comparisonKey);
+    $.each(recordings.recording, function(index, recording){
+      var label = recording.label;
+      //$.each(source.movement, function(index, mov){
+      if(recording.comparisonKey === comparisonKey){
+        var btn = $('<button type="button" class="btn btn-small" id="'+recording.id+'">'+label+' <span class="currentTime">00:00</span></button>');
+        $('#' + comparisonKey + ' .recordingList .btn-group-vertical').append(btn);
+        
+        $('#'+recording.id).click(function(event){
+          var buttonID = event.currentTarget.id;
+          $('.recordingList button').toggleClass('btn-primary', false);
+          $('#' + buttonID).toggleClass('btn-primary', true);
+          switchAudio(recording.audioURI, globalTime, recording.id);audioNum = recording.id;
+        });
+      }
+      //});
+    }); 
+  }
+};
+
+function renderSource(movID){
+  console.log('supplied movID: ' + movID);
+  console.log('TODO: implement real source switch');
+  /* Load the file using HTTP GET */
+  $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
+      
+  var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({
+      inputFormat: 'mei',
+       pageHeight: 2970,
+       pageWidth: 2100,
+       ignoreLayout: 1,
+       border: 5,
+       scale: 25 })
+    );
+   
+    $("#output").html(svg);
+  
+    console.log(vrvToolkit.getPageCount());
+  
+  });
+};
+
+function updateAudioTimes(currentTime, source){
+  
+};
+
+function getMusicSourceMeasureID(coreRef){
+
+  
+  
+}
+
+function prepareSync(comparisonKey){
+    $.each(recordings.recording, function(index, recording){
+      if(recording.comparisonKey === comparisonKey){
+        $.getJSON('/' + recording.annotsURI, function(data){
+          var measureStarts = [];
+          var measureLabels = [];
+          $.each(data.measure, function(index, item){
+            measureStarts.push(data.measure[index].start);
+            measureLabels.push(item.label);
+          });
+          mat_startTimes[recording.id] = measureStarts;
+          measures[recording.id] = measureLabels;
+        }, 'json');
+        
+        $("#track").bind('timeupdate', function() {
+          console.log('updateTime for ' + recording.id);
+          console.log(recording.id);
+          var time = this.currentTime;
+          console.log(time);
+          globalTime = time;
+          console.log(globalTime);
+          var warpedTime = Number(everpolate.linear(time, mat_startTimes[audioNum], mat_startTimes[recording.id])[0]);
+          console.log(warpedTime);
+          var mmss = new Date(null, null, null, null, null, warpedTime).toString("mm:ss")
+          $("#" + recording.id + " .currentTime").text(mmss);
+
+        });
+
+     }
+   });   
+}
 
 /**
  * get image URI, measure number, measure ID from JSON based on input time
@@ -45,36 +195,37 @@ function appendAudio() {
  * @var        {Number}   bestDiff
  */
 function getMeasure(time){
-  console.log(time);
+//  console.log(time);
   var bestDiff = 0;
   var minDiff;
-  var bestIndex;
   var i;
   var cur;
-  for (i=0; i < json.measures.length; i++){
-    console.log(i);
-    cur = json.measures[i];
-    diff = cur.timestamp - time;
-    if(diff < bestDiff){
-      minDiff = diff;
-      bestIndex = i; 
-    }
-  }
-  var imageUri = json.measures[0].page;
+
+  var imageUri;
   var measureID;
+  var measureNumber;
   var measureCount;
-  if(bestIndex >= 0){
-    imageUri = json.measures[bestIndex].page;
-    measureID = json.measures[bestIndex].measureID;
-    measureCount = bestIndex + 1;//+1 um die tatsächliche Taktzahl zu errechnen
-  };
+  var measureIndex;
   
-  //call function to check current image against the one associated with best match
-  checkImage(imageUri);
+  // Compute exact measure position by interpolation
+  measurePosition = Number(everpolate.linear(time, mat_startTimes[audioNum], measures[audioNum])[0]);
+  // Compute measure number (measureCount)
+  measureCount    = Math.floor( measurePosition );
+  measureIndex    = measureCount-1;
+  if(measureIndex >= 0){
+    imageUri = json.measure[measureIndex].facsURI;
+    checkImage(imageUri);
+    measureID = json.measure[measureIndex].sourceIdRef;  
+  }
+  else{
+    measureIndex = 0;
+  };
   //set facsimile text field to new value
   $('#facsimileID').text(imageUri);
   //set measure count to new value
   $("#measureCount").text(measureCount);
+  //set measure position to new value
+  $("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
   $("#measureID").text(measureID);
   

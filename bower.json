@@ -24,6 +24,8 @@
     "jquery": "~2.1.1",
     "bootstrap": "~3.2.0",
     "d3": "~3.4.13",
-    "verovio": "https://github.com/rism-ch/verovio/releases/download/version-0.9.3/verovio-toolkit-0.9.3.js.zip"
+    "verovio": "https://github.com/rism-ch/verovio/releases/download/version-0.9.7/verovio-toolkit-0.9.7.js.zip",
+    "everpolate": "git://github.com/BorisChumichev/everpolate.git#0ae49cc00c1ec0c5ebeea3bb9fa62155f265c157",
+    "datejs": "git://github.com/abritinthebay/datejs#v1.0.0-rc3"
   }
 }
