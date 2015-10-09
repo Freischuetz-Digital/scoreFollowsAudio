@@ -175,7 +175,7 @@
               
               // Highligt the bounding boxes
               var measureElement = d3.select( "#" + currentMeasure );
-              var barLineElement = d3.select( "#" + currentMeasure + " .barLine" );
+              var barLineElement = d3.select( "#" + currentMeasure + " .barlineAttr" );
               var systemElement = measureElement.select(function() { return this.parentNode; });
               var measureBB = measureElement[0][0].getBBox();
               var barLineBB = barLineElement[0][0].getBBox();
