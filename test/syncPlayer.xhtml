@@ -112,56 +112,10 @@
         <div role="tabpanel">
           
           <!-- Nav tabs -->
-          <ul id="comparisonTabNav" class="nav nav-tabs" role="tablist">
-            <!--<li role="presentation" class="active">
-              <a href="#mov_6" aria-controls="mov_6" role="tab" class="tab-button" data-toggle="tab">6</a>
-            </li>
-            <li role="presentation">
-              <a href="#mov_8" aria-controls="mov_8" role="tab" class="tab-button" data-toggle="tab">8</a>
-            </li>
-            <li role="presentation">
-              <a href="#mov_9" aria-controls="mov_9" role="tab" class="tab-button" data-toggle="tab">9</a>
-            </li>-->
-          </ul>
+          <ul id="comparisonTabNav" class="nav nav-tabs" role="tablist"/>
           
           <!-- Tab panes -->
-          <div id="comparisonTabs" class="tab-content">
-            <!--<div role="tabpanel" class="tab-pane active" id="mov_6">
-              <!-\-
-                for mov_6 return all sources
-                for mov_6 return all audios
-              -\->
-              <div>
-                <div id="sourceList" style="float:left; width:250px;">
-                  <h2>sources</h2>
-                  <div class="btn-group-vertical" role="group" aria-label="...">
-                    <button type="button" class="btn btn-small btn-primary">A</button>
-                    <button type="button" class="btn btn-small">KA2</button>
-                  </div>
-                </div>
-                <div id="audioList" style="float:left; width:250px;">
-                <h2>audios</h2>
-<<<<<<< HEAD
-                <div class="btn-group-vertical" role="group" aria-label="...">
-                  <button id="bloemeke" type="button" class="btn btn-small btn-primary" onclick="switchAudio('../Weber_Freischuetz-06_Bloemeke2013.wav',globalTime, 0);">Bloemeke <span class="currentTime">00:00</span></button>
-                  <button id="ackermann" type="button" class="btn btn-small" onclick="switchAudio('../Weber_Freischuetz-06_Ackermann1951.wav',globalTime, 1);">Ackermann <span class="currentTime">00:00</span></button>
-=======
-                <div id="audioSwitcher" class="btn-group-vertical" role="group" aria-label="...">
-                  <!-\-<button id="bloemeke" type="button" class="btn btn-small btn-primary" onclick="switchAudio('../Weber_Freischuetz-06_Bloemeke2013.wav',globalTime);audioNum = 0">Bloemeke <span class="currentTime">00:00</span></button>
-                  <button id="ackermann" type="button" class="btn btn-small" onclick="switchAudio('../Weber_Freischuetz-06_Ackermann1951.wav',globalTime);audioNum = 1">Ackermann <span class="currentTime">00:00</span></button>
->>>>>>> first configuration test via JSON
-                  <button type="button" class="btn btn-small">Furtwängler <span class="currentTime">00:00</span></button>
-                  <button type="button" class="btn btn-small">Jochum <span class="currentTime">00:00</span></button>
-                  <button type="button" class="btn btn-small">Kleiber, Carlos <span class="currentTime">00:00</span></button>
-                  <button type="button" class="btn btn-small">Kleiber, Erich <span class="currentTime">00:00</span></button>
-                  <button type="button" class="btn btn-small">Janowski <span class="currentTime">00:00</span></button>-\->
-                </div>
-              </div>
-              </div>
-            </div>-->
-            <!--<div role="tabpanel" class="tab-pane" id="mov_8">8</div>
-            <div role="tabpanel" class="tab-pane" id="mov_9">9</div>-->
-          </div>
+          <div id="comparisonTabs" class="tab-content"/>
           
         </div>
         <div id="backlink" style="display:none;">
@@ -171,9 +125,6 @@
       <div class="row-fluid">
         <div id="facsimile" style="visibility:hidden;display:none;">
           <h1>Facsimile</h1>
-          <!--<canvas id="myCanvas" width="710" height="533"
-            style="border:1px solid #000000;">
-          </canvas> -->
           <img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
           <div id="facsimileID"/>
         </div>
@@ -260,35 +211,6 @@
       }, 'json');
       
       var json;
-      //var json2; 
-		  //var json3;
-      //get JSON and assign response to var json and log data
-		
-		
-     /* $.getJSON('../Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
-        json = data;
-        source1 = [];
-		    measure1 = [];
-        $.each(data.measure, function(index, item){
-          source1.push(data.measure[index].start);
-			    measure1.push(data.measure[index].label);
-        })
-        measures = measure1;
-        mat_startTimes.push(source1);
-
-      }, 'json2');
-      */
-     /* $.getJSON('../Weber_Freischuetz-06_Ackermann1951_annoMeasures.json', function(data){
-        json2 = data;
-        source2 = [];
-        $.each(data.measure, function(index, item){
-          source2.push(data.measure[index].start);
-        })
-        
-        mat_startTimes.push(source2);
-
-      }, 'json3 ');*/
-        
        
       $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
 
