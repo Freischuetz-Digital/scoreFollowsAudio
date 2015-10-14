@@ -110,13 +110,14 @@ function createRecordingButtons(comparisonKey){
       var label = recording.label;
       //$.each(source.movement, function(index, mov){
       if(recording.comparisonKey === comparisonKey){
-        var btn = $('<button type="button" class="btn btn-small" id="'+recording.id+'">'+label+' <span class="currentTime">00:00</span></button>');
+        var btn = $('<button type="button" class="btn btn-small" id="'+comparisonKey+recording.id+'">'+label+' <span class="currentTime">00:00</span></button>');
         $('#' + comparisonKey + ' .recordingList .btn-group-vertical').append(btn);
         
-        $('#'+recording.id).click(function(event){
+        $('#'+comparisonKey+recording.id).click(function(event){
           var buttonID = event.currentTarget.id;
           $('.recordingList button').toggleClass('btn-primary', false);
-          $('#' + buttonID).toggleClass('btn-primary', true);
+          $('#'+comparisonKey+buttonID).toggleClass('btn-primary', true);
+          console.log(recording.audioURI, globalTime, recording.id);
           switchAudio(recording.audioURI, globalTime, recording.id);audioNum = recording.id;
         });
       }
@@ -181,7 +182,7 @@ function prepareSync(comparisonKey){
           var warpedTime = Number(everpolate.linear(time, mat_startTimes[audioNum], mat_startTimes[recording.id])[0]);
           console.log(warpedTime);
           var mmss = new Date(null, null, null, null, null, warpedTime).toString("mm:ss")
-          $("#" + recording.id + " .currentTime").text(mmss);
+          $("#" + comparisonKey + recording.id + " .currentTime").text(mmss);
 
         });
 
