@@ -109,6 +109,11 @@
             </li>
           </ul>
         </div>
+        <div id="backlink" style="display:none;">
+          <a href="#" onclick="nav_back(); false;">zurück</a>
+        </div>
+      </header>
+      <div class="row-fluid">
         <div role="tabpanel">
           
           <!-- Nav tabs -->
@@ -117,37 +122,6 @@
           <!-- Tab panes -->
           <div id="comparisonTabs" class="tab-content"/>
           
-        </div>
-        <div id="backlink" style="display:none;">
-          <a href="#" onclick="nav_back(); false;">zurück</a>
-        </div>
-      </header>
-      <div class="row-fluid">
-        <div id="facsimile" style="visibility:hidden;display:none;">
-          <h1>Facsimile</h1>
-          <img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/>
-          <div id="facsimileID"/>
-        </div>
-      
-        <div id="rendering" class="span8">
-          <h1>Rendering</h1>
-          <div id="output" style="height: 1000px;"/>
-        </div>
-      
-        <div id="audioDiv" class="span3">
-          <h1>Audio</h1>
-          <div>
-            <header>Audio:</header>
-            time: <div id="currentTime"></div>
-            <header>Measure:</header>
-            count: <div id="measureCount"></div>
-            position: <div id="measurePosition"></div>
-            id: <div id="measureID"></div>
-          </div>
-          <audio id="track" controls="controls">
-            <source src="../Weber_Freischuetz-06_Ackermann1951.wav" type="audio/wav" style="width:90%; height:10px;"/>
-            Your browser does not support the HTML5 audio element.
-          </audio>
         </div>
       
       </div>
@@ -194,13 +168,34 @@
           var sourceList = $('<div class="sourceList"  style="float:left; width:250px;"/>');
           sourceList.append('<h2>sources</h2>');
           sourceList.append('<div class="btn-group-vertical" role="group" aria-label="..."/>');
-          tab.append(sourceList);
-
           
-          var recordingList = $('<div class="recordingList"  style="float:left; width:250px;"/>');
+          var recordingList = $('<div class="recordingList span4"  style="float:left; width:250px;"/>');
           recordingList.append('<h2>recordings</h2>');
           recordingList.append('<div class="btn-group-vertical" role="group" aria-label="..."/>');
+          
+          var sourceTabs = ('<div role="tabpanel" class="span8">' +
+                              '<!-- Nav tabs -->' +
+                              '<ul id="scoresTabNav" class="nav nav-tabs" role="tablist">' +
+                                '<li role="presentation" class="active">'+
+                                  '<a href="#facsimileTab" aria-controls="facsimileTab" role="tab" class="tab-button" data-toggle="tab">Facsimile</a>'+
+                                  '</li>' +
+                                  '<li role="presentation" class="">'+
+                                  '<a href="#renderingTab" aria-controls="renderingTab" role="tab" class="tab-button" data-toggle="tab">Rendering</a>'+
+                                  '</li>' +
+                              '</ul>' +
+                              '<!-- Tab panes -->' +
+                              '<div id="scoresTabs" class="tab-content">' +
+                                '<div id="facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile"><h1>Facsimile</h1><img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/><div id="facsimileID"/></div></div>'+
+                                '<div id="renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering"><h1>Rendering</h1><div id="output" style="height: 1000px;"/></div></div>' +
+                              '</div>' +
+                            '</div>');
+          
+          var audioDiv = $('<div id="audioDiv" class="span8"><h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div><audio id="track" controls="controls"><source src="../Weber_Freischuetz-06_Ackermann1951.wav" type="audio/wav" style="width:90%; height:10px;"/>Your browser does not support the HTML5 audio element.</audio></div>');
+          
           tab.append(recordingList);
+          tab.append(audioDiv);
+          tab.append(sourceTabs);
+          tab.append(sourceList);
 
           createSourceButtons(object.comparisonKey);
           createRecordingButtons(object.comparisonKey);
