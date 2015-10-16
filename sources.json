@@ -2,7 +2,8 @@
   "source": [
     {
       "id": "freidi-musicSource_A",
-      "label": "Autograph (A)",
+      "type":"facsimile",
+      "label": "Autograph Facsimile (A)",
       "facsimileURI": "http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/",
       "movement": [
         {
@@ -16,6 +17,30 @@
         {
           "id": "A_mov9",
           "comparisonKey": "Weber_Freischuetz-09"
+        }
+      ]
+    },
+    {
+      "id": "freidi-musicSource_rendering",
+      "type":"rendering",
+      "label": "Rendering",
+      "codeURIprefix": "",
+      "movement": [
+        {
+          "id": "rend_mov6",
+          "comparisonKey": "Weber_Freischuetz-06",
+          "codeURI": "A_mov6_no_bTrem-no-facs.mei"
+          
+        },
+        {
+          "id": "rend_mov8",
+          "comparisonKey": "Weber_Freischuetz-08",
+          "codeURI": "A_mov8_no_bTrem-no-facs.mei"
+        },
+        {
+          "id": "rend_mov9",
+          "comparisonKey": "Weber_Freischuetz-09",
+          "codeURI": "A_mov9_no_bTrem-no-facs.mei"
         }
       ]
     }
