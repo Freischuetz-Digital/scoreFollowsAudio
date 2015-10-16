@@ -25,6 +25,7 @@
 xquery version "1.0";
 
 declare namespace mei="http://www.music-encoding.org/ns/mei";
+declare namespace json="http://www.json.org";
 
 (:import module namespace xqjson="http://xqilla.sourceforge.net/lib/xqjson";:)
 
@@ -33,25 +34,37 @@ declare namespace mei="http://www.music-encoding.org/ns/mei";
 
 declare option exist:serialize "method=json media-type=text/javascript";
 
-declare variable $musicSource := doc('data/freidi-musicSource_A.xml');
+declare variable $musicSource := doc('file:///C:\Users\bwb\Documents\GitHub\FreiDi\scoreFollowWebDemo\data\freidi-musicSource_A.xml');
 (:declare variable $clips2json := for $avFile in //avFile return :)
-declare variable $recording := doc('data/Weber_Freischuetz-06_Bloemeke2013_annoMeasures.txt_mei.xml');
+declare variable $recording := doc('file:///C:\Users\bwb\Documents\GitHub\FreiDi\scoreFollowWebDemo\data\xslt\recordingPrep\mei\Weber_Freischuetz-09_KleiberErich1955_annoMeasures.txt_mei.xml');
+declare variable $resultFileName := concat(substring-before(tokenize(document-uri($recording),'\\')[last()],'.txt'),'.json');
 (:xqjson:serialize-json(<json type="array">{$clips2json}</json>):)
 
 element json {
   for $clip in $recording//mei:clip
-  let $coreIdRef := substring-after($recording//id(substring-after($clip/@startid,'#'))/@sameas,'core.xml')
+  let $measureId := substring-after($clip/@startid,'#')
+  let $coreIdRef := substring-after($recording//mei:measure[@xml:id =$measureId]/@sameas,'core.xml')
   let $measure.musicSource := $musicSource//mei:measure[@sameas = concat('../core.xml',$coreIdRef)]
-  let $zone := $musicSource//id(substring-after($measure.musicSource/@facs,'#'))
+  let $zoneId := substring-after($measure.musicSource/@facs,'#')
+  let $zone := $musicSource//mei:zone[@xml:id = $zoneId] (:id(substring-after($measure.musicSource/@facs,'#')):)
   return
     element measure {
       element recordingIdRef {string($clip/@startid)},
       element coreIdRef {$coreIdRef},
       element sourceIdRef {concat('#',$measure.musicSource/@xml:id)},
 
-      element start {number($clip/@begin)},
-      element end {number($clip/@end)},
-      element label {substring-after($clip/@startid,'_measure')},
+      element start {
+        attribute json:literal {},
+        number($clip/@begin)
+      },
+      element end {
+        attribute json:literal {},
+        number($clip/@end)
+      },
+      element label {
+        attribute json:literal {},
+        substring-after($clip/@startid,'_measure')
+      },
       element facsURI {string($zone/parent::mei:surface/mei:graphic/@target)},
       element coordinates {
         for $att in $zone/@*[local-name()=('ulx','uly','lrx','lry')]
