@@ -27,7 +27,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>FreiDi Web-Demo: Rendering Follows Audio</title>
+    <title>FreiDi Web-Demo: syncPlayer</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="index page for tests / demos"/>
@@ -49,11 +49,26 @@
     <script type="text/javascript" src="../bower_components/datejs/build/production/date.min.js"></script>
     <script type="text/javascript" src="../src/FreiDi-scoreFollowsAudio.js"/>
     <style>
-      #audioList{
-      }
-      #audioList btn{
-        display: block;
-      }
+      
+    .row {
+        margin-left: 0px !important;
+    }
+    button.btn.btn-small {
+        width:100%;
+        text-align: left;
+    }
+    
+    button.btn.btn-small span.currentTime {
+        display: inline-block;
+        float:right;
+        text-align: right;
+        padding-left: 3px;
+    }
+    
+    button.btn.btn-small.buy{
+        width:30px;
+        float: right;
+    }
     </style>
   </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="30"><!-- onload="appendAudio()" klappt nicht in zus mit .bind timeupdate -->
@@ -137,11 +152,11 @@
       var sourcesLoaded = false;
       var recordings = {};
       var recordingsLoaded = false;
-      var audioNum = 'bloemeke2013';
+      var audioNum = 'bloemeke2013-06';
       
       $.getJSON('../config.json', function(data){
         config = data;
-        console.log(data);
+        //console.log(data);
         
         $.each(config.comparison, function(index, object){
           //construct and append elements for tab navigation
@@ -155,9 +170,15 @@
           tabNav.append(a);
           $('#comparisonTabNav').append(tabNav);
           
+          createRecordingButtons(object.comparisonKey);
+          
           $('#' + object.comparisonKey + '_button').click(function (e) {
             e.preventDefault();
+            if(comparisonKey !== ''){
+                document.getElementById(comparisonKey+'track').pause();
+            };
             $(this).tab('show');
+            comparisonKey = object.comparisonKey;
             prepareSync(object.comparisonKey);
           });
          
@@ -169,37 +190,121 @@
           sourceList.append('<h2>sources</h2>');
           sourceList.append('<div class="btn-group-vertical" role="group" aria-label="..."/>');
           
-          var recordingList = $('<div class="recordingList span4"  style="float:left; width:250px;"/>');
-          recordingList.append('<h2>recordings</h2>');
-          recordingList.append('<div class="btn-group-vertical" role="group" aria-label="..."/>');
+          var recordingList = $('<div class="recordingList span4" style="float:left; width:250px;"/>');
+          var buttonRow = $('<div class="row"/>');
+          recordingList.append('<h2>Recordings</h2>');
+          buttonRow.append('<div class="btn-group-vertical span12" role="group" aria-label="..."/>');
+          recordingList.append(buttonRow);
+          var metadataRow = $('<div class="row"/>');
+          metadataRow.append('<div id="recordingMetadata" style="overflow:scroll; overflow-x:hidden;height:400px;">' + 
+                                    '<img id="cover" href="../empty.jpg" alt="cover"/>' +
+                                '</div>');
+          recordingList.append(metadataRow);
           
           var sourceTabs = ('<div role="tabpanel" class="span8">' +
                               '<!-- Nav tabs -->' +
-                              '<ul id="scoresTabNav" class="nav nav-tabs" role="tablist">' +
-                                '<li role="presentation" class="active">'+
-                                  '<a href="#facsimileTab" aria-controls="facsimileTab" role="tab" class="tab-button" data-toggle="tab">Facsimile</a>'+
+                              '<ul id="'+object.comparisonKey+'scoresTabNav" class="nav nav-tabs" role="tablist">' +
+                                '<li id="'+object.comparisonKey+'facsimileTabButton" role="presentation" class="active">'+
+                                  '<a href="#'+object.comparisonKey+'facsimileTab" aria-controls="'+object.comparisonKey+'facsimileTab" role="tab" class="tab-button" data-toggle="tab">Facsimile</a>'+
                                   '</li>' +
-                                  '<li role="presentation" class="">'+
-                                  '<a href="#renderingTab" aria-controls="renderingTab" role="tab" class="tab-button" data-toggle="tab">Rendering</a>'+
+                                  '<li  id="'+object.comparisonKey+'renderingTabButton" role="presentation" class="">'+
+                                  '<a href="#'+object.comparisonKey+'renderingTab" aria-controls="'+object.comparisonKey+'renderingTab" role="tab" class="tab-button" data-toggle="tab">Rendering</a>'+
                                   '</li>' +
                               '</ul>' +
                               '<!-- Tab panes -->' +
-                              '<div id="scoresTabs" class="tab-content">' +
-                                '<div id="facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile"><h1>Facsimile</h1><img id="currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/><div id="facsimileID"/></div></div>'+
-                                '<div id="renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering"><h1>Rendering</h1><div id="output" style="height: 1000px;"/></div></div>' +
+                              '<div id="'+object.comparisonKey+'scoresTabs" class="tab-content">' +
+                                '<div id="'+object.comparisonKey+'facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile" align="center"><img id="'+object.comparisonKey+'currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/><div id="'+object.comparisonKey+'facsimileID"/></div></div>'+ //<h1>Facsimile</h1>
+                                '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;"/></div></div>' + //<h1>Rendering</h1>
                               '</div>' +
                             '</div>');
           
-          var audioDiv = $('<div id="audioDiv" class="span8"><h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div><audio id="track" controls="controls"><source src="../Weber_Freischuetz-06_Ackermann1951.wav" type="audio/wav" style="width:90%; height:10px;"/>Your browser does not support the HTML5 audio element.</audio></div>');
+          var audioDiv = $('<div id="'+object.comparisonKey+'audioDiv" class="span8"><audio id="'+object.comparisonKey+'track" controls="controls" class="span12"><source src="../Weber_Freischuetz-06_Ackermann1951.wav" type="audio/wav"/>Your browser does not support the HTML5 audio element.</audio></div>'); //<h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div>
           
           tab.append(recordingList);
           tab.append(audioDiv);
           tab.append(sourceTabs);
-          tab.append(sourceList);
-
+          //tab.append(sourceList);
+          
+          //console.log('#'+object.comparisonKey+'renderingTabButton');
+          
           createSourceButtons(object.comparisonKey);
-          createRecordingButtons(object.comparisonKey);
           $('#comparisonTabs').append(tab);
+          
+          //only for debug purpose
+          $('#'+object.comparisonKey+'renderingTabButton').on('mouseover',function(event){
+            console.log("mouseover: "+object.comparisonKey);
+          });
+          
+          $('#'+object.comparisonKey+'renderingTabButton').click(function(event){
+            //console.log("rendering tab clicked for: "+object.comparisonKey);
+            //var buttonID = event.currentTarget.id;
+            //$('.recordingList button').toggleClass('btn-primary', false);
+            //$('#' + buttonID).toggleClass('btn-primary', true);
+            //loadMeasureCoreChart(source.id);
+            renderSource('mov6');
+            
+          });
+          
+                //bind function to timeupdate of audio element
+          $('#'+object.comparisonKey+'track').bind('timeupdate', function() {
+            var time = this.currentTime;
+           // globalTime = time;
+            //console.log('ontimeupdate ' + time);
+    		  
+            //TODO format time
+            measure = getMeasure(time);
+            //console.log('timeupdate syncPlayer.xhtml');
+            //console.log(measure);
+              
+            if ( (measure !== undefined)  && (measure !== currentMeasure) )  {
+              d3.selectAll(".highlight").remove();
+              currentMeasure = measure;
+                
+              page = vrvToolkit.getPageWithElement( currentMeasure.substring(currentMeasure.indexOf('#')+1) );
+              if ( (page > 0) && (page !== currentPage) ) {
+                  currentPage = page;
+                  leftBarLine = -1;
+                  //console.log( 'vrv currentPage: ' + Number(currentPage) );
+                  var svg = vrvToolkit.renderPage( Number(currentPage), "" );
+                  $('#'+object.comparisonKey+'output').html(svg);
+              }
+              //console.log ( currentMeasure );
+                  
+                  // Highligt the bounding boxes
+                  var measureElement = d3.select( currentMeasure );
+                  var barLineElement = d3.select( currentMeasure + " .barLine" );
+                  var systemElement = measureElement.select(function() { return this.parentNode; });
+                    var measureBB = measureElement[0][0].getBBox();
+                  var barLineBB = barLineElement[0][0].getBBox();
+                  var systemBB = systemElement[0][0].getBBox();
+                  
+                  var x = measureBB.x;
+                  if (leftBarLine != -1) {
+                      x = leftBarLine;
+                  }
+                  var width = barLineBB.x - x + barLineBB.width;
+                  
+                  if (width < 0) {
+                      return;
+                  }
+                  
+                  leftBarLine = x + width;
+                  measureElement.append("rect")
+                        .attr("class", "highlight")
+                  		.attr("x", x)
+                        .attr("y", systemBB.y - 5)
+                        .attr("width", width)
+                        .attr("height", systemBB.height + 10)
+                        .attr("fill", "steelblue")
+                        .attr("fill-opacity", 0.1)
+                        .attr("stroke", "black")
+                        .attr("stroke-width", 2);
+                  
+                  
+              }
+              
+    
+            });
 
         });
         
@@ -207,85 +312,13 @@
       
       var json;
        
-      $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){json = data; console.log(data);}, 'json');
+      $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
+        json = data;
+        //console.log(data);
+    }, 'json');
 
         
-      //bind function to timeupdate of audio element
-      $("#track").bind('timeupdate', function() {
-        var time = this.currentTime;
-       // globalTime = time;
-        console.log(time);
-		  
-  		  /*if ( audioNum == 0 ){
-          $("#Bloemeke .currentTime").text(time.toFixed(1));
-  		    var warpedTime = everpolate.linear(time, mat_startTimes[0], mat_startTimes[1])[0];
-  		  		  
-  		    $("#Ackermann .currentTime").text(warpedTime.toFixed(1));
-        }
-		  
-   		  if ( audioNum == 1 ){
-   		    console.log("Ackermann")
-           $("#Ackermann .currentTime").text(time.toFixed(1));
-   		    var warpedTime = everpolate.linear(time, mat_startTimes[1], mat_startTimes[0])[0];
-   		  		  
-   		    $("#Bloemeke .currentTime").text(warpedTime.toFixed(1));
-        }*/
 
-        //TODO format time
-        measure = getMeasure(time);
-        console.log(measure);
-          
-        if ( (measure !== undefined)  && (measure !== currentMeasure) )  {
-          d3.selectAll(".highlight").remove();
-          currentMeasure = measure;
-            
-          //interpolateTimestamps(time);
-              
-          page = vrvToolkit.getPageWithElement( currentMeasure.substring(currentMeasure.indexOf('#')+1) );
-          if ( (page > 0) && (page != currentPage) ) {
-              currentPage = page;
-              leftBarLine = -1;
-              console.log( Number(currentPage) );
-              var svg = vrvToolkit.renderPage( Number(currentPage), "" );
-              $("#output").html(svg);
-          }
-          console.log ( currentMeasure );
-              
-              // Highligt the bounding boxes
-              var measureElement = d3.select( currentMeasure );
-              var barLineElement = d3.select( currentMeasure + " .barLine" );
-              var systemElement = measureElement.select(function() { return this.parentNode; });
-                var measureBB = measureElement[0][0].getBBox();
-              var barLineBB = barLineElement[0][0].getBBox();
-              var systemBB = systemElement[0][0].getBBox();
-              
-              var x = measureBB.x;
-              if (leftBarLine != -1) {
-                  x = leftBarLine;
-              }
-              var width = barLineBB.x - x + barLineBB.width;
-              
-              if (width < 0) {
-                  return;
-              }
-              
-              leftBarLine = x + width;
-              measureElement.append("rect")
-                    .attr("class", "highlight")
-              		.attr("x", x)
-                    .attr("y", systemBB.y - 5)
-                    .attr("width", width)
-                    .attr("height", systemBB.height + 10)
-                    .attr("fill", "steelblue")
-                    .attr("fill-opacity", 0.1)
-                    .attr("stroke", "black")
-                    .attr("stroke-width", 2);
-              
-              
-          }
-          
-
-        });
         
         //]]>
       </script>

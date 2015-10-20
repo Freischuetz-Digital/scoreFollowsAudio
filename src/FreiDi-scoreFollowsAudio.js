@@ -39,7 +39,7 @@ function appendAudio() {
 /*
  * global variables
  */
- 
+var comparisonKey = '';
 var globalTime = 0;
 var currentPage = 1;
 var currentMeasure = undefined;
@@ -56,12 +56,12 @@ var measures = [];
  */
 
 function switchAudio(url, currentTime, newAudioID){
-  console.log('switch audio');
-  console.log(newAudioID);
-  console.log(url);
-  console.log('Old time ' + currentTime);
+  //console.log('switch audio');
+  //console.log(newAudioID);
+  //console.log(url);
+  //console.log('Old time ' + currentTime);
   
-  var audio = $('#track');
+  var audio = $('#'+comparisonKey+'track');
   audio.attr('src', '/' + url);
   var newTime = Number(everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]);
   audio[0].currentTime = newTime.toFixed(4); 
@@ -73,12 +73,18 @@ function switchAudio(url, currentTime, newAudioID){
 };
 
 function createSourceButtons(comparisonKey){
-  $.getJSON('../sources.json', function(data){sources = data; console.log(data); sourcesLoaded = true}, 'json');
+  $.getJSON('../sources.json', function(data){
+    sources = data;
+    //console.log(data);
+    sourcesLoaded = true
+  }, 'json');
       
   if(sourcesLoaded !== true){
-    setTimeout(function(){createSourceButtons(comparisonKey);},1000);
+    setTimeout(function(){
+      createSourceButtons(comparisonKey);
+    },1000);
   }else{
-    console.log('processing sources for: ' +comparisonKey);
+    //console.log('processing sources for: ' +comparisonKey);
     $.each(sources.source, function(index, source){
       var label = source.label;
       $.each(source.movement, function(index, mov){
@@ -100,25 +106,76 @@ function createSourceButtons(comparisonKey){
   }
 };
 
+function appendMetadata(recording){
+    
+    $('#recordingMetadata').empty();
+    
+    var cover = $('<img id="cover" src="' + recording.coverURI + '" alt="cover" class="span12"/>');
+    var buyLink = $('<button type="button" class="btn btn-small" id="buyButton"><span class="glyphicon glyphicon-shopping-cart"/></button>');
+    $('#buyButton').click(function(event){
+        
+    });
+    $('#recordingMetadata').append(cover);
+    
+    //TODO Title als heading
+    $('#recordingMetadata').append($('<h3>'+ recording.metadata.title +'<button type="button" class="btn btn-small buy" id="buyButton"><span class="glyphicon glyphicon-shopping-cart"/></button></h3>'));
+    
+    var list = $('<dl/>');
+    //console.log(recording);
+    list.append($('<dt>Conductor</dt>'));
+    list.append($('<dd>'+ recording.metadata.conductor +'</dd>'));
+    list.append($('<dt>Ensemble</dt>'));
+    list.append($('<dd>'+ recording.metadata.ensemble +'</dd>'));
+    list.append($('<dt>Year</dt>'));
+    list.append($('<dd>'+ recording.metadata.year +'</dd>'));
+    list.append($('<dt>Cast</dt>'));
+    list.append($('<dd>'+ recording.metadata.cast +'</dd>'));
+    list.append($('<dt>Capture</dt>'));
+    list.append($('<dd>'+ recording.metadata.capture +'</dd>'));
+    list.append($('<dt>Format</dt>'));
+    list.append($('<dd>'+ recording.metadata.format +'</dd>'));
+    list.append($('<dt>Carrier</dt>'));
+    list.append($('<dd>'+ recording.metadata.carrier +'</dd>'));
+    list.append($('<dt>Label</dt>'));
+    list.append($('<dd>'+ recording.metadata.label +'</dd>'));
+    list.append($('<dt>Series</dt>'));
+    list.append($('<dd>'+ recording.metadata.series +'</dd>'));
+    list.append($('<dt>Catalog-Nr.</dt>'));
+    list.append($('<dd>'+ recording.metadata.catalogNr +'</dd>'));
+    list.append($('<dt>Copyright</dt>'));
+    list.append($('<dd>'+ recording.metadata.copyright +'</dd>'));
+    $('#recordingMetadata').append(list);
+    $('#recordingMetadata').append('<div>'+recording.metadata.remark+'</div>');
+    
+    
+}
+
 function createRecordingButtons(comparisonKey){
-  $.getJSON('../recordings.json', function(data){recordings = data; console.log(data); recordingsLoaded = true}, 'json');
+  $.getJSON('../recordings.json', function(data){
+    recordings = data;
+    //console.log(data);
+    recordingsLoaded = true
+  }, 'json');
+  
   if(recordingsLoaded !== true){
     setTimeout(function(){createRecordingButtons(comparisonKey);},1000);
   }else{
-    console.log('processing recordings for: ' +comparisonKey);
+    //console.log('processing recordings for: ' +comparisonKey);
     $.each(recordings.recording, function(index, recording){
-      var label = recording.label;
+      var buttonLabel = recording.buttonLabel;
       //$.each(source.movement, function(index, mov){
       if(recording.comparisonKey === comparisonKey){
-        var btn = $('<button type="button" class="btn btn-small" id="'+comparisonKey+recording.id+'">'+label+' <span class="currentTime">00:00</span></button>');
+        var btn = $('<button type="button" class="btn btn-small" id="'+comparisonKey+recording.id+'">'+buttonLabel+' <span class="currentTime">00:00</span></button>');
         $('#' + comparisonKey + ' .recordingList .btn-group-vertical').append(btn);
         
         $('#'+comparisonKey+recording.id).click(function(event){
           var buttonID = event.currentTarget.id;
-          $('.recordingList button').toggleClass('btn-primary', false);
-          $('#'+comparisonKey+buttonID).toggleClass('btn-primary', true);
-          console.log(recording.audioURI, globalTime, recording.id);
-          switchAudio(recording.audioURI, globalTime, recording.id);audioNum = recording.id;
+          $('#'+comparisonKey+' .recordingList button').toggleClass('btn-primary', false);
+          $('#'+comparisonKey+recording.id).toggleClass('btn-primary', true);
+          //console.log(recording.audioURI, globalTime, recording.id);
+          switchAudio(recording.audioURI, globalTime, recording.id);
+          audioNum = recording.id;
+          appendMetadata(recording);
         });
       }
       //});
@@ -130,7 +187,7 @@ function renderSource(movID){
   console.log('supplied movID: ' + movID);
   console.log('TODO: implement real source switch');
   /* Load the file using HTTP GET */
-  $.get( "../A_mov6_no_bTrem-no-facs.mei", function( data ) {
+  $.get( "../A_"+movID+"_no_bTrem-no-facs.mei", function( data ) {
       
   var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({
       inputFormat: 'mei',
@@ -141,9 +198,9 @@ function renderSource(movID){
        scale: 25 })
     );
    
-    $("#output").html(svg);
+    $('#'+comparisonKey+'output').html(svg);
   
-    console.log(vrvToolkit.getPageCount());
+    //console.log(vrvToolkit.getPageCount());
   
   });
 };
@@ -159,6 +216,7 @@ function getMusicSourceMeasureID(coreRef){
 }
 
 function prepareSync(comparisonKey){
+    //console.log('prepareSync for: ' + comparisonKey);
     $.each(recordings.recording, function(index, recording){
       if(recording.comparisonKey === comparisonKey){
         $.getJSON('/' + recording.annotsURI, function(data){
@@ -172,15 +230,15 @@ function prepareSync(comparisonKey){
           measures[recording.id] = measureLabels;
         }, 'json');
         
-        $("#track").bind('timeupdate', function() {
-          console.log('updateTime for ' + recording.id);
-          console.log(recording.id);
+        $("#"+comparisonKey+"track").bind('timeupdate', function() {
+          //console.log('updateTime for ' + recording.id);
+          //console.log(recording.id);
           var time = this.currentTime;
-          console.log(time);
+          //console.log(time);
           globalTime = time;
-          console.log(globalTime);
+          //console.log(globalTime);
           var warpedTime = Number(everpolate.linear(time, mat_startTimes[audioNum], mat_startTimes[recording.id])[0]);
-          console.log(warpedTime);
+          //console.log(warpedTime);
           var mmss = new Date(null, null, null, null, null, warpedTime).toString("mm:ss")
           $("#" + comparisonKey + recording.id + " .currentTime").text(mmss);
 
@@ -196,15 +254,15 @@ function prepareSync(comparisonKey){
  * @var        {Number}   bestDiff
  */
 function getMeasure(time){
-//  console.log(time);
-  var bestDiff = 0;
-  var minDiff;
-  var i;
-  var cur;
+  //console.log('getMeasure for time: ' + time);
+  //var bestDiff = 0;
+  //var minDiff;
+  //var i;
+  //var cur;
 
   var imageUri;
   var measureID;
-  var measureNumber;
+  //var measureNumber;
   var measureCount;
   var measureIndex;
   
@@ -216,20 +274,21 @@ function getMeasure(time){
   if(measureIndex >= 0){
     imageUri = json.measure[measureIndex].facsURI;
     checkImage(imageUri);
+    console.log(imageUri);
     measureID = json.measure[measureIndex].sourceIdRef;  
   }
   else{
     measureIndex = 0;
   };
   //set facsimile text field to new value
-  $('#facsimileID').text(imageUri);
+  //$('#facsimileID').text(imageUri);
   //set measure count to new value
-  $("#measureCount").text(measureCount);
+  //$("#measureCount").text(measureCount);
   //set measure position to new value
-  $("#measurePosition").text(measurePosition.toFixed(3));
+  //$("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
-  $("#measureID").text(measureID);
-  
+  //$("#measureID").text(measureID);
+  //console.log('getMeasure returns: ' + measureID);
   return measureID;
 };
 
@@ -239,7 +298,7 @@ function getMeasure(time){
  */
 function checkImage(imageUri) {
   if (currentImageUri !== imageUri){
-    setImage(imageUri, 'currentImage');
+    setImage(imageUri, comparisonKey+'currentImage');
   }
 };
 
