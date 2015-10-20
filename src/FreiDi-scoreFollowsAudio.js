@@ -275,6 +275,9 @@ function getMeasure(time){
     imageUri = json.measure[measureIndex].facsURI;
     checkImage(imageUri);
     console.log(imageUri);
+    coordinates = json.measure[measureIndex].coordinates;
+    console.log(coordinates);
+    highlightImageArea(coordinates);
     measureID = json.measure[measureIndex].sourceIdRef;  
   }
   else{
@@ -290,6 +293,19 @@ function getMeasure(time){
   //$("#measureID").text(measureID);
   //console.log('getMeasure returns: ' + measureID);
   return measureID;
+};
+
+function highlightImageArea(coordinates, widht, height){
+    currentWidth = $(comparisonKey+'currentImage').width();
+    currentHeight = $(comparisonKey+'currentImage').height();
+    
+    factor = currentWidth/width;
+    
+    ulx = coordinates.ulx * factor;
+    uly = coordinates.uly * factor;
+    lrx = coordinates.lrx * factor;
+    lry = coordinates.lry * factor;
+    
 };
 
  /**
@@ -310,6 +326,8 @@ function checkImage(imageUri) {
 function setImage(imageUri, targetID){
   currentImageUri = imageUri;
   document.getElementById(targetID).src = 'http://freischuetz-digital.de/digilib/Scaler/freidi/'+imageUri+'?dw=710&amp;mo=fit';
+  map = $('<map');
+  $('#'+targetID).append();
 };
 
 
