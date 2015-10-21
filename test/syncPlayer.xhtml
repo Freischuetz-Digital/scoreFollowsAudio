@@ -33,17 +33,17 @@
     <meta name="description" content="index page for tests / demos"/>
     <meta name="author" content="Benjamin W. Bohl"/>
     
-    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap.css"/>
-    <link rel="stylesheet" href="http://www.freischuetz-digital.de/styles/bootstrap-responsive.css"/>
-    <link href="http://www.freischuetz-digital.de/styles/bootswatch.css" rel="stylesheet"/>
-    <link href="http://www.freischuetz-digital.de/styles/freidi.css" rel="stylesheet"/>
-    <link href="http://www.freischuetz-digital.de/styles/ptsans.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="resources/bootstrap.css"/>
+    <link rel="stylesheet" href="resources/bootstrap-responsive.css"/>
+    <link href="resources/bootswatch.css" rel="stylesheet"/>
+    <link href="resources/freidi.css" rel="stylesheet"/>
+    <link href="resources/ptsans.css" rel="stylesheet"/>
     
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.freischuetz-digital.de/pix/freidi_icon_144.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.freischuetz-digital.de/pix/freidi_icon_114.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.freischuetz-digital.de/pix/freidi_icon_72.png"/>
-    <link rel="apple-touch-icon-precomposed" href="http://www.freischuetz-digital.de/pix/freidi_icon_57.png"/>
-    <link rel="shortcut icon" href="http://www.freischuetz-digital.de/pix/freidi_favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/freidi_icon_144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/freidi_icon_114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/freidi_icon_72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="resources/freidi_icon_57.png"/>
+    <link rel="shortcut icon" href="resources/freidi_favicon.png"/>
     
     <script type="text/javascript" src="../dist/bower.js"/>
     <script type="text/javascript" src="../bower_components/datejs/build/production/date.min.js"></script>
@@ -93,12 +93,12 @@
     <div id="content" class="container">
       <div id="figure-top" class="figure visible-desktop">
         powered by:
-        <a href="http://www.verovio.org"><img src="http://rism-ch.github.io/verovio/images/verovio-fadded-50.png" width="147" alt="verovio logo"/></a>
+        <a href="http://www.verovio.org"><img src="resources/verovio-fadded-50.png" width="147" alt="verovio logo"/></a>
       </div>
       <header id="overview" class="jumbotron subhead">
         <div class="row" style="min-height: 0;">
           <div class="span8">
-            <img style="margin: 40px 0 0 3px;" src="http://www.freischuetz-digital.de/pix/Logo_greenInset.png"/>
+            <img style="margin: 40px 0 0 3px;" src="resources/Logo_greenInset.png"/>
           </div>
           <div class="span4"> </div>
         </div>
@@ -213,8 +213,8 @@
                               '</ul>' +
                               '<!-- Tab panes -->' +
                               '<div id="'+object.comparisonKey+'scoresTabs" class="tab-content">' +
-                                '<div id="'+object.comparisonKey+'facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile" align="center"><img id="'+object.comparisonKey+'currentImage" src="http://freischuetz-digital.de/digilib/Scaler/freidi/sources/A/00000100.jpg?dw=710&amp;mo=fit"/><div id="'+object.comparisonKey+'facsimileID"/></div></div>'+ //<h1>Facsimile</h1>
-                                '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;"/></div></div>' + //<h1>Rendering</h1>
+                                '<div id="'+object.comparisonKey+'facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile" align="center"><img id="'+object.comparisonKey+'currentImage" src="sources/A/00000100.jpg"/><div id="'+object.comparisonKey+'facsimileID"/></div></div>'+ //<h1>Facsimile</h1>
+                                '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;"/><img id="'+object.comparisonKey+'_ajaxLoader" src="resources/ajax-loader.gif" style="visibility:hidden;"/></div></div>' + //<h1>Rendering</h1>
                               '</div>' +
                             '</div>');
           
@@ -231,8 +231,18 @@
           $('#comparisonTabs').append(tab);
           
           //only for debug purpose
-          $('#'+object.comparisonKey+'renderingTabButton').on('mouseover',function(event){
-            console.log("mouseover: "+object.comparisonKey);
+          //$('#'+object.comparisonKey+'renderingTabButton').on('mouseover',function(event){
+          //  console.log("mouseover: "+object.comparisonKey);
+          //});
+          
+          $('#'+object.comparisonKey+'_button').click(function(event){
+            //console.log("rendering tab clicked for: "+object.comparisonKey);
+            //var buttonID = event.currentTarget.id;
+            //$('.recordingList button').toggleClass('btn-primary', false);
+            //$('#' + buttonID).toggleClass('btn-primary', true);
+            //loadMeasureCoreChart(source.id);
+            renderSource('mov6');
+            
           });
           
           $('#'+object.comparisonKey+'renderingTabButton').click(function(event){
@@ -241,8 +251,8 @@
             //$('.recordingList button').toggleClass('btn-primary', false);
             //$('#' + buttonID).toggleClass('btn-primary', true);
             //loadMeasureCoreChart(source.id);
-            renderSource('mov6');
-            
+            //renderSource('mov6');
+            $('#'+object.comparisonKey+'_ajaxLoader').show();
           });
           
                 //bind function to timeupdate of audio element
