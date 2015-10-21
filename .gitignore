@@ -11,6 +11,7 @@ A_mov6.xml
 *.wav
 *annoMeasures.json
 recordingPrep
+test/sources
 
 # =========================
 #dist and documentation
