@@ -45,24 +45,57 @@ var currentPage = 1;
 var currentMeasure = undefined;
 var leftBarLine = -1;
 //set currentImage to default value
-var currentImageUri = 'sources/A/00000100.jpg';
+var currentImageUri;
 //declare variable json
-
+var json;
 var mat_startTimes = [];
 var measures = [];
 var offline = true;
+
  /*
  * used functions
  */
+ 
+ /* function filterById
+ * @param object   the JSON array to be searched
+ * @param value    the ID value to be retrieved
+ *
+ * returns JSON object
+ */
+function getIndexById (object, value) {
+
+    console.log('filter by id:');
+    console.log(value);
+
+  return $.map(object, function (item, key) { 
+
+      // this is where the check is done
+      if (item.comparisonKey === value) {
+
+        // if you want the index or property "0", "1", "2"... etc.
+        // item._index = key;
+
+        return item._index = key; 
+      }
+      
+ /*   return $.grep(object, function(element, index){
+      
+      if(element.comparisonKey === value){
+        element.latestJSON = json;
+        return element
+      }
+      */
+    });
+}
 
 function switchAudio(url, currentTime, newAudioID){
   //console.log('switch audio');
   //console.log(newAudioID);
   //console.log(url);
   //console.log('Old time ' + currentTime);
-  
+
   var audio = $('#'+comparisonKey+'track');
-  audio.attr('src', '/' + url);
+  audio.attr('src', url);
   var newTime = Number(everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]);
   audio[0].currentTime = newTime.toFixed(4); 
   audio.bind('canplay', function() {
@@ -97,7 +130,7 @@ function createSourceButtons(comparisonKey){
             $('.recordingList button').toggleClass('btn-primary', false);
             $('#' + buttonID).toggleClass('btn-primary', true);
             //loadMeasureCoreChart(source.id);
-            renderSource(mov.id);
+            //renderSource(mov.id);
             
           });
         }
@@ -108,20 +141,20 @@ function createSourceButtons(comparisonKey){
 
 function appendMetadata(recording){
     
-    $('#recordingMetadata').empty();
+    $('#'+comparisonKey+'recordingMetadata').empty();
     
     var cover = $('<img id="cover" src="' + recording.coverURI + '" alt="cover" class="span12"/>');
     var buyLink = $('<button type="button" class="btn btn-small" id="buyButton"><span class="glyphicon glyphicon-shopping-cart"/></button>');
     $('#buyButton').click(function(event){
         
     });
-    $('#recordingMetadata').append(cover);
+    $('#'+comparisonKey+'recordingMetadata').append(cover);
     
     //TODO Title als heading
-    $('#recordingMetadata').append($('<h3>'+ recording.metadata.title +'<button type="button" class="btn btn-small buy" id="buyButton"><span class="glyphicon glyphicon-shopping-cart"/></button></h3>'));
+    $('#'+comparisonKey+'recordingMetadata').append($('<h3>'+ recording.metadata.title +'<button type="button" class="btn btn-small buy" id="buyButton"><span class="glyphicon glyphicon-shopping-cart"/></button></h3>'));
     
     var list = $('<dl/>');
-    //console.log(recording);
+    console.log(recording);
     list.append($('<dt>Conductor</dt>'));
     list.append($('<dd>'+ recording.metadata.conductor +'</dd>'));
     list.append($('<dt>Ensemble</dt>'));
@@ -144,8 +177,10 @@ function appendMetadata(recording){
     list.append($('<dd>'+ recording.metadata.catalogNr +'</dd>'));
     list.append($('<dt>Copyright</dt>'));
     list.append($('<dd>'+ recording.metadata.copyright +'</dd>'));
-    $('#recordingMetadata').append(list);
-    $('#recordingMetadata').append('<div>'+recording.metadata.remark+'</div>');
+    console.log(list);
+    
+    $('#'+comparisonKey+'recordingMetadata').append(list);
+    $('#'+comparisonKey+'recordingMetadata').append('<div>'+recording.metadata.remark+'</div>');
     
     
 }
@@ -170,6 +205,11 @@ function createRecordingButtons(comparisonKey){
         
         $('#'+comparisonKey+recording.id).click(function(event){
           var buttonID = event.currentTarget.id;
+          $.getJSON(recording.annotsURI, function(data){
+            console.log('load recording annots for '+recording.id);
+            console.log(data);
+            json = data;
+          }, 'json');
           $('#'+comparisonKey+' .recordingList button').toggleClass('btn-primary', false);
           $('#'+comparisonKey+recording.id).toggleClass('btn-primary', true);
           //console.log(recording.audioURI, globalTime, recording.id);
@@ -184,8 +224,8 @@ function createRecordingButtons(comparisonKey){
 };
 
 function renderSource(movID){
-  console.log('supplied movID: ' + movID);
-  console.log('TODO: implement real source switch');
+  console.log('renderSource supplied movID: ' + movID);
+  //console.log('TODO: implement real source switch');
   /* Load the file using HTTP GET */
   $.get( "../A_"+movID+"_no_bTrem-no-facs.mei", function( data ) {
       
@@ -218,8 +258,8 @@ function getMusicSourceMeasureID(coreRef){
 function prepareSync(comparisonKey){
     //console.log('prepareSync for: ' + comparisonKey);
     $.each(recordings.recording, function(index, recording){
-      if(recording.comparisonKey === comparisonKey){
-        $.getJSON('/' + recording.annotsURI, function(data){
+   //   if(recording.comparisonKey === comparisonKey){
+        $.getJSON(recording.annotsURI, function(data){
           var measureStarts = [];
           var measureLabels = [];
           $.each(data.measure, function(index, item){
@@ -244,7 +284,7 @@ function prepareSync(comparisonKey){
 
         });
 
-     }
+     //}
    });   
 }
 
@@ -273,7 +313,7 @@ function getMeasure(time){
   measureIndex    = measureCount-1;
   if(measureIndex >= 0){
     imageUri = json.measure[measureIndex].facsURI;
-    checkImage(imageUri);
+    checkImage(imageUri, comparisonKey);
     console.log(imageUri);
     measureID = json.measure[measureIndex].sourceIdRef;  
   }
@@ -296,7 +336,7 @@ function getMeasure(time){
  * check if submitted image URI equals current image URI
  * @param      {String}   imageURI image URI from JSON to be checked against currently visible images URI
  */
-function checkImage(imageUri) {
+function checkImage(imageUri, comparisonKey) {
   if (currentImageUri !== imageUri){
     setImage(imageUri, comparisonKey+'currentImage', offline);
   }
@@ -308,6 +348,7 @@ function checkImage(imageUri) {
  * @param      {String}   targetID ID of the target img element
  */
 function setImage(imageUri, targetID, local){
+  console.log('setImage in '+targetID);
   currentImageUri = imageUri;
   if(local){
     document.getElementById(targetID).src = imageUri;

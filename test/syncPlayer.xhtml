@@ -152,12 +152,12 @@
       var sourcesLoaded = false;
       var recordings = {};
       var recordingsLoaded = false;
-      var audioNum = 'bloemeke2013-06';
+      var audioNum= 'bloemeke2013-06';
       
       $.getJSON('../config.json', function(data){
         config = data;
         //console.log(data);
-        
+        //prepareSync();
         $.each(config.comparison, function(index, object){
           //construct and append elements for tab navigation
           var tabNav = $('<li/>').prop({'role':'presentation'});
@@ -177,9 +177,47 @@
             if(comparisonKey !== ''){
                 document.getElementById(comparisonKey+'track').pause();
             };
+            if(comparisonKey !== ''){
+              lastComparisonIndex = getIndexById(config.comparison, comparisonKey);
+              //config.comparison[comparisonIndex[0]].lastJSON = json;
+              console.log(lastComparisonIndex);
+              console.log(config.comparison[lastComparisonIndex]);
+              config.comparison[lastComparisonIndex].lastJSON = json;
+              config.comparison[lastComparisonIndex].lastMeasure = currentMeasure;
+              console.log(config.comparison[lastComparisonIndex]);
+              
+              newComparisonIndex = getIndexById(config.comparison, object.comparisonKey);
+              json = config.comparison[newComparisonIndex].lastJSON;
+              if(currentMeasure !== undefined){
+                currentMeasure = config.comparison[newComparisonIndex].lastMeasure;
+                console.log(json);
+              }
+            }
             $(this).tab('show');
+            
             comparisonKey = object.comparisonKey;
             prepareSync(object.comparisonKey);
+            
+            if (comparisonKey == 'Weber_Freischuetz-06'){
+        //      checkImage('sources/A/00000100.jpg');
+              var time = document.getElementById('Weber_Freischuetz-06'+'track').currentTime;
+              globalTime = time;
+              
+         //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-06');//TODO cache comparison time
+              renderSource('mov6');
+            } else if (comparisonKey == 'Weber_Freischuetz-08'){
+          //    checkImage('sources/A/00000127.jpg');
+              var time = document.getElementById('Weber_Freischuetz-08'+'track').currentTime;
+              globalTime = time;
+         //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-08');//TODO cache comparison time
+         //     renderSource('mov8');
+            } else if (comparisonKey == 'Weber_Freischuetz-09'){
+        //      checkImage('sources/A/00000147.jpg');
+              var time = document.getElementById('Weber_Freischuetz-09'+'track').currentTime;
+              globalTime = time;
+         //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-09');//TODO cache comparison time
+         //     renderSource('mov9');
+            }
           });
          
           //construct and append data tab element
@@ -196,7 +234,7 @@
           buttonRow.append('<div class="btn-group-vertical span12" role="group" aria-label="..."/>');
           recordingList.append(buttonRow);
           var metadataRow = $('<div class="row"/>');
-          metadataRow.append('<div id="recordingMetadata" style="overflow:scroll; overflow-x:hidden;height:400px;">' + 
+          metadataRow.append('<div id="'+object.comparisonKey+'recordingMetadata" style="overflow:scroll; overflow-x:hidden;height:400px;">' + 
                                     //'<img id="cover" href="../empty.jpg" alt="cover"/>' +
                                 '</div>');
           recordingList.append(metadataRow);
@@ -208,17 +246,17 @@
                                   '<a href="#'+object.comparisonKey+'facsimileTab" aria-controls="'+object.comparisonKey+'facsimileTab" role="tab" class="tab-button" data-toggle="tab">Facsimile</a>'+
                                   '</li>' +
                                   '<li  id="'+object.comparisonKey+'renderingTabButton" role="presentation" class="">'+
-                                  '<a href="#'+object.comparisonKey+'renderingTab" aria-controls="'+object.comparisonKey+'renderingTab" role="tab" class="tab-button" data-toggle="tab">Rendering</a>'+
+                                  '<a href="#'+object.comparisonKey+'renderingTab" aria-controls="'+object.comparisonKey+'renderingTab" role="tab" class="tab-button" data-toggle="tab">Rendering<img id="'+object.comparisonKey+'_ajaxLoader" src="resources/ajax-loader.gif" style="display:none; margin-left:3px;height:12px;"/></a>'+
                                   '</li>' +
                               '</ul>' +
                               '<!-- Tab panes -->' +
                               '<div id="'+object.comparisonKey+'scoresTabs" class="tab-content">' +
-                                '<div id="'+object.comparisonKey+'facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile" align="center"><img id="'+object.comparisonKey+'currentImage" src="sources/A/00000100.jpg"/><div id="'+object.comparisonKey+'facsimileID"/></div></div>'+ //<h1>Facsimile</h1>
-                                '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;"/><img id="'+object.comparisonKey+'_ajaxLoader" src="resources/ajax-loader.gif" style="visibility:hidden;"/></div></div>' + //<h1>Rendering</h1>
+                                '<div id="'+object.comparisonKey+'facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile" align="center"><img id="'+object.comparisonKey+'currentImage" src="'+object.initialImageURI+'"/><div id="'+object.comparisonKey+'facsimileID"/></div></div>'+ //<h1>Facsimile</h1>
+                                '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;display:none;"/></div></div>' + //<h1>Rendering</h1>
                               '</div>' +
                             '</div>');
           
-          var audioDiv = $('<div id="'+object.comparisonKey+'audioDiv" class="span8"><audio id="'+object.comparisonKey+'track" controls="controls" class="span12"><source src="../Weber_Freischuetz-06_Ackermann1951.wav" type="audio/wav"/>Your browser does not support the HTML5 audio element.</audio></div>'); //<h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div>
+          var audioDiv = $('<div id="'+object.comparisonKey+'audioDiv" class="span8"><audio id="'+object.comparisonKey+'track" controls="controls" class="span12"><source src="'+object.initialAudioURI+'" type="audio/wav"/>Your browser does not support the HTML5 audio element.</audio></div>'); //<h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div>
           
           tab.append(recordingList);
           tab.append(audioDiv);
@@ -235,15 +273,28 @@
           //  console.log("mouseover: "+object.comparisonKey);
           //});
           
-          $('#'+object.comparisonKey+'_button').click(function(event){
+         /* $('#'+object.comparisonKey+'_button').click(function(event){
             //console.log("rendering tab clicked for: "+object.comparisonKey);
             //var buttonID = event.currentTarget.id;
             //$('.recordingList button').toggleClass('btn-primary', false);
             //$('#' + buttonID).toggleClass('btn-primary', true);
             //loadMeasureCoreChart(source.id);
-            renderSource('mov6');
+            if (comparisonKey == 'Weber_Freischuetz-06'){
+              checkImage('sources/A/00000100.jpg');
+              prepareSync(comparisonKey); 
+              switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-06');//TODO cache comparison time
+              renderSource('mov6');
+            } else if (comparisonKey == 'Weber_Freischuetz-08'){
+              checkImage('sources/A/00000127.jpg');
+              switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-08');//TODO cache comparison time
+              renderSource('mov8');
+            } else if (comparisonKey == 'Weber_Freischuetz-09'){
+              checkImage('sources/A/00000147.jpg');
+              switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-09');//TODO cache comparison time
+              renderSource('mov9');
+            }
             
-          });
+          });*/
           
           $('#'+object.comparisonKey+'renderingTabButton').click(function(event){
             //console.log("rendering tab clicked for: "+object.comparisonKey);
@@ -252,7 +303,9 @@
             //$('#' + buttonID).toggleClass('btn-primary', true);
             //loadMeasureCoreChart(source.id);
             //renderSource('mov6');
-            $('#'+object.comparisonKey+'_ajaxLoader').show();
+             
+            $('#'+object.comparisonKey+'_ajaxLoader').hide();
+            $('#'+object.comparisonKey+'output').show();
           });
           
                 //bind function to timeupdate of audio element
@@ -320,12 +373,10 @@
         
       }, 'json');
       
-      var json;
-       
-      $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
+    /*  $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
         json = data;
         //console.log(data);
-    }, 'json');
+    }, 'json');*/
 
         
 
