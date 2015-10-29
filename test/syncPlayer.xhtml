@@ -179,17 +179,16 @@
             };
             if(comparisonKey !== ''){
               lastComparisonIndex = getIndexById(config.comparison, comparisonKey);
-              //config.comparison[comparisonIndex[0]].lastJSON = json;
-              console.log(lastComparisonIndex);
-              console.log(config.comparison[lastComparisonIndex]);
-              config.comparison[lastComparisonIndex].lastJSON = json;
-              config.comparison[lastComparisonIndex].lastMeasure = currentMeasure;
+              config.comparison[lastComparisonIndex].last_json = json;
+              config.comparison[lastComparisonIndex].last_currentMeasure = currentMeasure;
+              config.comparison[lastComparisonIndex].last_globalTime = globalTime;
               console.log(config.comparison[lastComparisonIndex]);
               
               newComparisonIndex = getIndexById(config.comparison, object.comparisonKey);
-              json = config.comparison[newComparisonIndex].lastJSON;
+              json = config.comparison[newComparisonIndex].last_json;
+              globalTime = config.comparison[lastComparisonIndex].last_globalTime;
               if(currentMeasure !== undefined){
-                currentMeasure = config.comparison[newComparisonIndex].lastMeasure;
+                currentMeasure = config.comparison[newComparisonIndex].last_currentMeasure;
                 console.log(json);
               }
             }
@@ -198,23 +197,23 @@
             comparisonKey = object.comparisonKey;
             prepareSync(object.comparisonKey);
             
-            if (comparisonKey == 'Weber_Freischuetz-06'){
+ //           if (comparisonKey == 'Weber_Freischuetz-06'){
         //      checkImage('sources/A/00000100.jpg');
-              var time = document.getElementById('Weber_Freischuetz-06'+'track').currentTime;
-              globalTime = time;
+   //           var time = document.getElementById('Weber_Freischuetz-06'+'track').currentTime;
+   //           globalTime = time;
               
          //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-06');//TODO cache comparison time
-              renderSource('mov6');
-            } else if (comparisonKey == 'Weber_Freischuetz-08'){
+    //          renderSource('mov6');
+     //       } else if (comparisonKey == 'Weber_Freischuetz-08'){
           //    checkImage('sources/A/00000127.jpg');
-              var time = document.getElementById('Weber_Freischuetz-08'+'track').currentTime;
-              globalTime = time;
+      //        var time = document.getElementById('Weber_Freischuetz-08'+'track').currentTime;
+      //        globalTime = time;
          //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-08');//TODO cache comparison time
          //     renderSource('mov8');
-            } else if (comparisonKey == 'Weber_Freischuetz-09'){
+      //      } else if (comparisonKey == 'Weber_Freischuetz-09'){
         //      checkImage('sources/A/00000147.jpg');
-              var time = document.getElementById('Weber_Freischuetz-09'+'track').currentTime;
-              globalTime = time;
+      //        var time = document.getElementById('Weber_Freischuetz-09'+'track').currentTime;
+       //       globalTime = time;
          //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-09');//TODO cache comparison time
          //     renderSource('mov9');
             }
