@@ -55,7 +55,17 @@ var offline = true;
  /*
  * used functions
  */
- 
+
+/*function resetGlobalVars(){
+  console.log('reset globals');
+  audioNum ='';
+  globalTime = 0;
+  //var currentPage = 1;
+  currentMeasure = undefined;
+  leftBarLine = -1;
+  json = [];
+ };
+*/ 
  /* function filterById
  * @param object   the JSON array to be searched
  * @param value    the ID value to be retrieved
@@ -205,11 +215,11 @@ function createRecordingButtons(comparisonKey){
         
         $('#'+comparisonKey+recording.id).click(function(event){
           var buttonID = event.currentTarget.id;
-          $.getJSON(recording.annotsURI, function(data){
+          /*$.getJSON(recording.annotsURI, function(data){
             console.log('load recording annots for '+recording.id);
             console.log(data);
             json = data;
-          }, 'json');
+          }, 'json');*/
           $('#'+comparisonKey+' .recordingList button').toggleClass('btn-primary', false);
           $('#'+comparisonKey+recording.id).toggleClass('btn-primary', true);
           //console.log(recording.audioURI, globalTime, recording.id);
@@ -294,7 +304,7 @@ function prepareSync(comparisonKey){
  * @var        {Number}   bestDiff
  */
 function getMeasure(time){
-  //console.log('getMeasure for time: ' + time);
+  console.log('getMeasure for time: ' + time);
   //var bestDiff = 0;
   //var minDiff;
   //var i;
@@ -328,7 +338,8 @@ function getMeasure(time){
   //$("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
   //$("#measureID").text(measureID);
-  //console.log('getMeasure returns: ' + measureID);
+  console.log('getMeasure count: '+ measureCount);
+  console.log('getMeasure returns: ' + measureID);
   return measureID;
 };
 

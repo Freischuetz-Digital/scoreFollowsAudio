@@ -174,49 +174,59 @@
           
           $('#' + object.comparisonKey + '_button').click(function (e) {
             e.preventDefault();
+            
             if(comparisonKey !== ''){
-                document.getElementById(comparisonKey+'track').pause();
-            };
-            if(comparisonKey !== ''){
+              document.getElementById(comparisonKey+'track').pause();
+            
               lastComparisonIndex = getIndexById(config.comparison, comparisonKey);
               config.comparison[lastComparisonIndex].last_json = json;
               config.comparison[lastComparisonIndex].last_currentMeasure = currentMeasure;
               config.comparison[lastComparisonIndex].last_globalTime = globalTime;
+              config.comparison[lastComparisonIndex].last_audioNum = audioNum;
               console.log(config.comparison[lastComparisonIndex]);
               
+              //console.log(object.comparisonKey);
               newComparisonIndex = getIndexById(config.comparison, object.comparisonKey);
-              json = config.comparison[newComparisonIndex].last_json;
-              globalTime = config.comparison[lastComparisonIndex].last_globalTime;
-              if(currentMeasure !== undefined){
-                currentMeasure = config.comparison[newComparisonIndex].last_currentMeasure;
-                console.log(json);
+            
+              if(config.comparison[newComparisonIndex].last_json !== undefined){
+                json = config.comparison[newComparisonIndex].last_json;
+                globalTime = config.comparison[newComparisonIndex].last_globalTime;
+                audioNum = config.comparison[newComparisonIndex].last_audioNum;
+                
+                console.log(globalTime);
+                console.log(config.comparison[newComparisonIndex].last_globalTime);
+                console.log(audioNum);
+                console.log(config.comparison[newComparisonIndex].last_audioNum);
+
+                console.log('globalTime resetted');
+
+                if(currentMeasure !== undefined){
+                  currentMeasure = config.comparison[newComparisonIndex].last_currentMeasure;
+                  console.log(json);
+                }
+                
+              }else{
+                  console.log('newComp last json not defined');
+    /*              $.getJSON(recording.annotsURI, function(data){
+            console.log('load recording annots for '+recording.id);
+            console.log(data);
+            json = data;
+            config.comparison[newComparisonIndex].last_json = data;
+                config.comparison[newComparisonIndex].last_globalTime = 0;
+                config.comparison[newComparisonIndex].last_audioNum = data.id;
+          }, 'json');*/
+                
+
               }
             }
             $(this).tab('show');
             
             comparisonKey = object.comparisonKey;
+            console.log(comparisonKey);
+            console.log(object.comparisonKey);
             prepareSync(object.comparisonKey);
             
- //           if (comparisonKey == 'Weber_Freischuetz-06'){
-        //      checkImage('sources/A/00000100.jpg');
-   //           var time = document.getElementById('Weber_Freischuetz-06'+'track').currentTime;
-   //           globalTime = time;
-              
-         //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-06');//TODO cache comparison time
-    //          renderSource('mov6');
-     //       } else if (comparisonKey == 'Weber_Freischuetz-08'){
-          //    checkImage('sources/A/00000127.jpg');
-      //        var time = document.getElementById('Weber_Freischuetz-08'+'track').currentTime;
-      //        globalTime = time;
-         //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-08');//TODO cache comparison time
-         //     renderSource('mov8');
-      //      } else if (comparisonKey == 'Weber_Freischuetz-09'){
-        //      checkImage('sources/A/00000147.jpg');
-      //        var time = document.getElementById('Weber_Freischuetz-09'+'track').currentTime;
-       //       globalTime = time;
-         //     switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-09');//TODO cache comparison time
-         //     renderSource('mov9');
-            }
+ 
           });
          
           //construct and append data tab element
@@ -311,7 +321,7 @@
           $('#'+object.comparisonKey+'track').bind('timeupdate', function() {
             var time = this.currentTime;
            // globalTime = time;
-            //console.log('ontimeupdate ' + time);
+            console.log('html ontimeupdate ' + time);
     		  
             //TODO format time
             measure = getMeasure(time);
