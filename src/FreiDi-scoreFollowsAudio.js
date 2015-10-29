@@ -215,15 +215,15 @@ function createRecordingButtons(comparisonKey){
         
         $('#'+comparisonKey+recording.id).click(function(event){
           var buttonID = event.currentTarget.id;
-          /*$.getJSON(recording.annotsURI, function(data){
+          $.getJSON(recording.annotsURI, function(data){
             console.log('load recording annots for '+recording.id);
             console.log(data);
             json = data;
-          }, 'json');*/
+          }, 'json');
           $('#'+comparisonKey+' .recordingList button').toggleClass('btn-primary', false);
           $('#'+comparisonKey+recording.id).toggleClass('btn-primary', true);
           //console.log(recording.audioURI, globalTime, recording.id);
-          switchAudio(recording.audioURI, globalTime, recording.id);
+          switchAudio(recording.audioURI, globalTime, recording.id); //Potential race problem
           audioNum = recording.id;
           appendMetadata(recording);
         });
@@ -233,11 +233,11 @@ function createRecordingButtons(comparisonKey){
   }
 };
 
-function renderSource(movID){
-  console.log('renderSource supplied movID: ' + movID);
+function renderSource(meiURI){
+  console.log('renderSource supplied: ' + meiURI);
   //console.log('TODO: implement real source switch');
   /* Load the file using HTTP GET */
-  $.get( "../A_"+movID+"_no_bTrem-no-facs.mei", function( data ) {
+  $.get( meiURI, function( data ) {
       
   var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({
       inputFormat: 'mei',
