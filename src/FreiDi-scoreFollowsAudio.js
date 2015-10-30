@@ -331,13 +331,13 @@ function getMeasure(time){
     measureIndex = 0;
   };
   //set facsimile text field to new value
-  //$('#facsimileID').text(imageUri);
+  $('#facsimileID').text(imageUri);
   //set measure count to new value
-  //$("#measureCount").text(measureCount);
+  $("#measureCount").text(measureCount);
   //set measure position to new value
-  //$("#measurePosition").text(measurePosition.toFixed(3));
+  $("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
-  //$("#measureID").text(measureID);
+  $("#measureID").text(measureID);
   console.log('getMeasure count: '+ measureCount);
   console.log('getMeasure returns: ' + measureID);
   return measureID;

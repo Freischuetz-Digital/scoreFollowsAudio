@@ -90,6 +90,9 @@
             <li id="nav_rend">
               <a href="rendering.xhtml">Rendering Demo</a>
             </li>
+              <li id="nav_sync">
+                  <a href="syncPlayer.xhtml">syncPlayer Demo</a>
+              </li>
             <li id="nav_code">
               <a href="https://github.com/Freischuetz-Digital/scoreFollowsAudio">Code</a>
             </li>
@@ -113,18 +116,15 @@
         </div>  
         <div id="audioDiv" class="span3">
           <h1>Audio</h1>
-            
-          <div>
-            <header>Audio:</header>
-            time: <div id="currentTime"></div>
-            <header>Measure:</header>
-            count: <div id="measureCount"></div>
-            position: <div id="measurePosition"></div>
-            id: <div id="measureID"></div>
-          </div>
+          <dl class="dl-horizontal">
+            <dt>Player time:</dt> <dd><span id="currentTime"></span></dd>
+            <dt>Measure count:</dt> <dd><span id="measureCount"></span></dd>
+            <dt>Measure position:</dt> <dd><span id="measurePosition"></span></dd>
+            <dt>Measure id:</dt> <dd><span id="measureID"></span></dd>
+          </dl>
             
           <audio id="track" controls="controls">
-            <source src="../Weber_Freischuetz-06_Bloemeke2013.wav" type="audio/wav" style="width:100px; height:10px;"/>
+            <source src="sources/Weber_Freischuetz-06_Bloemeke2013.ogg" type="audio/wav" style="width:100px; height:10px;"/>
             Your browser does not support the HTML5 audio element.
           </audio>
         </div>
@@ -140,7 +140,7 @@
         var mat_startTimes = [];
 
         //get JSON and assign response to var json and log data
-        $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
+        $.getJSON('sources/Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json', function(data){
           json = data;
           console.log(data);
           mat_startTimes[audioNum] = data;
