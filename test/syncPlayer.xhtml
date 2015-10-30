@@ -128,6 +128,7 @@
           <a href="#" onclick="nav_back(); false;">zurück</a>
         </div>
       </header>
+      
       <div class="row-fluid">
         <div role="tabpanel">
           
@@ -346,7 +347,7 @@
                   
                   // Highligt the bounding boxes
                   var measureElement = d3.select( currentMeasure );
-                  var barLineElement = d3.select( currentMeasure + " .barLine" );
+                  var barLineElement = d3.select( currentMeasure + " .barlineAttr" );
                   var systemElement = measureElement.select(function() { return this.parentNode; });
                     var measureBB = measureElement[0][0].getBBox();
                   var barLineBB = barLineElement[0][0].getBBox();
@@ -394,7 +395,7 @@
         
         //]]>
       </script>
-    <script type="text/javascript" src="./verovio-toolkit.js"/>
+    <script type="text/javascript" src="./verovio-toolkit-0.9.10-dev-215f725-256Mb.js"/>
     <script type="text/javascript">
       var vrvToolkit = new verovio.toolkit();
     </script>
