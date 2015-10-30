@@ -107,8 +107,12 @@ function switchAudio(url, currentTime, newAudioID){
   var audio = $('#'+comparisonKey+'track');
   audio.attr('src', url);
   var newTime = Number(everpolate.linear(currentTime, mat_startTimes[audioNum], mat_startTimes[newAudioID])[0]);
-  audio[0].currentTime = newTime.toFixed(4); 
-  audio.bind('canplay', function() {
+  
+  audio.bind('loadedmetadata', function(){
+    audio[0].currentTime = newTime.toFixed(4);
+  });
+
+audio.bind('canplay', function() {
    // console.log('New time '  + audio[0].currentTime);
    audio[0].play();
    audioNum = newAudioID;
@@ -243,7 +247,6 @@ function renderSource(meiURI){
   } else {
   
     $.get( meiURI, function( data ) {
-      
     var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({
         inputFormat: 'mei',
         pageHeight: 2970,
