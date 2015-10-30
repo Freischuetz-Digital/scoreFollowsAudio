@@ -1,0 +1,86 @@
+body{
+    padding-top:60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    font-family: "PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+      
+.hero-unit {
+	padding: 30px !important;
+}
+
+.navbar .brand {
+	background-image: url('../pix/Logo_miniInset.png');
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+	margin-left: 0;
+	padding: 9px 20px 0 35px;
+	font-size: 16px;
+	line-height: 15px;
+}
+
+.navbar .brand small {
+    font-size: 80%;
+}
+
+#navbar {
+    margin-bottom: 20px;
+}
+
+.subcontent .span5 {
+    width: 700px;
+} 
+
+.subcontent .span6 {
+    width: 700px;
+}
+
+p {
+    text-align: justify;
+    -moz-hyphens: auto;
+    -o-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -hyphens: auto;
+}
+
+section {
+    padding-top: 70px;
+}
+
+.figure {
+    
+}
+
+#figure-top {
+    position: absolute;
+    right: 60px;
+    top: 100px;
+}
+
+.noTopMargin {
+    margin-top: 0;
+}
+
+.marginBottom30 {
+    margin-bottom: 30px;
+}
+
+.marginBottom50 {
+    margin-bottom: 50px;
+}
+
+.carousel-control {
+    line-height: 48px;
+}
+
+.btn-tooltip {
+    padding: 0 3px;
+    line-height: 18px;
+}
+
+q:before{
+    content:'»';
+}
+
+q:after{
+    content:'«';
+}

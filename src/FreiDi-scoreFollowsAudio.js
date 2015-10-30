@@ -50,7 +50,7 @@ var currentImageUri = 'sources/A/00000100.jpg';
 
 var mat_startTimes = [];
 var measures = [];
-
+var offline = true;
  /*
  * used functions
  */
@@ -314,7 +314,7 @@ function highlightImageArea(coordinates, widht, height){
  */
 function checkImage(imageUri) {
   if (currentImageUri !== imageUri){
-    setImage(imageUri, comparisonKey+'currentImage');
+    setImage(imageUri, comparisonKey+'currentImage', offline);
   }
 };
 
@@ -323,11 +323,14 @@ function checkImage(imageUri) {
  * @param      {String}   imageUri new image URI
  * @param      {String}   targetID ID of the target img element
  */
-function setImage(imageUri, targetID){
+function setImage(imageUri, targetID, local){
   currentImageUri = imageUri;
-  document.getElementById(targetID).src = 'http://freischuetz-digital.de/digilib/Scaler/freidi/'+imageUri+'?dw=710&amp;mo=fit';
-  map = $('<map');
-  $('#'+targetID).append();
+  if(local){
+    document.getElementById(targetID).src = imageUri;
+  } else {
+    document.getElementById(targetID).src = 'http://freischuetz-digital.de/digilib/Scaler/freidi/'+imageUri+'?dw=710&amp;mo=fit';
+  }
+  
 };
 
 
