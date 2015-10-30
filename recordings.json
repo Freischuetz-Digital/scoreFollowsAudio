@@ -3,7 +3,7 @@
     "id": "bloemeke2013-06",
     "buttonLabel": "Bloemeke, Karl-Heinz",
     "comparisonKey": "Weber_Freischuetz-06",
-    "audioURI": "sources/Weber_Freischuetz-06_Bloemeke2013.mp3",
+    "audioURI": "sources/Weber_Freischuetz-06_Bloemeke2013.ogg",
     "annotsURI": "sources/Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Bloemeke2013.jpg",
     "metadata": {
@@ -27,7 +27,7 @@
     "id": "ackermann1951-06",
     "buttonLabel": "Ackermann, Otto",
     "comparisonKey": "Weber_Freischuetz-06",
-    "audioURI": "sources/Weber_Freischuetz-06_Ackermann1951.mp3",
+    "audioURI": "sources/Weber_Freischuetz-06_Ackermann1951.ogg",
     "annotsURI": "sources/Weber_Freischuetz-06_Ackermann1951_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Ackermann1951.jpg",
     "metadata": {
@@ -51,7 +51,7 @@
     "id": "furtwaengler1954-06",
     "buttonLabel": "Furtwängler, Wilhelm",
     "comparisonKey": "Weber_Freischuetz-06",
-    "audioURI": "sources/Weber_Freischuetz-06_Furtwaengler1954.mp3",
+    "audioURI": "sources/Weber_Freischuetz-06_Furtwaengler1954.ogg",
     "annotsURI": "sources/Weber_Freischuetz-06_Furtwaengler1954_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Furtwaengler1954.jpg",
     "metadata": {
@@ -75,7 +75,7 @@
     "id": "janowski1994-06",
     "buttonLabel": "Janowski, Marek",
     "comparisonKey": "Weber_Freischuetz-06",
-    "audioURI": "sources/Weber_Freischuetz-06_Janowski1994.mp3",
+    "audioURI": "sources/Weber_Freischuetz-06_Janowski1994.ogg",
     "annotsURI": "sources/Weber_Freischuetz-06_Janowski1994_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Janowski1994.jpg",
     "metadata": {
@@ -99,7 +99,7 @@
     "id": "jochum1960-06",
     "buttonLabel": "Jochum, Eugen",
     "comparisonKey": "Weber_Freischuetz-06",
-    "audioURI": "sources/Weber_Freischuetz-06_Jochum1960.mp3",
+    "audioURI": "sources/Weber_Freischuetz-06_Jochum1960.ogg",
     "annotsURI": "sources/Weber_Freischuetz-06_Jochum1960_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Jochum1960.jpg",
     "metadata": {
@@ -123,7 +123,7 @@
     "id": "kleiber1955-06",
     "buttonLabel": "Kleiber, Erich",
     "comparisonKey": "Weber_Freischuetz-06",
-    "audioURI": "sources/Weber_Freischuetz-06_KleiberErich1955.mp3",
+    "audioURI": "sources/Weber_Freischuetz-06_KleiberErich1955.ogg",
     "annotsURI": "sources/Weber_Freischuetz-06_KleiberErich1955_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Kleiber1955.jpg",
     "metadata": {
@@ -147,7 +147,7 @@
     "id": "kleiber1973-06",
     "buttonLabel": "Kleiber, Carlos",
     "comparisonKey": "Weber_Freischuetz-06",
-    "audioURI": "sources/Weber_Freischuetz-06_KleiberCarlos1973.mp3",
+    "audioURI": "sources/Weber_Freischuetz-06_KleiberCarlos1973.ogg",
     "annotsURI": "sources/Weber_Freischuetz-06_KleiberCarlos1973_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Kleiber1973.jpg",
     "metadata": {
@@ -171,7 +171,7 @@
     "id": "bloemeke2013-08",
     "buttonLabel": "Bloemeke, Karl-Heinz",
     "comparisonKey": "Weber_Freischuetz-08",
-    "audioURI": "sources/Weber_Freischuetz-08_Bloemeke2013.mp3",
+    "audioURI": "sources/Weber_Freischuetz-08_Bloemeke2013.ogg",
     "annotsURI": "sources/Weber_Freischuetz-08_Bloemeke2013_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Bloemeke2013.jpg",
     "metadata": {
@@ -195,7 +195,7 @@
     "id": "ackermann1951-08",
     "buttonLabel": "Ackermann, Otto",
     "comparisonKey": "Weber_Freischuetz-08",
-    "audioURI": "sources/Weber_Freischuetz-08_Ackermann1951.mp3",
+    "audioURI": "sources/Weber_Freischuetz-08_Ackermann1951.ogg",
     "annotsURI": "sources/Weber_Freischuetz-08_Ackermann1951_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Ackermann1951.jpg",
     "metadata": {
@@ -219,7 +219,7 @@
     "id": "furtwaengler1954-08",
     "buttonLabel": "Furtwängler, Wilhelm",
     "comparisonKey": "Weber_Freischuetz-08",
-    "audioURI": "sources/Weber_Freischuetz-08_Furtwaengler1954.mp3",
+    "audioURI": "sources/Weber_Freischuetz-08_Furtwaengler1954.ogg",
     "annotsURI": "sources/Weber_Freischuetz-08_Furtwaengler1954_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Furtwaengler1954.jpg",
     "metadata": {
@@ -243,7 +243,7 @@
     "id": "janowski1994-08",
     "buttonLabel": "Janowski, Marek",
     "comparisonKey": "Weber_Freischuetz-08",
-    "audioURI": "sources/Weber_Freischuetz-08_Janowski1994.mp3",
+    "audioURI": "sources/Weber_Freischuetz-08_Janowski1994.ogg",
     "annotsURI": "sources/Weber_Freischuetz-08_Janowski1994_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Janowski1994.jpg",
     "metadata": {
@@ -267,7 +267,7 @@
     "id": "jochum1960-08",
     "buttonLabel": "Jochum, Eugen",
     "comparisonKey": "Weber_Freischuetz-08",
-    "audioURI": "sources/Weber_Freischuetz-08_Jochum1960.mp3",
+    "audioURI": "sources/Weber_Freischuetz-08_Jochum1960.ogg",
     "annotsURI": "sources/Weber_Freischuetz-08_Jochum1960_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Jochum1960.jpg",
     "metadata": {
@@ -291,7 +291,7 @@
     "id": "kleiber1955-08",
     "buttonLabel": "Kleiber, Erich",
     "comparisonKey": "Weber_Freischuetz-08",
-    "audioURI": "sources/Weber_Freischuetz-08_KleiberErich1955.mp3",
+    "audioURI": "sources/Weber_Freischuetz-08_KleiberErich1955.ogg",
     "annotsURI": "sources/Weber_Freischuetz-08_KleiberErich1955_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Kleiber1955.jpg",
     "metadata": {
@@ -315,7 +315,7 @@
     "id": "kleiber1973-08",
     "buttonLabel": "Kleiber, Carlos",
     "comparisonKey": "Weber_Freischuetz-08",
-    "audioURI": "sources/Weber_Freischuetz-08_KleiberCarlos1973.mp3",
+    "audioURI": "sources/Weber_Freischuetz-08_KleiberCarlos1973.ogg",
     "annotsURI": "sources/Weber_Freischuetz-08_KleiberCarlos1973_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Kleiber1973.jpg",
     "metadata": {
@@ -338,7 +338,7 @@
     "id": "bloemeke2013-09",
     "buttonLabel": "Bloemeke, Karl-Heinz",
     "comparisonKey": "Weber_Freischuetz-09",
-    "audioURI": "sources/Weber_Freischuetz-09_Bloemeke2013.mp3",
+    "audioURI": "sources/Weber_Freischuetz-09_Bloemeke2013.ogg",
     "annotsURI": "sources/Weber_Freischuetz-09_Bloemeke2013_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Bloemeke2013.jpg",
     "metadata": {
@@ -362,7 +362,7 @@
     "id": "ackermann1951-09",
     "buttonLabel": "Ackermann, Otto",
     "comparisonKey": "Weber_Freischuetz-09",
-    "audioURI": "sources/Weber_Freischuetz-09_Ackermann1951.mp3",
+    "audioURI": "sources/Weber_Freischuetz-09_Ackermann1951.ogg",
     "annotsURI": "sources/Weber_Freischuetz-09_Ackermann1951_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Ackermann1951.jpg",
     "metadata": {
@@ -386,7 +386,7 @@
     "id": "furtwaengler1954-09",
     "buttonLabel": "Furtwängler, Wilhelm",
     "comparisonKey": "Weber_Freischuetz-09",
-    "audioURI": "sources/Weber_Freischuetz-09_Furtwaengler1954.mp3",
+    "audioURI": "sources/Weber_Freischuetz-09_Furtwaengler1954.ogg",
     "annotsURI": "sources/Weber_Freischuetz-09_Furtwaengler1954_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Furtwaengler1954.jpg",
     "metadata": {
@@ -410,7 +410,7 @@
     "id": "janowski1994-09",
     "buttonLabel": "Janowski, Marek",
     "comparisonKey": "Weber_Freischuetz-09",
-    "audioURI": "sources/Weber_Freischuetz-09_Janowski1994.mp3",
+    "audioURI": "sources/Weber_Freischuetz-09_Janowski1994.ogg",
     "annotsURI": "sources/Weber_Freischuetz-09_Janowski1994_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Janowski1994.jpg",
     "metadata": {
@@ -434,7 +434,7 @@
     "id": "jochum1960-09",
     "buttonLabel": "Jochum, Eugen",
     "comparisonKey": "Weber_Freischuetz-09",
-    "audioURI": "sources/Weber_Freischuetz-09_Jochum1960.mp3",
+    "audioURI": "sources/Weber_Freischuetz-09_Jochum1960.ogg",
     "annotsURI": "sources/Weber_Freischuetz-09_Jochum1960_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Jochum1960.jpg",
     "metadata": {
@@ -458,7 +458,7 @@
     "id": "kleiber1955-09",
     "buttonLabel": "Kleiber, Erich",
     "comparisonKey": "Weber_Freischuetz-09",
-    "audioURI": "sources/Weber_Freischuetz-09_KleiberErich1955.mp3",
+    "audioURI": "sources/Weber_Freischuetz-09_KleiberErich1955.ogg",
     "annotsURI": "sources/Weber_Freischuetz-09_KleiberErich1955_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Kleiber1955.jpg",
     "metadata": {
@@ -482,7 +482,7 @@
     "id": "kleiber1973-09",
     "buttonLabel": "Kleiber, Carlos",
     "comparisonKey": "Weber_Freischuetz-09",
-    "audioURI": "sources/Weber_Freischuetz-09_KleiberCarlos1973.mp3",
+    "audioURI": "sources/Weber_Freischuetz-09_KleiberCarlos1973.ogg",
     "annotsURI": "sources/Weber_Freischuetz-09_KleiberCarlos1973_annoMeasures.json",
     "coverURI": "sources/freidi-recording_Kleiber1973.jpg",
     "metadata": {
