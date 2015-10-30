@@ -11,7 +11,8 @@ A_mov6.xml
 *.wav
 *annoMeasures.json
 recordingPrep
-
+data/freidi-musicSource_A.xml
+test/sources/
 # =========================
 #dist and documentation
 # =========================
