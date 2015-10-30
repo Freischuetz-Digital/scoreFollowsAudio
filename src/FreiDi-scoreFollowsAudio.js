@@ -158,14 +158,14 @@ function appendMetadata(recording){
     $('#'+comparisonKey+'recordingMetadata').empty();
     
     var cover = $('<img id="cover" src="' + recording.coverURI + '" alt="cover" class="span12"/>');
-    var buyLink = $('<button type="button" class="btn btn-small" id="buyButton"><span class="glyphicon glyphicon-shopping-cart"/></button>');
+    var buyLink = $('<button type="button" class="btn btn-small" id="buyButton">GET<span class="glyphicon glyphicon-shopping-cart"/></button>');
     $('#buyButton').click(function(event){
         
     });
     $('#'+comparisonKey+'recordingMetadata').append(cover);
     
     //TODO Title als heading
-    $('#'+comparisonKey+'recordingMetadata').append($('<h3>'+ recording.metadata.title +'<button type="button" class="btn btn-small buy" id="buyButton"><span class="glyphicon glyphicon-shopping-cart"/></button></h3>'));
+    $('#'+comparisonKey+'recordingMetadata').append($('<h3>'+ recording.metadata.title +'<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a></h3>'));
     
     var list = $('<dl/>');
     console.log(recording);
