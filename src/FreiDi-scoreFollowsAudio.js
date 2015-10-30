@@ -237,22 +237,26 @@ function renderSource(meiURI){
   console.log('renderSource supplied: ' + meiURI);
   //console.log('TODO: implement real source switch');
   /* Load the file using HTTP GET */
-  $.get( meiURI, function( data ) {
+  
+  if($('#'+comparisonKey+'output svg').length > 0){
+    return
+  } else {
+  
+    $.get( meiURI, function( data ) {
       
-  var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({
-      inputFormat: 'mei',
-       pageHeight: 2970,
-       pageWidth: 2100,
-       ignoreLayout: 1,
-       border: 5,
-       scale: 25 })
-    );
-   
-    $('#'+comparisonKey+'output').html(svg);
-  
-    //console.log(vrvToolkit.getPageCount());
-  
-  });
+    var svg = vrvToolkit.renderData( data + "\n", JSON.stringify({
+        inputFormat: 'mei',
+        pageHeight: 2970,
+        pageWidth: 2100,
+        ignoreLayout: 1,
+        border: 5,
+        scale: 25 })
+      );
+    
+      $('#'+comparisonKey+'output').html(svg);
+      //console.log(vrvToolkit.getPageCount());
+    });
+  }
 };
 
 function updateAudioTimes(currentTime, source){
