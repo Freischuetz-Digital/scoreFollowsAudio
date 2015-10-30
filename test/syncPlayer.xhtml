@@ -116,6 +116,9 @@
             <li id="nav_rend">
               <a href="rendering.xhtml">Rendering Demo</a>
             </li>
+              <li id="nav_sync">
+                  <a href="syncPlayer.xhtml">syncPlayer Demo</a>
+              </li>
             <li id="nav_code">
               <a href="https://github.com/Freischuetz-Digital/scoreFollowsAudio">Code</a>
             </li>
@@ -128,6 +131,9 @@
           <a href="#" onclick="nav_back(); false;">zurück</a>
         </div>
       </header>
+      <div class="row-fluid">
+        <p>The <i>FreiDi:syncPlayer</i> combines the previous experiments of bringing together facsimile and audio or rendering and audio. Please start by selecting a tab below. Each tab corresponds to one number of Carl Maria von Weber's opera <i>Der Freischütz</i>. <b>Please be aware</b> that on selecting a tab for the first time, the rendering process of the score will make your browser <b>unresponsive for a moment</b>. Having selected a number you may choose from different recordings by clicking on the respective buttons. You may even switch instantaneously between the recordings, the <i>FreiDi:syncPlayer</i> will keep care to address the identical measure position in the audio stream.</p>
+      </div>
       <div class="row-fluid">
         <div role="tabpanel">
           
@@ -152,12 +158,12 @@
       var sourcesLoaded = false;
       var recordings = {};
       var recordingsLoaded = false;
-      var audioNum = 'bloemeke2013-06';
+      var audioNum= 'bloemeke2013-06';
       
       $.getJSON('../config.json', function(data){
         config = data;
         //console.log(data);
-        
+        //prepareSync();
         $.each(config.comparison, function(index, object){
           //construct and append elements for tab navigation
           var tabNav = $('<li/>').prop({'role':'presentation'});
@@ -174,12 +180,61 @@
           
           $('#' + object.comparisonKey + '_button').click(function (e) {
             e.preventDefault();
+            
             if(comparisonKey !== ''){
-                document.getElementById(comparisonKey+'track').pause();
-            };
+              document.getElementById(comparisonKey+'track').pause();
+            
+              lastComparisonIndex = getIndexById(config.comparison, comparisonKey);
+              config.comparison[lastComparisonIndex].last_json = json;
+              config.comparison[lastComparisonIndex].last_currentMeasure = currentMeasure;
+              config.comparison[lastComparisonIndex].last_globalTime = globalTime;
+              config.comparison[lastComparisonIndex].last_audioNum = audioNum;
+              console.log(config.comparison[lastComparisonIndex]);
+              
+              //console.log(object.comparisonKey);
+              newComparisonIndex = getIndexById(config.comparison, object.comparisonKey);
+            
+              if(config.comparison[newComparisonIndex].last_json !== undefined){
+                json = config.comparison[newComparisonIndex].last_json;
+                globalTime = config.comparison[newComparisonIndex].last_globalTime;
+                audioNum = config.comparison[newComparisonIndex].last_audioNum;
+                
+                console.log(globalTime);
+                console.log(config.comparison[newComparisonIndex].last_globalTime);
+                console.log(audioNum);
+                console.log(config.comparison[newComparisonIndex].last_audioNum);
+
+                console.log('globalTime resetted');
+
+                if(currentMeasure !== undefined){
+                  currentMeasure = config.comparison[newComparisonIndex].last_currentMeasure;
+                  console.log(json);
+                }
+                
+              }else{
+                  console.log('newComp last json not defined');
+                  globalTime = 0;
+                  json = [];
+    /*              $.getJSON(recording.annotsURI, function(data){
+            console.log('load recording annots for '+recording.id);
+            console.log(data);
+            json = data;
+            config.comparison[newComparisonIndex].last_json = data;
+                config.comparison[newComparisonIndex].last_globalTime = 0;
+                config.comparison[newComparisonIndex].last_audioNum = data.id;
+          }, 'json');*/
+                
+
+              }
+            }
             $(this).tab('show');
+            
             comparisonKey = object.comparisonKey;
+            console.log(comparisonKey);
+            console.log(object.comparisonKey);
             prepareSync(object.comparisonKey);
+            renderSource(object.meiURI);
+ 
           });
          
           //construct and append data tab element
@@ -196,7 +251,7 @@
           buttonRow.append('<div class="btn-group-vertical span12" role="group" aria-label="..."/>');
           recordingList.append(buttonRow);
           var metadataRow = $('<div class="row"/>');
-          metadataRow.append('<div id="recordingMetadata" style="overflow:scroll; overflow-x:hidden;height:400px;">' + 
+          metadataRow.append('<div id="'+object.comparisonKey+'recordingMetadata" style="overflow:scroll; overflow-x:hidden;height:400px;">' + 
                                     //'<img id="cover" href="../empty.jpg" alt="cover"/>' +
                                 '</div>');
           recordingList.append(metadataRow);
@@ -208,17 +263,17 @@
                                   '<a href="#'+object.comparisonKey+'facsimileTab" aria-controls="'+object.comparisonKey+'facsimileTab" role="tab" class="tab-button" data-toggle="tab">Facsimile</a>'+
                                   '</li>' +
                                   '<li  id="'+object.comparisonKey+'renderingTabButton" role="presentation" class="">'+
-                                  '<a href="#'+object.comparisonKey+'renderingTab" aria-controls="'+object.comparisonKey+'renderingTab" role="tab" class="tab-button" data-toggle="tab">Rendering</a>'+
+                                  '<a href="#'+object.comparisonKey+'renderingTab" aria-controls="'+object.comparisonKey+'renderingTab" role="tab" class="tab-button" data-toggle="tab">Rendering<img id="'+object.comparisonKey+'_ajaxLoader" src="resources/ajax-loader.gif" style="display:none; margin-left:3px;height:12px;"/></a>'+
                                   '</li>' +
                               '</ul>' +
                               '<!-- Tab panes -->' +
                               '<div id="'+object.comparisonKey+'scoresTabs" class="tab-content">' +
-                                '<div id="'+object.comparisonKey+'facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile" align="center"><img id="'+object.comparisonKey+'currentImage" src="sources/A/00000100.jpg"/><div id="'+object.comparisonKey+'facsimileID"/></div></div>'+ //<h1>Facsimile</h1>
-                                '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;"/><img id="'+object.comparisonKey+'_ajaxLoader" src="resources/ajax-loader.gif" style="visibility:hidden;"/></div></div>' + //<h1>Rendering</h1>
+                                '<div id="'+object.comparisonKey+'facsimileTab" role="tabpanel" class="tab-pane active"><div id="facsimile" align="center"><img id="'+object.comparisonKey+'currentImage" src="'+object.initialImageURI+'"/><div id="'+object.comparisonKey+'facsimileID"/></div></div>'+ //<h1>Facsimile</h1>
+                                '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;display:none;"/></div></div>' + //<h1>Rendering</h1>
                               '</div>' +
                             '</div>');
           
-          var audioDiv = $('<div id="'+object.comparisonKey+'audioDiv" class="span8"><audio id="'+object.comparisonKey+'track" controls="controls" class="span12"><source src="../Weber_Freischuetz-06_Ackermann1951.wav" type="audio/wav"/>Your browser does not support the HTML5 audio element.</audio></div>'); //<h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div>
+          var audioDiv = $('<div id="'+object.comparisonKey+'audioDiv" class="span8"><audio id="'+object.comparisonKey+'track" controls="controls" class="span12"><source src="'+object.initialAudioURI+'" type="audio/wav"/>Your browser does not support the HTML5 audio element.</audio></div>'); //<h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div>
           
           tab.append(recordingList);
           tab.append(audioDiv);
@@ -235,15 +290,28 @@
           //  console.log("mouseover: "+object.comparisonKey);
           //});
           
-          $('#'+object.comparisonKey+'_button').click(function(event){
+         /* $('#'+object.comparisonKey+'_button').click(function(event){
             //console.log("rendering tab clicked for: "+object.comparisonKey);
             //var buttonID = event.currentTarget.id;
             //$('.recordingList button').toggleClass('btn-primary', false);
             //$('#' + buttonID).toggleClass('btn-primary', true);
             //loadMeasureCoreChart(source.id);
-            renderSource('mov6');
+            if (comparisonKey == 'Weber_Freischuetz-06'){
+              checkImage('sources/A/00000100.jpg');
+              prepareSync(comparisonKey); 
+              switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-06');//TODO cache comparison time
+              renderSource('mov6');
+            } else if (comparisonKey == 'Weber_Freischuetz-08'){
+              checkImage('sources/A/00000127.jpg');
+              switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-08');//TODO cache comparison time
+              renderSource('mov8');
+            } else if (comparisonKey == 'Weber_Freischuetz-09'){
+              checkImage('sources/A/00000147.jpg');
+              switchAudio('sources/Weber_Freischuetz-06_Bloemeke2013.wav', 0, 'bloemeke2013-09');//TODO cache comparison time
+              renderSource('mov9');
+            }
             
-          });
+          });*/
           
           $('#'+object.comparisonKey+'renderingTabButton').click(function(event){
             //console.log("rendering tab clicked for: "+object.comparisonKey);
@@ -252,14 +320,16 @@
             //$('#' + buttonID).toggleClass('btn-primary', true);
             //loadMeasureCoreChart(source.id);
             //renderSource('mov6');
-            $('#'+object.comparisonKey+'_ajaxLoader').show();
+             
+            $('#'+object.comparisonKey+'_ajaxLoader').hide();
+            $('#'+object.comparisonKey+'output').show();
           });
           
                 //bind function to timeupdate of audio element
           $('#'+object.comparisonKey+'track').bind('timeupdate', function() {
             var time = this.currentTime;
            // globalTime = time;
-            //console.log('ontimeupdate ' + time);
+            console.log('html ontimeupdate ' + time);
     		  
             //TODO format time
             measure = getMeasure(time);
@@ -282,7 +352,7 @@
                   
                   // Highligt the bounding boxes
                   var measureElement = d3.select( currentMeasure );
-                  var barLineElement = d3.select( currentMeasure + " .barLine" );
+                  var barLineElement = d3.select( currentMeasure + " .barlineAttr" );
                   var systemElement = measureElement.select(function() { return this.parentNode; });
                     var measureBB = measureElement[0][0].getBBox();
                   var barLineBB = barLineElement[0][0].getBBox();
@@ -320,19 +390,17 @@
         
       }, 'json');
       
-      var json;
-       
-      $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
+    /*  $.getJSON('../Weber_Freischuetz-06_FreiDi_annoMeasures.json', function(data){
         json = data;
         //console.log(data);
-    }, 'json');
+    }, 'json');*/
 
         
 
         
         //]]>
       </script>
-    <script type="text/javascript" src="./verovio-toolkit.js"/>
+    <script type="text/javascript" src="./verovio-toolkit-0.9.10-dev-215f725-256Mb.js"/>
     <script type="text/javascript">
       var vrvToolkit = new verovio.toolkit();
     </script>

@@ -5,17 +5,30 @@
     {
       "sortNum": 1,
       "comparisonKey": "Weber_Freischuetz-06",
-      "label": "6"
+      "label": "No. 6",
+      "meiURI": "sources/A_mov6.mei",
+      "initialImageURI": "sources/A/00000100.jpg",
+      "initialAudioURI": "sources/Weber_Freischuetz-06_Bloemeke2013.ogg",
+      "initialJsonURI": "sources/Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json"
+
     },
     {
       "sortNum": 2,
       "comparisonKey": "Weber_Freischuetz-08",
-      "label": "8"
+      "label": "No. 8",
+      "meiURI": "sources/A_mov8.mei",
+      "initialImageURI": "sources/A/00000127.jpg",
+      "initialAudioURI": "sources/Weber_Freischuetz-08_Bloemeke2013.ogg",
+      "initialJsonURI": "sources/Weber_Freischuetz-08_Bloemeke2013_annoMeasures.json"
     },
     {
       "sortNum": 3,
       "comparisonKey": "Weber_Freischuetz-09",
-      "label": "9"
+      "label": "No. 9",
+      "meiURI": "sources/A_mov9.mei",
+      "initialImageURI": "sources/A/00000147.jpg",
+      "initialAudioURI": "sources/Weber_Freischuetz-09_Bloemeke2013.ogg",
+      "initialJsonURI": "sources/Weber_Freischuetz-09_Bloemeke2013_annoMeasures.json"
     }
   ]
 }
