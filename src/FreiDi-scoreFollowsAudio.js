@@ -158,14 +158,16 @@ function appendMetadata(recording){
     $('#'+comparisonKey+'recordingMetadata').empty();
     
     var cover = $('<img id="cover" src="' + recording.coverURI + '" alt="cover" class="span12"/>');
-    var buyLink = $('<button type="button" class="btn btn-small" id="buyButton">GET<span class="glyphicon glyphicon-shopping-cart"/></button>');
+    var buyLink = $('<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a>');//<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a>
     $('#buyButton').click(function(event){
         
     });
     $('#'+comparisonKey+'recordingMetadata').append(cover);
+    $('#'+comparisonKey+'recordingMetadata').append(buyLink);
+    
     
     //TODO Title als heading
-    $('#'+comparisonKey+'recordingMetadata').append($('<h3>'+ recording.metadata.title +'<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a></h3>'));
+    $('#'+comparisonKey+'recordingMetadata').append($('<h3>' + recording.metadata.title + '</h3>'));
     
     var list = $('<dl/>');
     console.log(recording);
@@ -357,7 +359,7 @@ function highlightImageArea(coordinates, widht, height){
     currentWidth = $(comparisonKey+'currentImage').width();
     currentHeight = $(comparisonKey+'currentImage').height();
     
-    factor = currentWidth/width;
+    factor = 0.5;//currentWidth/width;
     
     ulx = coordinates.ulx * factor;
     uly = coordinates.uly * factor;
