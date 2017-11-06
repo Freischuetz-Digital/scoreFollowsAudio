@@ -2,10 +2,12 @@
   "name": "FreiDi-scoreFollowsAudio",
   "version": "0.3.2",
   "author": "Benjamin W. Bohl <bohl@edirom.de>",
-  "contributors": [{
-  "name": "Thomas Prätzlich",
-  "email": "tpratzli@mpi-inf.mpg.de"
-}],
+  "contributors": [
+    {
+      "name": "Thomas Prätzlich",
+      "email": "tpratzli@mpi-inf.mpg.de"
+    }
+  ],
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
