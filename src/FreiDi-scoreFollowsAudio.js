@@ -30,10 +30,10 @@
 function appendAudio() {
   var audio = new Audio();
   audio.id = 'track_js'
-  audio.src = 'http://localhost:8000/Weber_Freischuetz-06_FreiDi.mp3';
+  audio.src = 'https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-06_Bloemeke2013.mp3';
   audio.controls = true;
   document.getElementById("audioDiv").appendChild(audio);
-  console.log('audio appended');
+  ////console.log('audio appended');
 };
 
 /*
@@ -50,14 +50,14 @@ var currentImageUri;
 var json;
 var mat_startTimes = [];
 var measures = [];
-var offline = true;
+var offline = false;
 
  /*
  * used functions
  */
 
 /*function resetGlobalVars(){
-  console.log('reset globals');
+  //console.log('reset globals');
   audioNum ='';
   globalTime = 0;
   //var currentPage = 1;
@@ -74,8 +74,8 @@ var offline = true;
  */
 function getIndexById (object, value) {
 
-    console.log('filter by id:');
-    console.log(value);
+    ////console.log('filter by id:');
+    ////console.log(value);
 
   return $.map(object, function (item, key) { 
 
@@ -99,10 +99,20 @@ function getIndexById (object, value) {
 }
 
 function switchAudio(url, currentTime, newAudioID){
-  //console.log('switch audio');
-  //console.log(newAudioID);
-  //console.log(url);
-  //console.log('Old time ' + currentTime);
+  ////console.log('switch audio');
+  ////console.log(newAudioID);
+  ////console.log(url);
+  ////console.log('Old time ' + currentTime);
+  
+  var audioURI;
+  //check offline
+  if(offline){
+    audioURI = url;
+  } else {
+    audioURI = 'http://rubin.upb.de:8092/exist/apps/contents/audioData/' + url.substring(url.indexOf('/')+1);
+  }
+
+
 
   var audio = $('#'+comparisonKey+'track');
   audio.attr('src', url);
@@ -113,7 +123,7 @@ function switchAudio(url, currentTime, newAudioID){
   });
 
 audio.bind('canplay', function() {
-   // console.log('New time '  + audio[0].currentTime);
+   // //console.log('New time '  + audio[0].currentTime);
    audio[0].play();
    audioNum = newAudioID;
    }); 
@@ -122,7 +132,7 @@ audio.bind('canplay', function() {
 function createSourceButtons(comparisonKey){
   $.getJSON('../sources.json', function(data){
     sources = data;
-    //console.log(data);
+    ////console.log(data);
     sourcesLoaded = true
   }, 'json');
       
@@ -131,7 +141,7 @@ function createSourceButtons(comparisonKey){
       createSourceButtons(comparisonKey);
     },1000);
   }else{
-    //console.log('processing sources for: ' +comparisonKey);
+    ////console.log('processing sources for: ' +comparisonKey);
     $.each(sources.source, function(index, source){
       var label = source.label;
       $.each(source.movement, function(index, mov){
@@ -170,7 +180,7 @@ function appendMetadata(recording){
     $('#'+comparisonKey+'recordingMetadata').append($('<h3>' + recording.metadata.title + '</h3>'));
     
     var list = $('<dl/>');
-    console.log(recording);
+    //console.log(recording);
     list.append($('<dt>Conductor</dt>'));
     list.append($('<dd>'+ recording.metadata.conductor +'</dd>'));
     list.append($('<dt>Ensemble</dt>'));
@@ -193,7 +203,7 @@ function appendMetadata(recording){
     list.append($('<dd>'+ recording.metadata.catalogNr +'</dd>'));
     list.append($('<dt>Copyright</dt>'));
     list.append($('<dd>'+ recording.metadata.copyright +'</dd>'));
-    console.log(list);
+    //console.log(list);
     
     $('#'+comparisonKey+'recordingMetadata').append(list);
     $('#'+comparisonKey+'recordingMetadata').append('<div>'+recording.metadata.remark+'</div>');
@@ -204,14 +214,14 @@ function appendMetadata(recording){
 function createRecordingButtons(comparisonKey){
   $.getJSON('../recordings.json', function(data){
     recordings = data;
-    //console.log(data);
+    ////console.log(data);
     recordingsLoaded = true
   }, 'json');
   
   if(recordingsLoaded !== true){
     setTimeout(function(){createRecordingButtons(comparisonKey);},1000);
   }else{
-    //console.log('processing recordings for: ' +comparisonKey);
+    ////console.log('processing recordings for: ' +comparisonKey);
     $.each(recordings.recording, function(index, recording){
       var buttonLabel = recording.buttonLabel;
       //$.each(source.movement, function(index, mov){
@@ -222,13 +232,13 @@ function createRecordingButtons(comparisonKey){
         $('#'+comparisonKey+recording.id).click(function(event){
           var buttonID = event.currentTarget.id;
           $.getJSON(recording.annotsURI, function(data){
-            console.log('load recording annots for '+recording.id);
-            console.log(data);
+            //console.log('load recording annots for '+recording.id);
+            //console.log(data);
             json = data;
           }, 'json');
           $('#'+comparisonKey+' .recordingList button').toggleClass('btn-primary', false);
           $('#'+comparisonKey+recording.id).toggleClass('btn-primary', true);
-          //console.log(recording.audioURI, globalTime, recording.id);
+          ////console.log(recording.audioURI, globalTime, recording.id);
           switchAudio(recording.audioURI, globalTime, recording.id); //Potential race problem
           audioNum = recording.id;
           appendMetadata(recording);
@@ -240,8 +250,8 @@ function createRecordingButtons(comparisonKey){
 };
 
 function renderSource(meiURI){
-  console.log('renderSource supplied: ' + meiURI);
-  //console.log('TODO: implement real source switch');
+  //console.log('renderSource supplied: ' + meiURI);
+  ////console.log('TODO: implement real source switch');
   /* Load the file using HTTP GET */
   
   if($('#'+comparisonKey+'output svg').length > 0){
@@ -259,7 +269,7 @@ function renderSource(meiURI){
       );
     
       $('#'+comparisonKey+'output').html(svg);
-      //console.log(vrvToolkit.getPageCount());
+      ////console.log(vrvToolkit.getPageCount());
     });
   }
 };
@@ -275,7 +285,7 @@ function getMusicSourceMeasureID(coreRef){
 }
 
 function prepareSync(comparisonKey){
-    //console.log('prepareSync for: ' + comparisonKey);
+    ////console.log('prepareSync for: ' + comparisonKey);
     $.each(recordings.recording, function(index, recording){
    //   if(recording.comparisonKey === comparisonKey){
         $.getJSON(recording.annotsURI, function(data){
@@ -290,14 +300,14 @@ function prepareSync(comparisonKey){
         }, 'json');
         
         $("#"+comparisonKey+"track").bind('timeupdate', function() {
-          //console.log('updateTime for ' + recording.id);
-          //console.log(recording.id);
+          ////console.log('updateTime for ' + recording.id);
+          ////console.log(recording.id);
           var time = this.currentTime;
-          //console.log(time);
+          ////console.log(time);
           globalTime = time;
-          //console.log(globalTime);
+          ////console.log(globalTime);
           var warpedTime = Number(everpolate.linear(time, mat_startTimes[audioNum], mat_startTimes[recording.id])[0]);
-          //console.log(warpedTime);
+          ////console.log(warpedTime);
           var mmss = new Date(null, null, null, null, null, warpedTime).toString("mm:ss")
           $("#" + comparisonKey + recording.id + " .currentTime").text(mmss);
 
@@ -313,7 +323,7 @@ function prepareSync(comparisonKey){
  * @var        {Number}   bestDiff
  */
 function getMeasure(time){
-  console.log('getMeasure for time: ' + time);
+  //console.log('getMeasure for time: ' + time);
   //var bestDiff = 0;
   //var minDiff;
   //var i;
@@ -333,9 +343,9 @@ function getMeasure(time){
   if(measureIndex >= 0){
     imageUri = json.measure[measureIndex].facsURI;
     checkImage(imageUri, comparisonKey);
-    console.log(imageUri);
+    //console.log(imageUri);
     coordinates = json.measure[measureIndex].coordinates;
-    console.log(coordinates);
+    //console.log(coordinates);
     highlightImageArea(coordinates);
     measureID = json.measure[measureIndex].sourceIdRef;  
   }
@@ -350,8 +360,8 @@ function getMeasure(time){
   $("#measurePosition").text(measurePosition.toFixed(3));
   //set measure ID to new value
   $("#measureID").text(measureID);
-  console.log('getMeasure count: '+ measureCount);
-  console.log('getMeasure returns: ' + measureID);
+  //console.log('getMeasure count: '+ measureCount);
+  //console.log('getMeasure returns: ' + measureID);
   return measureID;
 };
 
@@ -383,13 +393,13 @@ function checkImage(imageUri, comparisonKey) {
  * @param      {String}   imageUri new image URI
  * @param      {String}   targetID ID of the target img element
  */
-function setImage(imageUri, targetID, local){
-  console.log('setImage in '+targetID);
+function setImage(imageUri, targetID, offline){
+  //console.log('setImage in '+targetID);
   currentImageUri = imageUri;
-  if(local){
+  if(offline){
     document.getElementById(targetID).src = imageUri;
   } else {
-    document.getElementById(targetID).src = 'http://freischuetz-digital.de/digilib/Scaler/freidi/'+imageUri+'?dw=710&amp;mo=fit';
+    document.getElementById(targetID).src = 'https://digilib.freischuetz-digital.de/Scaler/'+imageUri+'?dw=710&amp;mo=fit';
   }
   
 };
