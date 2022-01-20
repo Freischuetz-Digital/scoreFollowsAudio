@@ -35,7 +35,7 @@ module.exports = (grunt) ->
         options:
           port: 8000
           hostname: "localhost"
-          #open: 'http://localhost:8000/test/index.html'
+          open: 'http://localhost:8000/test/index.html'
           
 
     watch:
