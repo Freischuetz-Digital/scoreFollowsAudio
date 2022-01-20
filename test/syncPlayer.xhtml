@@ -48,6 +48,24 @@
     <script type="text/javascript" src="../dist/bower.js"/>
     <script type="text/javascript" src="../bower_components/datejs/build/production/date.min.js"></script>
     <script type="text/javascript" src="../src/FreiDi-scoreFollowsAudio.js"/>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          //store activeTab to localStorage
+          $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+              localStorage.setItem('activeTab', $(e.target).attr('href'));
+          });
+          var defaultTab = '#Weber_Freischuetz-06';
+          var activeTab = localStorage.getItem('activeTab');
+          if(activeTab){
+              //reset active tab on reload
+              $('#comparisonTabNav a[href="' + activeTab + '"]').tab('show');
+          } else {
+              //set default tab
+              localStorage.setItem('activeTab', defaultTab);
+              $('#comparisonTabNav a[href="' + defaultTab + '"]').tab('show');
+          }
+      });
+    </script>
     <style>
       
     .row {
@@ -111,17 +129,17 @@
               <a href="index.html">Description</a>
             </li>
             <li id="nav_facs">
-              <a href="facsimile.xhtml">FacsimileSync Test</a>
+              <a href="facsimile.xhtml">Facsimile Demo</a>
             </li>
             <li id="nav_vrvTest">
               <a href="verovio-test.html">Verovio Test</a>
             </li>
             <li id="nav_rend">
-              <a href="rendering.xhtml">RenderingSync Test</a>
+              <a href="rendering.xhtml">Rendering Demo</a>
             </li>
-              <li id="nav_sync">
-                  <a href="syncPlayer.xhtml">syncPlayer Demo</a>
-              </li>
+            <li id="nav_sync" class="active">
+              <a href="syncPlayer.xhtml">syncPlayer Demo</a>
+            </li>
             <li id="nav_code">
               <a href="https://github.com/Freischuetz-Digital/scoreFollowsAudio">Code</a>
             </li>
