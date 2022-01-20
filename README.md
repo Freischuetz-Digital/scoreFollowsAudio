@@ -10,7 +10,20 @@ http://nvie.com/posts/a-successful-git-branching-model/
 Demo
 =====
 
-The package contains a test folder. To build and run scoreFollowsAudio, you'll need Node.js, npm, and bower installed on your system. In the main directory run the following commands from command line:
+The package contains a test folder. To build and run scoreFollowsAudio, you'll need Node.js, npm,  bower and cooffeescript installed on your system. When you have Node and npm installed install bower by running:
+
+```
+npm install -g bower
+```
+
+followed by installing coffescript by running:
+
+```
+npm install --dev coffeescript
+```
+
+
+In the main directory run the following commands from command line:
 
 ```
 bower install
