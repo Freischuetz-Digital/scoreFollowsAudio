@@ -54,8 +54,8 @@
           $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
               localStorage.setItem('activeTab', $(e.target).attr('href'));
           });
-          var defaultTab = '#Weber_Freischuetz-06';
-          var activeTab = localStorage.getItem('activeTab');
+          var defaultTab = '#Weber_Freischuetz-08';
+          var activeTab = '#Weber_Freischuetz-08';
           if(activeTab){
               //reset active tab on reload
               $('#comparisonTabNav a[href="' + activeTab + '"]').tab('show');
