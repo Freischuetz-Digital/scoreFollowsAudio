@@ -3,16 +3,6 @@
   "appVersion": "0.",
   "comparison": [
     {
-      "sortNum": 1,
-      "comparisonKey": "Weber_Freischuetz-06",
-      "label": "No. 6",
-      "meiURI": "https://raw.githubusercontent.com/Freischuetz-Digital/data-music/master/ready-for-use/source_expan/A/A_mov6.xml",
-      "initialImageURI": "https://digilib.freischuetz-digital.de/Scaler/freidi/sources/A/00000100.jpg",
-      "initialAudioURI": "https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-06_Bloemeke2013.mp3",
-      "initialJsonURI": "https://edition.freischuetz-digital.de/syncPlayer/test/Weber_Freischuetz-06_Bloemeke2013_annoMeasures.json"
-
-    },
-    {
       "sortNum": 2,
       "comparisonKey": "Weber_Freischuetz-08",
       "label": "No. 8",
@@ -20,15 +10,6 @@
       "initialImageURI": "https://digilib.freischuetz-digital.de/Scaler/freidi/sources/A/00000127.jpg",
       "initialAudioURI": "https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-08_Bloemeke2013.mp3",
       "initialJsonURI": "https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-08_Bloemeke2013_annoMeasures.json"
-    },
-    {
-      "sortNum": 3,
-      "comparisonKey": "Weber_Freischuetz-09",
-      "label": "No. 9",
-      "meiURI": "https://raw.githubusercontent.com/Freischuetz-Digital/data-music/master/ready-for-use/source_expan/A/A_mov9.xml",
-      "initialImageURI": "https://digilib.freischuetz-digital.de/Scaler/freidi/sources/A/00000147.jpg",
-      "initialAudioURI": "https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-09_Bloemeke2013.mp3",
-      "initialJsonURI": "https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-09_Bloemeke2013_annoMeasures.json"
     }
   ]
 }
