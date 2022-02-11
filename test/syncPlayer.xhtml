@@ -232,12 +232,7 @@
                                 '<div id="'+object.comparisonKey+'renderingTab" role="tabpanel" class="tab-pane active"><div id="rendering" align="center"><div id="'+object.comparisonKey+'output" style="height: 100%;display:none;"/></div></div>' + //<h1>Rendering</h1>
                               '</div>' +
                             '</div>');
-          var audioURI;
-          if(offline){
-              audioURI = object.initialAudioURI;
-            } else {
-              audioURI = 'http://rubin.upb.de:8092/exist/apps/contents/audioData/' + object.initialAudioURI.substring(object.initialAudioURI.indexOf('/')+1);
-            }
+          var audioURI = object.initialAudioURI;
           var audioDiv = $('<div id="'+object.comparisonKey+'audioDiv" class="span8"><audio id="'+object.comparisonKey+'track" controls="controls" class="span12"><source src="'+object.initialAudioURI+'" type="audio/mp3"/>Your browser does not support the HTML5 audio element.</audio></div>'); //<h1>Audio</h1><div><header>Audio:</header>time: <div id="currentTime"></div><header>Measure:</header>count: <div id="measureCount"></div>position: <div id="measurePosition"></div>id: <div id="measureID"></div></div>
           
           tab.append(recordingList);
