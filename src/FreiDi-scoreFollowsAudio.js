@@ -168,12 +168,12 @@ function appendMetadata(recording){
     $('#'+comparisonKey+'recordingMetadata').empty();
     
     var cover = $('<img id="cover" src="' + recording.coverURI + '" alt="cover" class="span12"/>');
-    var buyLink = $('<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a>');//<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a>
-    $('#buyButton').click(function(event){
+    //var buyLink = $('<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a>');//<a role="button" class="btn btn-sm buy" id="buyButton" href="'+recording.metadata.link+'" target="_blank">GET<span class="glyphicon glyphicon-shopping-cart"/></a>
+    /* $('#buyButton').click(function(event){
         
-    });
+    });*/
     $('#'+comparisonKey+'recordingMetadata').append(cover);
-    $('#'+comparisonKey+'recordingMetadata').append(buyLink);
+    //$('#'+comparisonKey+'recordingMetadata').append(buyLink);
     
     
     //TODO Title als heading
