@@ -7,7 +7,7 @@
       "comparisonKey": "Weber_Freischuetz-08",
       "label": "No. 8",
       "meiURI": "https://raw.githubusercontent.com/Freischuetz-Digital/data-music/master/ready-for-use/source_expan/A/A_mov8.xml",
-      "initialImageURI": "https://digilib.freischuetz-digital.de/Scaler/freidi/sources/A/00000127.jpg",
+      "initialImageURI": "https://digilib.freischuetz-digital.de/Scaler/sources/A/00000127.jpg?dw=823&amp;mo=fit",
       "initialAudioURI": "https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-08_Bloemeke2013.mp3",
       "initialJsonURI": "https://edition.freischuetz-digital.de/apps/contents/audioData/Weber_Freischuetz-08_Bloemeke2013_annoMeasures.json"
     }
